@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEEEEE"
+    android:layout_marginTop="?attr/actionBarSize"
+    tools:context="kg.ooba.mobile.android.activities.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.v4.view.ViewPager
+                android:id="@+id/grouponViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="480dp">
+            </android.support.v4.view.ViewPager>
+            <me.relex.circleindicator.CircleIndicator
+                android:id="@+id/groupon_circle_indicator"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                app:ci_drawable="@drawable/circle_indicator_selected"
+                app:ci_drawable_unselected="@drawable/circle_indicator_unselected"
+                android:layout_alignBottom="@+id/grouponViewPager"
+                android:layout_marginBottom="40dp">
+            </me.relex.circleindicator.CircleIndicator>
+            <Button
+                android:layout_below="@id/groupon_circle_indicator"
+                android:background="@drawable/shape_button_view_all"
+                android:textSize="18sp"
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:text="Смотреть все"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <TextView
+            android:layout_marginTop="16dp"
+            android:padding="10dp"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:text="ЛУЧШИЕ КОЛЛЕКЦИИ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.v4.view.ViewPager
+                android:id="@+id/bestCollectionViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="480dp">
+            </android.support.v4.view.ViewPager>
+            <me.relex.circleindicator.CircleIndicator
+                android:id="@+id/best_collection_circle_indicator"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                app:ci_drawable="@drawable/circle_indicator_selected"
+                app:ci_drawable_unselected="@drawable/circle_indicator_unselected"
+                android:layout_alignBottom="@+id/bestCollectionViewPager"
+                android:layout_marginBottom="40dp">
+            </me.relex.circleindicator.CircleIndicator>
+
+        </RelativeLayout>
+        <TextView
+            android:layout_marginTop="16dp"
+            android:padding="10dp"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:text="МИРОВЫЕ МАГАЗИНЫ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:padding="5dp"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:text="Оригинальные товары мировых брендов"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.v4.view.ViewPager
+                android:id="@+id/brandViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="480dp">
+            </android.support.v4.view.ViewPager>
+            <me.relex.circleindicator.CircleIndicator
+                android:id="@+id/brand_circle_indicator"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                app:ci_drawable="@drawable/circle_indicator_selected"
+                app:ci_drawable_unselected="@drawable/circle_indicator_unselected"
+                android:layout_alignBottom="@+id/brandViewPager"
+                android:layout_marginBottom="40dp">
+            </me.relex.circleindicator.CircleIndicator>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_marginTop="16dp"
+            android:padding="10dp"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:text="НЕ НАШЛИ НУЖНЫЙ ТОВАР?"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:padding="5dp"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:text="Ищите еще больше товару тут:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rec_view_shop"
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+        </android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+
+</ScrollView>

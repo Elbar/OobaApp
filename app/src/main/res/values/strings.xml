@@ -1,0 +1,161 @@
+<resources>
+    <string name="app_name">Ooba</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie. Fusce quis mauris a enim sollicitudin ultrices non eget velit. Aliquam eu pulvinar enim. Praesent libero nisl, ultricies vel maximus eu, maximus et nisi. Phasellus pharetra nec ligula vitae mollis. Quisque porttitor ornare magna, quis dignissim libero aliquam id. Donec sollicitudin ultrices ante, a semper erat tristique in. Vivamus sodales in ligula at sodales. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla tempus bibendum nibh, ac tincidunt quam convallis non. Proin dolor nunc, egestas et tortor consequat, dignissim lacinia odio. Ut ut aliquet erat. Ut non scelerisque elit. Morbi dolor neque, iaculis eu justo rutrum, aliquet dictum mauris. Phasellus quis massa ut ligula feugiat congue a et dolor. Etiam a dui a sapien ornare accumsan ac ut lorem. Suspendisse vehicula lorem dapibus nibh rhoncus ultricies. Proin sem nulla, elementum quis pharetra quis, commodo vitae nisi. Donec urna orci, posuere et iaculis sit amet, fringilla quis sapien. Pellentesque nec posuere felis. Praesent malesuada tellus nisi, non dictum justo interdum eget. Quisque mollis euismod libero, non aliquam lorem interdum vitae. Aliquam vehicula efficitur purus eget rutrum. Sed pulvinar fermentum risus ac viverra. Cras laoreet ligula quam, ac lacinia nisl elementum in. Aenean velit arcu, euismod a venenatis non, pulvinar pulvinar massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie. Fusce quis mauris a enim sollicitudin ultrices non eget velit. Aliquam eu pulvinar enim. Praesent libero nisl, ultricies vel maximus eu, maximus et nisi. Phasellus pharetra nec ligula vitae mollis. Quisque porttitor ornare magna, quis dignissim libero aliquam id. Donec sollicitudin ultrices ante, a semper erat tristique in. Vivamus sodales in ligula at sodales. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla tempus bibendum nibh, ac tincidunt quam convallis non. Proin dolor nunc, egestas et tortor consequat, dignissim lacinia odio. Ut ut aliquet erat. Ut non scelerisque elit. Morbi dolor neque, iaculis eu justo rutrum, aliquet dictum mauris. Phasellus quis massa ut ligula feugiat congue a et dolor. Etiam a dui a sapien ornare accumsan ac ut lorem. Suspendisse vehicula lorem dapibus nibh rhoncus ultricies. Proin sem nulla, elementum quis pharetra quis, commodo vitae nisi. Donec urna orci, posuere et iaculis sit amet, fringilla quis sapien. Pellentesque nec posuere felis. Praesent malesuada tellus nisi, non dictum justo interdum eget. Quisque mollis euismod libero, non aliquam lorem interdum vitae. Aliquam vehicula efficitur purus eget rutrum. Sed pulvinar fermentum risus ac viverra. Cras laoreet ligula quam, ac lacinia nisl elementum in. Aenean velit arcu, euismod a venenatis non, pulvinar pulvinar massa.</string>
+    <string name="next">ДАЛЕЕ</string>
+    <string name="skip">ПРОПУСТИТЬ</string>
+    <string name="start">НАЧАТЬ</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="lenta">Лента</string>
+    <string name="catalog">Каталог</string>
+    <string name="discounts">Акции</string>
+    <string name="collections">Коллекции</string>
+    <string name="mpublic">Паблик</string>
+    <string name="notifications">Оповещения</string>
+    <string name="my_orders">Мои заказы</string>
+    <string name="my_payments">Мои платежи</string>
+    <string name="mail_forwarding">Mail Forwarding</string>
+    <string name="user_details">Личные данные</string>
+    <string name="security">Безопасность</string>
+    <string name="user_settings">Почтовые настройки</string>
+    <string name="exit">Выход</string>
+    <string name="communicate">communicate</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_register">Create a new account</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="title_activity_register">Registration</string>
+    <string name="action_reg">Register</string>
+    <string name="next2">ДАЛЕЕ</string>
+
+    <string name="slide_1_title">100.000.000 товаров</string>
+    <string name="slide_1_desc">Приобретайте товары без комиссии из полного ассортимента товаров любых интернет магазинов Китая</string>
+
+    <string name="slide_2_title">Коллекции</string>
+    <string name="slide_2_desc">Найдите идеи для вдохновения в наших ежедневно обновляемых коллекциях</string>
+
+    <string name="slide_3_title">Блог</string>
+    <string name="slide_3_desc">Дайте своему творческому потенциалу раскрыться читайте наш профессиональный блог</string>
+
+    <string name="slide_4_title">Регистрируйся!</string>
+    <string name="slide_4_desc">Будь в курсе самых свежих промоакций, распродаж и интересных новинок</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
+    <string name="title_activity_auth">Sign in</string>
+
+    <string name="data">Личные данные</string>
+    <string name="post_settings">Почтовые настройки</string>
+    <string name="privacy">Безопасность</string>
+    <string name="mailForwarding">Mail forwarding</string>
+    <string name="payments">Платежи</string>
+    <string name="partnerProgram">Партнерская программа</string>
+    <string name="messNotif">Сообщения</string>
+    <string name="groupPurchases">Групповые покупки</string>
+    <string name="signIn">Логин</string>
+    <string name="goodCard">Карточка товара</string>
+    <string name="basketItem">Корзина</string>
+    <string name="uploadImg">Загрузить картинку</string>
+    <string name="balance">Личный баланс</string>
+    <string name="notif">Уведомления</string>
+    <string name="images">Картинки</string>
+    <string name="registr">Регистрация</string>
+
+    <string name="user_name">Клиент, ФИО</string>
+    <string name="passport">Паспорт №</string>
+    <string name="birth_date">Дата рождения</string>
+    <string name="gender">Пол </string>
+    <string name="email">E-mail address</string>
+    <string name="phone_num">Телефон номер</string>
+
+    <string name="gender_female">Женщина</string>
+    <string name="gender_male">Мужчина</string>
+    <string name="gender_none">Не указан</string>
+
+    <string name="country">Выберите страну</string>
+    <string name="region">Выберите регион</string>
+    <string name="city">Выберите город</string>
+
+    <string name="save">Сохранить</string>
+    <string name="add">Добавить</string>
+
+    <string name="old_password">Текущий пароль</string>
+    <string name="password">Пароль</string>
+    <string name="new_password">Новый пароль</string>
+    <string name="repeat_password">Повторите пароль</string>
+
+    <string name="default_date">Нет данных</string>
+
+    <string name="rekvizity">Реквизиты склада в Урумчи</string>
+    <string name="user_example">Получатель: Имя Фамилия получателя на латинице Пример: IVAN PETROV</string>
+    <string name="trek_nomer">Трек номер посылки</string>
+    <string name="good_type">Тип (классификация) товара</string>
+
+    <string name="variant_dostavki">Вариант доставки</string>
+
+    <string name="tittle_articul">Артикул</string>
+    <string name="tittle_ostatok">Осталось</string>
+    <string name="tittle_price">Цена</string>
+    <string name="kolichestvo">Штук</string>
+    <string name="more">Характеристики ... </string>
+
+    <string name="out_user">Получатель (Фамилия Имя): </string>
+    <string name="out_contact">Контактный адрес: </string>
+
+    <string name="delete_address">Удалить</string>
+    <string name="order_date">Дата</string>
+    <string name="order_name">Заказ</string>
+    <string name="summa">Сумма</string>
+    <string name="account_num">Счет № </string>
+    <string name="payment_status">Назначение </string>
+    <string name="orderGood">Оформить заказ</string>
+
+    <string name="payment_done">Оплаченные счета</string>
+    <string name="payment_yet">Неоплаченные счета</string>
+
+    <string name="pay_more"><u>Подробней </u></string>
+    <string name="pay">Оплатить</string>
+    <string name="cancel">Отмена</string>
+
+    <string name="attribute">Описание</string>
+    <string name="basketBtn">Продолжить</string>
+    <string name="sendBtn">Отправить</string>
+    <string name="login">Вход</string>
+    <string name="rememberMe">Запомнить меня</string>
+    <string name="registration">Зарегистрироваться</string>
+    <string name="registrationTxt">Регистрация</string>
+    <string name="haveLogin">Cоздать новый аккаунт</string>
+    <string name="forgotPassword">Забыли пароль?</string>
+
+    <string name="seller">Продавец</string>
+    <string name="profileBalance">Баланс</string>
+    <string name="bill">Лицевой счет</string>
+    <string name="regTime">На сайте</string>
+    <string name="userLink">Ссылка на пользователя</string>
+
+    <string name="bonus">Бонус</string>
+    <string name="promoCode">Промо</string>
+    <string name="statusText">Статус</string>
+    <string name="partner_program">Партнерская программа</string>
+    <string name="title_activity_product_cart">ProductCartActivity</string>
+    <string name="title_activity_partner1">PartnerActivity</string>
+    <string name="title_activity_group_on">GroupOnActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

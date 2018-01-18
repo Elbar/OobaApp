@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/border"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/paymentImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        app:srcCompat="@drawable/dostavka" />
+
+    <TextView
+        android:id="@+id/paymentDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/paymentImage" />
+
+    <TextView
+        android:id="@+id/paymentStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/paymentDate"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@+id/paymentImage"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/out_Paysum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/paymentDate"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/orderNumTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/paymentStatus"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@+id/paymentImage"
+        android:text="@string/order_name" />
+
+    <TextView
+        android:id="@+id/orderNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/out_Paysum"
+        android:layout_toEndOf="@+id/orderNumTxt"
+        android:textAlignment="textEnd"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/invoiceNumTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/orderNumTxt"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@+id/paymentImage"
+        android:text="@string/account_num" />
+
+    <TextView
+        android:id="@+id/invoiceNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/orderNum"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@+id/invoiceNumTxt"
+        android:textAlignment="textEnd"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+</RelativeLayout>

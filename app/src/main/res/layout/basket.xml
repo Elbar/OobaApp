@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/border"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/basketImage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp" />
+
+    <CheckBox
+        android:id="@+id/cartCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true" />
+
+    <RelativeLayout
+        android:id="@+id/linearAttr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cartCheckBox"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@+id/basketImage">
+
+        <TextView
+            android:id="@+id/basAttr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/attribute"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/attribute"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@+id/basAttr"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/priceTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearAttr"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@+id/basketImage"
+        android:text="@string/tittle_price"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearAttr"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@+id/priceTxt"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <ImageButton
+        android:id="@+id/refresh"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/cartCheckBox"
+        app:srcCompat="@drawable/cwac_cam2_ic_refresh_white" />
+
+    <ImageButton
+        android:id="@+id/delete"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/refresh"
+        app:srcCompat="@android:drawable/ic_menu_delete" />
+
+    <TextView
+        android:id="@+id/kol_vo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/priceTxt"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@+id/basketImage"
+        android:text="@string/kolichestvo"
+        android:textSize="14sp" />
+
+
+    <ImageView
+        android:id="@+id/decrease_item_count"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_below="@id/kol_vo"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/basketImage"
+        app:srcCompat="@drawable/minus" />
+
+    <TextView
+        android:id="@+id/basketCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/kol_vo"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="7dp"
+        android:layout_toEndOf="@+id/decrease_item_count"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/increase_item_count"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_below="@id/kol_vo"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/basketCount"
+        app:srcCompat="@drawable/plus" />
+
+    <TextView
+        android:id="@+id/basketTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/basketCount"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/basketTotal"
+        android:background="@drawable/border"/>
+</RelativeLayout>
