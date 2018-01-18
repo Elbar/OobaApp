@@ -80,7 +80,7 @@
             android:layout_below="@+id/good_type"
             android:layout_marginTop="10dp"/>
 
-        <kg.ooba.mobile.android.utils.StaticGridView
+        <com.kg.vista.ooba.utils.StaticGridView
             android:id="@+id/grvMailForwarding"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

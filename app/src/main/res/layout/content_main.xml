@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#EEEEEE"
     android:layout_marginTop="?attr/actionBarSize"
-    tools:context="kg.ooba.mobile.android.activities.MainActivity"
+    tools:context=".activities.MainActivity"
     tools:showIn="@layout/app_bar_main">
     <LinearLayout
         android:orientation="vertical"
