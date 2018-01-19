@@ -7,4 +7,6 @@
     <item name="action_collections" type="id" />
     <item name="action_catalog" type="id" />
     <item name="action_discounts" type="id" />
+    <item name="world_shops_gv" type="id" />
+    <item name="test_tv" type="id" />
 </resources>

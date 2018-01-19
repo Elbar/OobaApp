@@ -9,7 +9,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".activities.App"
+        android:name=".activity.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activities.SplashScreen"
+            android:name=".activity.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme">
             <intent-filter>
@@ -26,54 +26,54 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--<activity-->
+            <!--android:name=".activities.MainActivity"-->
+            <!--android:launchMode="singleTask"-->
+            <!--android:theme="@style/AppTheme.NoActionBar" />-->
         <activity
-            android:name=".activities.MainActivity"
-            android:launchMode="singleTask"
+            android:name=".activity.ShopActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.NotificationActivity" />
         <activity
-            android:name=".activities.ShopActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activities.NotificationActivity" />
-        <activity
-            android:name=".activities.LoginActivity"
+            android:name=".activity.LoginActivity"
             android:label="@string/title_activity_login" />
         <activity
-            android:name=".activities.RegisterActivity"
+            android:name=".activity.RegisterActivity"
             android:label="@string/title_activity_register" />
-        <activity android:name=".activities.WelcomeActivity" />
+        <activity android:name=".activity.WelcomeActivity" />
         <activity
-            android:name=".activities.UserDetailsActivity"
+            android:name=".activity.UserDetailsActivity"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".activities.SecurityActivity"
+            android:name=".activity.SecurityActivity"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".activities.PostSettingsActivity" />
-        <activity android:name=".activities.DiscountActivity" />
-        <activity android:name=".activities.PaymentsActivity" />
-        <activity android:name=".activities.PaymentsStatusActivity" />
-        <activity android:name=".activities.BalanceActivity" />
+        <activity android:name=".activity.PostSettingsActivity" />
+        <activity android:name=".activity.DiscountActivity" />
+        <activity android:name=".activity.PaymentsActivity" />
+        <activity android:name=".activity.PaymentsStatusActivity" />
+        <activity android:name=".activity.BalanceActivity" />
         <activity
-            android:name=".activities.ProductActivity"
+            android:name=".activity.ProductActivity"
             android:label=""
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activities.PartnerInfoActivity" />
+        <activity android:name=".activity.PartnerInfoActivity" />
         <activity
-            android:name=".activities.PartnerActivity"
+            android:name=".activity.PartnerActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activities.MailForwardingActivity" />
-        <activity android:name=".activities.MailForwardingInfoActivity" />
+        <activity android:name=".activity.MailForwardingActivity" />
+        <activity android:name=".activity.MailForwardingInfoActivity" />
         <activity
-            android:name=".activities.ProductCartActivity"
+            android:name=".activity.ProductCartActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activities.BasketOrderActivity"
+            android:name=".activity.BasketOrderActivity"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".activities.GroupOnActivity"
+            android:name=".activity.GroupOnActivity"
             android:label="@string/title_activity_group_on"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activities.GroupInfoActivity" />
-        <activity android:name=".activities.MessNotifActivity"></activity>
+        <activity android:name=".activity.GroupInfoActivity" />
+        <activity android:name=".activity.MessNotifActivity"></activity>
     </application>
 
 </manifest>

@@ -7,12 +7,12 @@
     android:layout_height="match_parent"
     android:background="#EEEEEE"
     android:layout_marginTop="?attr/actionBarSize"
-    tools:context=".activities.MainActivity"
+    tools:context=".activity.MainActivity"
     tools:showIn="@layout/app_bar_main">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -66,6 +66,16 @@
                 android:layout_marginBottom="40dp">
             </me.relex.circleindicator.CircleIndicator>
 
+            <Button
+                android:layout_below="@id/best_collection_circle_indicator"
+                android:background="@drawable/shape_button_view_all"
+                android:textSize="18sp"
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:text="Смотреть все"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
         </RelativeLayout>
         <TextView
             android:layout_marginTop="16dp"
@@ -100,6 +110,16 @@
                 android:layout_marginBottom="40dp">
             </me.relex.circleindicator.CircleIndicator>
 
+            <Button
+                android:layout_below="@id/brand_circle_indicator"
+                android:background="@drawable/shape_button_view_all"
+                android:textSize="18sp"
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:text="Смотреть все"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
         </RelativeLayout>
 
         <TextView
@@ -107,22 +127,34 @@
             android:padding="10dp"
             android:gravity="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:text="НЕ НАШЛИ НУЖНЫЙ ТОВАР?"
+            android:text="@string/online_store"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-        <TextView
-            android:padding="5dp"
-            android:textSize="16sp"
-            android:gravity="center"
-            android:text="Ищите еще больше товару тут:"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rec_view_shop"
             android:layout_width="match_parent"
+            android:layout_marginBottom="50dp"
             android:layout_height="300dp">
         </android.support.v7.widget.RecyclerView>
 
+        <GridView
+            android:id="@id/world_shops_gv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:layout_marginTop="20dp"
+            android:columnWidth="90dp"
+            android:gravity="center"
+
+            android:horizontalSpacing="10dp"
+            android:numColumns="3"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="10dp" />
+
     </LinearLayout>
+
+
+
 
 </ScrollView>
