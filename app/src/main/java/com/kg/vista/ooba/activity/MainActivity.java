@@ -5,38 +5,35 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import com.azoft.carousellayoutmanager.CarouselLayoutManager;
 import com.azoft.carousellayoutmanager.CarouselZoomPostLayoutListener;
-import com.azoft.carousellayoutmanager.CenterScrollListener;
 
 import java.util.List;
 import java.util.Random;
 
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.adapter.BestCollectionViewPagerAdapter;
-import com.kg.vista.ooba.adapter.BrandViewPagerAdapter;
+import com.kg.vista.ooba.adapter.BrandAdapter;
 import com.kg.vista.ooba.adapter.GrouponViewPagerAdapter;
-import com.kg.vista.ooba.adapter.ShopRecyclerViewAdapter;
+import com.kg.vista.ooba.adapter.ShopAdapter;
 import com.kg.vista.ooba.model.Brand;
 import com.kg.vista.ooba.model.Collection;
 import com.kg.vista.ooba.model.Groupon;
 import com.kg.vista.ooba.model.MainRequest;
 import com.kg.vista.ooba.model.Shop;
 
-import butterknife.BindView;
 import me.relex.circleindicator.CircleIndicator;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -65,24 +62,20 @@ public class MainActivity extends AbstractActivity
     private ViewPager bestCollectionViewPager;
     private CircleIndicator bestCollectionCircleIndicator;
 
-    private BrandViewPagerAdapter brandViewPagerAdapter;
-    private ViewPager brandViewPager;
+    private BrandAdapter brandAdapter;
+    private GridView brandGridView;
     private CircleIndicator brandCircleIndicator;
-    private ShopRecyclerViewAdapter shopRecyclerViewAdapter;
-    private RecyclerView shopRecyclerView;
+    private ShopAdapter shopGridViewAdapter;
+    private GridView shopGridView;
 
-    @BindView(R.id.world_shops_gv)
-    GridView mWorldShopsGV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -99,9 +92,9 @@ public class MainActivity extends AbstractActivity
         bestCollectionViewPager = (ViewPager) findViewById(R.id.bestCollectionViewPager);
         bestCollectionCircleIndicator = (CircleIndicator) findViewById(R.id.best_collection_circle_indicator);
 
-        brandViewPager = (ViewPager) findViewById(R.id.brandViewPager);
-        brandCircleIndicator = (CircleIndicator) findViewById(R.id.brand_circle_indicator);
-        shopRecyclerView = (RecyclerView) findViewById(R.id.rec_view_shop);
+        brandGridView = (GridView) findViewById(R.id.brand_gv);
+//        brandCircleIndicator = (CircleIndicator) findViewById(R.id.brand_circle_indicator);
+        shopGridView = (GridView) findViewById(R.id.grid_view_shop);
 
         setUIFromAdapters();
 
@@ -118,6 +111,8 @@ public class MainActivity extends AbstractActivity
                 brandList = response.body().getBrand();
                 shopList = response.body().getShop();
 
+                Toast.makeText(MainActivity.this, brandList.toString(), Toast.LENGTH_SHORT).show();
+
 
                 int randomNumber = new Random().nextInt(grouponList.size()) + 1;
                 grouponViewPagerAdapter = new GrouponViewPagerAdapter(MainActivity.this, grouponList);
@@ -131,20 +126,20 @@ public class MainActivity extends AbstractActivity
                 bestCollectionViewPager.setAdapter(bestCollectionViewPagerAdapter);
                 bestCollectionViewPager.setCurrentItem(randomNumber1);
                 bestCollectionCircleIndicator.setViewPager(bestCollectionViewPager);
-
+//
                 int randomNumber2 = new Random().nextInt(brandList.size())+1;
-                brandViewPagerAdapter = new BrandViewPagerAdapter(MainActivity.this, brandList);
-                brandViewPager.setAdapter(brandViewPagerAdapter);
-                brandViewPager.setCurrentItem(randomNumber2);
-                brandCircleIndicator.setViewPager(brandViewPager);
+                brandAdapter = new BrandAdapter(MainActivity.this, brandList);
+                brandGridView.setAdapter(brandAdapter);
+//                brandGridView.setCurrentItem(randomNumber2);
+//                brandCircleIndicator.setViewPager(brandGridView);
 
                 final CarouselLayoutManager layoutManager = new CarouselLayoutManager(CarouselLayoutManager.HORIZONTAL, true);
                 layoutManager.setPostLayoutListener(new CarouselZoomPostLayoutListener());
-                shopRecyclerViewAdapter = new ShopRecyclerViewAdapter(MainActivity.this, shopList);
-                shopRecyclerView.setLayoutManager(layoutManager);
-                shopRecyclerView.setHasFixedSize(true);
-                shopRecyclerView.setAdapter(shopRecyclerViewAdapter);
-                shopRecyclerView.addOnScrollListener(new CenterScrollListener());
+                shopGridViewAdapter = new ShopAdapter(MainActivity.this, shopList);
+//                shopGridView.setLayoutManager(layoutManager);
+//                shopGridView.setHasFixedSize(true);
+                shopGridView.setAdapter(shopGridViewAdapter);
+//                shopGridView.addOnScrollListener(new CenterScrollListener());
 
             }
 

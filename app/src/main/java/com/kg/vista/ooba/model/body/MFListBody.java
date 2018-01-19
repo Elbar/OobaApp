@@ -3,9 +3,6 @@ package com.kg.vista.ooba.model.body;
 import java.io.Serializable;
 import java.util.List;
 
-/**
- * Created by aizhan on 9/7/17.
- */
 
 public class MFListBody implements Serializable{
     private String userId;

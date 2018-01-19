@@ -9,4 +9,5 @@
     <item name="action_discounts" type="id" />
     <item name="world_shops_gv" type="id" />
     <item name="test_tv" type="id" />
+    <item name="brand_gv" type="id" />
 </resources>

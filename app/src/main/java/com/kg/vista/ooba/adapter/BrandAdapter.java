@@ -7,30 +7,29 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import com.kg.vista.ooba.R;
-import com.kg.vista.ooba.model.Shop;
+import com.kg.vista.ooba.model.Brand;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class ShopAdapter extends BaseAdapter {
 
-    private final List<Shop> shops;
-    Context context;
+public class BrandAdapter extends BaseAdapter {
+
+    private final List<Brand> brands;
     Context mContext;
 
-    public ShopAdapter(Context context, List<Shop> shops) {
+    public BrandAdapter(Context context, List<Brand> brands) {
         this.mContext = context;
-        this.shops = shops;
+        this.brands = brands;
     }
 
 
     @Override
     public int getCount() {
-        return shops.size();
+        return brands.size();
     }
 
     // 3
@@ -50,17 +49,16 @@ public class ShopAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
 
-        final Shop shop = shops.get(position);
+            final Brand brand = brands.get(position);
 
-        if (convertView == null) {
-            final LayoutInflater layoutInflater = LayoutInflater.from(mContext);
-            convertView = layoutInflater.inflate(R.layout.shop_item, null);
-        }
+            if (convertView == null) {
+                final LayoutInflater layoutInflater = LayoutInflater.from(mContext);
+                convertView = layoutInflater.inflate(R.layout.brand_item, null);
+            }
 
-        ImageView imageView  = (ImageView) convertView.findViewById(R.id.shop_image);
-        final ProgressBar progressBar = (ProgressBar) convertView.findViewById(R.id.shopProgressBar);
-
-        Picasso.with(context).load("http://ooba.kg/"+shop.getLogo()).into(imageView, new Callback() {
+            ImageView imageView = (ImageView) convertView.findViewById(R.id.brand_image);
+            final ProgressBar progressBar = (ProgressBar) convertView.findViewById(R.id.brandProgressBar);
+        Picasso.with(mContext).load("http://ooba.kg/data/brandlogo/"+brand.getBrandLogo()).into(imageView, new Callback() {
             @Override
             public void onSuccess() {
                 progressBar.setVisibility(View.INVISIBLE);
@@ -72,8 +70,8 @@ public class ShopAdapter extends BaseAdapter {
             }
         });
 
-
         return convertView;
+
     }
 
 

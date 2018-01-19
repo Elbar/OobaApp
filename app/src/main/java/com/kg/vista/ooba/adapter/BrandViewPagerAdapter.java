@@ -36,11 +36,8 @@ public class BrandViewPagerAdapter extends PagerAdapter {
         View itemView = inflater.inflate(R.layout.brand_item, container, false);
 
         ImageView imageView = (ImageView) itemView.findViewById(R.id.brand_image);
-        TextView tvTitle = (TextView) itemView.findViewById(R.id.brand_title);
         final ProgressBar progressBar = (ProgressBar) itemView.findViewById(R.id.brandProgressBar);
         Brand brand = brandList.get(position);
-        //Log.d("ooba2", "price "+groupon.getPrice());
-        tvTitle.setText(brand.getBrandName());
         Picasso.with(context).load("http://ooba.kg/data/brandlogo/"+brand.getBrandLogo()).into(imageView, new Callback() {
             @Override
             public void onSuccess() {

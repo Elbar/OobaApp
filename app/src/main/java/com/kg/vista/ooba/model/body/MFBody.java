@@ -1,8 +1,6 @@
 package com.kg.vista.ooba.model.body;
 
-/**
- * Created by aizhan on 9/8/17.
- */
+
 
 public class MFBody{
 

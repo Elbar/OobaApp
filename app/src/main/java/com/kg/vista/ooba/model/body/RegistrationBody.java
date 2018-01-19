@@ -1,8 +1,5 @@
 package com.kg.vista.ooba.model.body;
 
-/**
- * Created by aizhan on 9/2/17.
- */
 
 public class RegistrationBody {
     private String mail;
