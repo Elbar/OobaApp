@@ -16,7 +16,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class PaymentsStatusActivity extends AppCompatActivity {
+public class PaymentsStatusActivity extends AbstractActivity {
 
     private RelativeLayout payDone;
     private RelativeLayout payYet;

@@ -1,4 +1,4 @@
-package com.kg.vista.ooba.activity;
+package com.kg.vista.ooba.fragment;
 
 import android.content.Intent;
 import android.support.v4.app.Fragment;
@@ -15,6 +15,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.kg.vista.ooba.R;
+import com.kg.vista.ooba.activity.App;
+import com.kg.vista.ooba.activity.PartnerInfoActivity;
+import com.kg.vista.ooba.activity.UsersManagement;
 import com.kg.vista.ooba.adapter.PartnerAdapter;
 import com.kg.vista.ooba.model.Item.PartnerItem;
 import com.kg.vista.ooba.model.dto.PartnerItemDTO;

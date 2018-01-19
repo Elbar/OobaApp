@@ -14,7 +14,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class SecurityActivity extends AppCompatActivity {
+public class SecurityActivity extends AbstractActivity {
 
     private EditText oldPasswordEditText;
     private EditText newPasswordEditText;

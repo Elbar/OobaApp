@@ -18,7 +18,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class PaymentsActivity extends AppCompatActivity {
+public class PaymentsActivity extends AbstractActivity {
 
     private ArrayList<PaymentsItem> paymentsItems = new ArrayList<>();
     private PaymentsAdapter paymentsAdapter;

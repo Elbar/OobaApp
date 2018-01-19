@@ -17,7 +17,7 @@ import android.widget.TextView;
 import com.kg.vista.ooba.R;
 
 
-public class WelcomeActivity extends AppCompatActivity {
+public class WelcomeActivity extends AbstractActivity {
 
     private ViewPager viewPager;
     private MyViewPagerAdapter myViewPagerAdapter;

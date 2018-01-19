@@ -10,7 +10,7 @@ import com.kg.vista.ooba.R;
 import com.squareup.picasso.Picasso;
 
 
-public class PartnerInfoActivity extends AppCompatActivity {
+public class PartnerInfoActivity extends AbstractActivity {
 
     private String clientId;
     private String seller;

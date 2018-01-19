@@ -19,7 +19,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class NotificationActivity extends AppCompatActivity {
+public class NotificationActivity extends AbstractActivity {
 
     private ArrayList<NotificationItem> notifications = new ArrayList<>();
     private NotificationAdapter notificationAdapter;

@@ -16,7 +16,7 @@ import com.kg.vista.ooba.fragment.ActiveGroupFragment;
 import com.kg.vista.ooba.fragment.ArchiveGroupFragment;
 
 
-public class GroupOnActivity extends AppCompatActivity {
+public class GroupOnActivity extends AbstractActivity {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide

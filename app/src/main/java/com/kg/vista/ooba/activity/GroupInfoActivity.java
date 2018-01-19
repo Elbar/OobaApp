@@ -11,7 +11,7 @@ import com.kg.vista.ooba.R;
 import com.squareup.picasso.Picasso;
 
 
-public class GroupInfoActivity extends AppCompatActivity {
+public class GroupInfoActivity extends AbstractActivity {
 
     private String goodTitle;
     private String oldCost;

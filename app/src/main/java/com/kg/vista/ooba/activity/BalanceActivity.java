@@ -1,23 +1,23 @@
 package com.kg.vista.ooba.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.GridView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.adapter.BalanceAdapter;
 import com.kg.vista.ooba.model.Item.BalanceItem;
 import com.kg.vista.ooba.model.dto.BalanceDTO;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class BalanceActivity extends AppCompatActivity {
+public class BalanceActivity extends AbstractActivity {
 
     private ArrayList<BalanceItem> balanceItems = new ArrayList<>();
     private BalanceAdapter balanceAdapter;

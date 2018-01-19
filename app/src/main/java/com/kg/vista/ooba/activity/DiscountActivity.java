@@ -7,7 +7,7 @@ import android.view.MenuItem;
 import com.kg.vista.ooba.R;
 
 
-public class DiscountActivity extends AppCompatActivity {
+public class DiscountActivity extends AbstractActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

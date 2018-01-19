@@ -12,7 +12,7 @@ import android.support.v7.widget.Toolbar;
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.adapter.TabAdapter;
 
-public class ProductCartActivity extends AppCompatActivity {
+public class ProductCartActivity extends AbstractActivity {
 
     private ViewPager viewPager;
     private TabAdapter tabAdapter;

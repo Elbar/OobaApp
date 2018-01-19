@@ -1,7 +1,6 @@
 package com.kg.vista.ooba.activity;
 
 import android.support.design.widget.TabLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import android.support.v4.app.Fragment;
@@ -13,9 +12,10 @@ import android.view.MenuItem;
 
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.fragment.FinishedPartnerFragment;
+import com.kg.vista.ooba.fragment.ProcessPartnerFragment;
 
 
-public class PartnerActivity extends AppCompatActivity {
+public class PartnerActivity extends AbstractActivity {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide

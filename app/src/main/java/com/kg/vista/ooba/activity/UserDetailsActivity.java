@@ -27,7 +27,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class UserDetailsActivity extends AppCompatActivity {
+public class UserDetailsActivity extends AbstractActivity {
 
     private EditText userName;
     private EditText passport;

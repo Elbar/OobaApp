@@ -26,7 +26,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MailForwardingActivity extends AppCompatActivity {
+public class MailForwardingActivity extends AbstractActivity {
 
     private EditText trNum;
     private EditText rekvizityEditText;
