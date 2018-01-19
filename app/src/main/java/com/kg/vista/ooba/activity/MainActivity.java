@@ -3,26 +3,21 @@ package com.kg.vista.ooba.activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
-
-import android.util.Log;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.GridView;
 import android.widget.Toast;
 
 import com.azoft.carousellayoutmanager.CarouselLayoutManager;
 import com.azoft.carousellayoutmanager.CarouselZoomPostLayoutListener;
-
-import java.util.List;
-import java.util.Random;
-
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.adapter.BestCollectionViewPagerAdapter;
 import com.kg.vista.ooba.adapter.BrandAdapter;
@@ -33,6 +28,9 @@ import com.kg.vista.ooba.model.Collection;
 import com.kg.vista.ooba.model.Groupon;
 import com.kg.vista.ooba.model.MainRequest;
 import com.kg.vista.ooba.model.Shop;
+
+import java.util.List;
+import java.util.Random;
 
 import me.relex.circleindicator.CircleIndicator;
 import retrofit2.Call;
@@ -77,6 +75,8 @@ public class MainActivity extends AbstractActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -95,6 +95,7 @@ public class MainActivity extends AbstractActivity
         brandGridView = (GridView) findViewById(R.id.brand_gv);
 //        brandCircleIndicator = (CircleIndicator) findViewById(R.id.brand_circle_indicator);
         shopGridView = (GridView) findViewById(R.id.grid_view_shop);
+        brandGridView.setVerticalScrollBarEnabled(false);
 
         setUIFromAdapters();
 
