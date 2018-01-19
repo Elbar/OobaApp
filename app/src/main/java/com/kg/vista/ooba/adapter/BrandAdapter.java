@@ -51,6 +51,7 @@ public class BrandAdapter extends BaseAdapter {
 
             final Brand brand = brands.get(position);
 
+
             if (convertView == null) {
                 final LayoutInflater layoutInflater = LayoutInflater.from(mContext);
                 convertView = layoutInflater.inflate(R.layout.brand_item, null);
