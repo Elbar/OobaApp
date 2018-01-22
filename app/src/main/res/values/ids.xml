@@ -19,8 +19,8 @@
     <item name="group_purchases_tv" type="id" />
     <item name="whats_new_gv" type="id" />
     <item name="item_title" type="id" />
-    <item name="show_all_items_btn" type="id" />
-    <item name="show_popular_items_btn" type="id" />
-    <item name="show_new_items_btn" type="id" />
+    <item name="show_all_items_cv" type="id" />
+    <item name="show_popular_items_cv" type="id" />
+    <item name="show_new_items_cv" type="id" />
     <item name="show_blogs_cv" type="id" />
 </resources>

@@ -125,5 +125,14 @@ public interface RetrofitService {
     Call<OtherProductsOfSeller> getOtherProductsOfSeller(@Query("url") String sellerProductUrl);
 
     @GET("api.ooba.kg/?url=mixed&filter=all&limit=6")
+    Call<List<WhatsNew>> getWhatsAllItems();
+
+    @GET("api.ooba.kg/?url=mixed&filter=all&limit=6")
+    Call<List<WhatsNew>> getWhatsPopularItems();
+
+    @GET("api.ooba.kg/?url=mixed&filter=all&limit=6")
     Call<List<WhatsNew>> getWhatsNewItems();
+
+    @GET("api.ooba.kg/?url=mixed&filter=blogs&limit=6")
+    Call<List<WhatsNew>> getBlogs();
 }

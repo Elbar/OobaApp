@@ -9,6 +9,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -84,12 +85,56 @@ public class MainActivity extends AbstractActivity
     @BindView(R.id.whats_new_gv)
     GridView mWhatsNewGV;
 
+    @BindView(R.id.show_all_items_cv)
+    CardView mShowAllItemsCV;
+    @BindView(R.id.show_blogs_cv)
+    CardView mShowBlogsCV;
+    @BindView(R.id.show_popular_items_cv)
+    CardView mShowPopularItemsCV;
+    @BindView(R.id.show_new_items_cv)
+    CardView mShowNewItemsCV;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+
+        mShowAllItemsCV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getWhatsAllItems();
+
+
+            }
+        });
+
+        mShowBlogsCV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getBlogs();
+
+
+            }
+        });
+        mShowNewItemsCV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getWhatsNewItems();
+
+
+            }
+        });
+        mShowPopularItemsCV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getWhatsPopularItems();
+
+
+            }
+        });
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -115,12 +160,11 @@ public class MainActivity extends AbstractActivity
 
 
         setUIFromAdapters();
-        getWhatsNewItems(whatsNewLinearLayoutManager);
 
     }
 
 
-    private void getWhatsNewItems(final LinearLayoutManager whatsNewLinearLayoutManager) {
+    private void getWhatsNewItems() {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
@@ -130,6 +174,51 @@ public class MainActivity extends AbstractActivity
 
 
         Call<List<WhatsNew>> getUserNotifications = request.getWhatsNewItems();
+
+        getUserNotifications.enqueue(new Callback<List<WhatsNew>>() {
+            @Override
+            public void onResponse(@NonNull Call<List<WhatsNew>> call, @NonNull Response<List<WhatsNew>> response) {
+
+                try {
+                    List<WhatsNew> whatsNews = response.body();
+                    List<WhatsNew> whatsNewItem = new ArrayList<>();
+
+                    for (int i = 0; i < whatsNews.size(); i++) {
+                        WhatsNew whatsNew = new WhatsNew();
+                        whatsNew.setTitle(whatsNews.get(i).getTitle());
+                        whatsNew.setFileUrl("http://ooba.kg/"+ whatsNews.get(i).getFileUrl());
+                        whatsNewItem.add(whatsNew);
+
+                    }
+
+                    WhatsNewGVAdapter adapter = new WhatsNewGVAdapter(MainActivity.this, whatsNewItem);
+                    mWhatsNewGV.setAdapter(adapter);
+
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+
+                }
+            }
+
+
+            @Override
+            public void onFailure(Call<List<WhatsNew>> call, Throwable t) {
+
+            }
+        });
+
+    }
+    private void getWhatsAllItems() {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        final RetrofitService request = retrofit.create(RetrofitService.class);
+
+
+        Call<List<WhatsNew>> getUserNotifications = request.getWhatsAllItems();
 
         getUserNotifications.enqueue(new Callback<List<WhatsNew>>() {
             @Override
@@ -169,6 +258,106 @@ public class MainActivity extends AbstractActivity
         });
 
     }
+    private void getWhatsPopularItems() {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        final RetrofitService request = retrofit.create(RetrofitService.class);
+
+
+        Call<List<WhatsNew>> getUserNotifications = request.getWhatsPopularItems();
+
+        getUserNotifications.enqueue(new Callback<List<WhatsNew>>() {
+            @Override
+            public void onResponse(@NonNull Call<List<WhatsNew>> call, @NonNull Response<List<WhatsNew>> response) {
+
+                try {
+                    List<WhatsNew> whatsNews = response.body();
+                    List<WhatsNew> whatsNewItem = new ArrayList<>();
+
+                    for (int i = 0; i < whatsNews.size(); i++) {
+                        WhatsNew whatsNew = new WhatsNew();
+                        whatsNew.setTitle(whatsNews.get(i).getTitle());
+                        whatsNew.setFileUrl("http://ooba.kg/"+ whatsNews.get(i).getFileUrl());
+                        whatsNewItem.add(whatsNew);
+
+                    }
+
+//                    whatsNewRVAdapter = new WhatsNewGVAdapter(whatsNewItem);
+//                    mWhatsNewRV.setLayoutManager(whatsNewLinearLayoutManager);
+//                    mWhatsNewRV.setAdapter(whatsNewRVAdapter);
+
+                    WhatsNewGVAdapter adapter = new WhatsNewGVAdapter(MainActivity.this, whatsNewItem);
+                    mWhatsNewGV.setAdapter(adapter);
+
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+
+                }
+            }
+
+
+            @Override
+            public void onFailure(Call<List<WhatsNew>> call, Throwable t) {
+
+            }
+        });
+
+    }
+
+    private void getBlogs() {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        final RetrofitService request = retrofit.create(RetrofitService.class);
+
+
+        Call<List<WhatsNew>> getUserNotifications = request.getBlogs();
+
+        getUserNotifications.enqueue(new Callback<List<WhatsNew>>() {
+            @Override
+            public void onResponse(@NonNull Call<List<WhatsNew>> call, @NonNull Response<List<WhatsNew>> response) {
+
+                try {
+                    List<WhatsNew> whatsNews = response.body();
+                    List<WhatsNew> whatsNewItem = new ArrayList<>();
+
+                    for (int i = 0; i < whatsNews.size(); i++) {
+                        WhatsNew whatsNew = new WhatsNew();
+                        whatsNew.setTitle(whatsNews.get(i).getTitle());
+                        whatsNew.setFileUrl("http://ooba.kg/"+ whatsNews.get(i).getFileUrl());
+                        whatsNewItem.add(whatsNew);
+
+                    }
+
+//                    whatsNewRVAdapter = new WhatsNewGVAdapter(whatsNewItem);
+//                    mWhatsNewRV.setLayoutManager(whatsNewLinearLayoutManager);
+//                    mWhatsNewRV.setAdapter(whatsNewRVAdapter);
+
+                    WhatsNewGVAdapter adapter = new WhatsNewGVAdapter(MainActivity.this, whatsNewItem);
+                    mWhatsNewGV.setAdapter(adapter);
+
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+
+                }
+            }
+
+
+            @Override
+            public void onFailure(Call<List<WhatsNew>> call, Throwable t) {
+
+            }
+        });
+
+    }
+
 
     private void setUIFromAdapters(){
         App.api().mainRequest().enqueue(new Callback<MainRequest>() {
