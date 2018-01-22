@@ -8,6 +8,7 @@ import java.util.List;
 import com.kg.vista.ooba.model.OtherProductsOfSeller;
 import com.kg.vista.ooba.model.Product;
 import com.kg.vista.ooba.model.ProductConfig;
+import com.kg.vista.ooba.model.WhatsNew;
 import com.kg.vista.ooba.model.body.LoginBody;
 import com.kg.vista.ooba.model.body.MFListBody;
 import com.kg.vista.ooba.model.body.RegistrationBody;
@@ -43,7 +44,7 @@ import static com.kg.vista.ooba.api.conf.Config.BASE_URL;
 
 
 
-public interface ApiService {
+public interface RetrofitService {
 
     @POST("?url=registration")
     Call<RegistrationDTO> registration(@Body RegistrationBody body);
@@ -122,4 +123,7 @@ public interface ApiService {
     Call<ProductConfig> getProductConfig(@Query("url") String mPath);
     @GET(BASE_URL)
     Call<OtherProductsOfSeller> getOtherProductsOfSeller(@Query("url") String sellerProductUrl);
+
+    @GET("api.ooba.kg/?url=mixed&filter=all&limit=6")
+    Call<List<WhatsNew>> getWhatsNewItems();
 }

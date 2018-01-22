@@ -5,7 +5,7 @@ import android.app.Application;
 import java.util.concurrent.TimeUnit;
 
 
-import com.kg.vista.ooba.api.ApiService;
+import com.kg.vista.ooba.api.RetrofitService;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -16,7 +16,7 @@ import static com.kg.vista.ooba.api.conf.Config.BASE_URL;
 
 public class App extends Application {
 
-    private static ApiService apiService;
+    private static RetrofitService apiService;
 
     @Override
     public void onCreate() {
@@ -37,10 +37,10 @@ public class App extends Application {
                 .client(httpClient)
                 .build();
 
-        apiService = retrofit.create(ApiService.class);
+        apiService = retrofit.create(RetrofitService.class);
     }
 
-    public static ApiService api() {
+    public static RetrofitService api() {
         return apiService;
     }
 }

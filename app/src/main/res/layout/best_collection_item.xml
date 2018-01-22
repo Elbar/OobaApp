@@ -38,17 +38,29 @@
                     android:id="@+id/bestCollectionProgressBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
+
+
+                <TextView
+                    android:id="@+id/best_collections_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_below="@id/best_collections_image"
+                    android:gravity="center"
+                    android:text="Электроника из Китая!"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@id/best_collection_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/best_collections_title"
+                    android:padding="15dp"
+                    android:gravity="center"
+                    android:text="Инфо" />
             </RelativeLayout>
 
-            <TextView
-                android:id="@+id/best_collections_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="15dp"
-                android:textColor="@color/colorPrimaryDark"
-                android:gravity="center"
-                android:text="Электроника из Китая!"
-                android:textSize="20sp" />
 
             <!--<TextView-->
                 <!--android:visibility="gone"-->

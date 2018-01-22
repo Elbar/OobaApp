@@ -3,39 +3,51 @@ package com.kg.vista.ooba.activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.GridView;
-import android.widget.Toast;
 
 import com.azoft.carousellayoutmanager.CarouselLayoutManager;
 import com.azoft.carousellayoutmanager.CarouselZoomPostLayoutListener;
 import com.kg.vista.ooba.R;
-import com.kg.vista.ooba.adapter.BestCollectionViewPagerAdapter;
+import com.kg.vista.ooba.adapter.BestCollectionRecyclerViewAdapter;
 import com.kg.vista.ooba.adapter.BrandAdapter;
 import com.kg.vista.ooba.adapter.GrouponViewPagerAdapter;
 import com.kg.vista.ooba.adapter.ShopAdapter;
+import com.kg.vista.ooba.adapter.WhatsNewGVAdapter;
+import com.kg.vista.ooba.api.RetrofitService;
 import com.kg.vista.ooba.model.Brand;
 import com.kg.vista.ooba.model.Collection;
 import com.kg.vista.ooba.model.Groupon;
 import com.kg.vista.ooba.model.MainRequest;
 import com.kg.vista.ooba.model.Shop;
+import com.kg.vista.ooba.model.WhatsNew;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import me.relex.circleindicator.CircleIndicator;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
+import static com.kg.vista.ooba.api.conf.Config.BASE_URL;
 
 public class MainActivity extends AbstractActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -56,26 +68,30 @@ public class MainActivity extends AbstractActivity
     private GrouponViewPagerAdapter grouponViewPagerAdapter;
     private ViewPager grouponViewPager;
 
-    private BestCollectionViewPagerAdapter bestCollectionViewPagerAdapter;
-    private ViewPager bestCollectionViewPager;
-    private CircleIndicator bestCollectionCircleIndicator;
+    private BestCollectionRecyclerViewAdapter bestCollectionRVAdapter;
+    private WhatsNewGVAdapter whatsNewRVAdapter;
 
+    private CircleIndicator bestCollectionCircleIndicator;
     private BrandAdapter brandAdapter;
     private GridView brandGridView;
     private CircleIndicator brandCircleIndicator;
     private ShopAdapter shopGridViewAdapter;
     private GridView shopGridView;
 
+    @BindView(R.id.best_collection_rv)
+    RecyclerView mBestCollectionRV;
+
+    @BindView(R.id.whats_new_gv)
+    GridView mWhatsNewGV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -85,11 +101,10 @@ public class MainActivity extends AbstractActivity
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        final LinearLayoutManager whatsNewLinearLayoutManager = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false);
 
         grouponViewPager = (ViewPager) findViewById(R.id.grouponViewPager);
-        grouponCircleIndicator = (CircleIndicator) findViewById(R.id.groupon_circle_indicator);
-
-        bestCollectionViewPager = (ViewPager) findViewById(R.id.bestCollectionViewPager);
+//        grouponCircleIndicator = (CircleIndicator) findViewById(R.id.groupon_circle_indicator);
         bestCollectionCircleIndicator = (CircleIndicator) findViewById(R.id.best_collection_circle_indicator);
 
         brandGridView = (GridView) findViewById(R.id.brand_gv);
@@ -97,9 +112,64 @@ public class MainActivity extends AbstractActivity
         shopGridView = (GridView) findViewById(R.id.grid_view_shop);
         brandGridView.setVerticalScrollBarEnabled(false);
 
+
+
         setUIFromAdapters();
+        getWhatsNewItems(whatsNewLinearLayoutManager);
 
     }
+
+
+    private void getWhatsNewItems(final LinearLayoutManager whatsNewLinearLayoutManager) {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        final RetrofitService request = retrofit.create(RetrofitService.class);
+
+
+        Call<List<WhatsNew>> getUserNotifications = request.getWhatsNewItems();
+
+        getUserNotifications.enqueue(new Callback<List<WhatsNew>>() {
+            @Override
+            public void onResponse(@NonNull Call<List<WhatsNew>> call, @NonNull Response<List<WhatsNew>> response) {
+
+                try {
+                    List<WhatsNew> whatsNews = response.body();
+                    List<WhatsNew> whatsNewItem = new ArrayList<>();
+
+                    for (int i = 0; i < whatsNews.size(); i++) {
+                        WhatsNew whatsNew = new WhatsNew();
+                        whatsNew.setTitle(whatsNews.get(i).getTitle());
+                        whatsNew.setFileUrl("http://ooba.kg/"+ whatsNews.get(i).getFileUrl());
+                        whatsNewItem.add(whatsNew);
+
+                    }
+
+//                    whatsNewRVAdapter = new WhatsNewGVAdapter(whatsNewItem);
+//                    mWhatsNewRV.setLayoutManager(whatsNewLinearLayoutManager);
+//                    mWhatsNewRV.setAdapter(whatsNewRVAdapter);
+
+                    WhatsNewGVAdapter adapter = new WhatsNewGVAdapter(MainActivity.this, whatsNewItem);
+                    mWhatsNewGV.setAdapter(adapter);
+
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+
+                }
+            }
+
+
+            @Override
+            public void onFailure(Call<List<WhatsNew>> call, Throwable t) {
+
+            }
+        });
+
+    }
+
     private void setUIFromAdapters(){
         App.api().mainRequest().enqueue(new Callback<MainRequest>() {
             @Override
@@ -111,22 +181,24 @@ public class MainActivity extends AbstractActivity
                 collectionList = response.body().getCollection();
                 brandList = response.body().getBrand();
                 shopList = response.body().getShop();
-
-                Toast.makeText(MainActivity.this, brandList.toString(), Toast.LENGTH_SHORT).show();
-
+                LinearLayoutManager bestCollectionLinearLayoutManager = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false);
 
                 int randomNumber = new Random().nextInt(grouponList.size()) + 1;
                 grouponViewPagerAdapter = new GrouponViewPagerAdapter(MainActivity.this, grouponList);
                 grouponViewPager.setAdapter(grouponViewPagerAdapter);
                 grouponViewPager.setCurrentItem(randomNumber);
-                grouponCircleIndicator.setViewPager(grouponViewPager);
+//                grouponCircleIndicator.setViewPager(grouponViewPager);
 
 
                 int randomNumber1 = new Random().nextInt(collectionList.size())+1;
-                bestCollectionViewPagerAdapter = new BestCollectionViewPagerAdapter(MainActivity.this, collectionList);
-                bestCollectionViewPager.setAdapter(bestCollectionViewPagerAdapter);
-                bestCollectionViewPager.setCurrentItem(randomNumber1);
-                bestCollectionCircleIndicator.setViewPager(bestCollectionViewPager);
+
+                bestCollectionRVAdapter = new BestCollectionRecyclerViewAdapter(collectionList);
+                mBestCollectionRV.setLayoutManager(bestCollectionLinearLayoutManager);
+                mBestCollectionRV.setAdapter(bestCollectionRVAdapter);
+
+
+//                bestCollectionViewPager.setCurrentItem(randomNumber1);
+//                bestCollectionCircleIndicator.setViewPager(bestCollectionViewPager);
 //
                 int randomNumber2 = new Random().nextInt(brandList.size())+1;
                 brandAdapter = new BrandAdapter(MainActivity.this, brandList);

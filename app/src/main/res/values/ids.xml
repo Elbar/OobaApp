@@ -10,4 +10,17 @@
     <item name="world_shops_gv" type="id" />
     <item name="test_tv" type="id" />
     <item name="brand_gv" type="id" />
+    <item name="best_collection_rv" type="id" />
+    <item name="best_collection_info" type="id" />
+    <item name="whats_new_circle_indicator" type="id" />
+    <item name="whats_new_rv" type="id" />
+    <item name="title" type="id" />
+    <item name="groupon_circle_indicator" type="id" />
+    <item name="group_purchases_tv" type="id" />
+    <item name="whats_new_gv" type="id" />
+    <item name="item_title" type="id" />
+    <item name="show_all_items_btn" type="id" />
+    <item name="show_popular_items_btn" type="id" />
+    <item name="show_new_items_btn" type="id" />
+    <item name="show_blogs_cv" type="id" />
 </resources>

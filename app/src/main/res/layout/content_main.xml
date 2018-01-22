@@ -1,102 +1,308 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EEEEEE"
     android:layout_marginTop="?attr/actionBarSize"
+    android:background="#EEEEEE"
     tools:context=".activity.MainActivity"
     tools:showIn="@layout/app_bar_main">
+
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+            <TextView
+                android:id="@id/group_purchases_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:padding="10dp"
+                android:text="Групповые покупки"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@id/group_purchases_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="16dp"
+                android:padding="15dp"
+                android:text="Смотреть все"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@android:color/holo_red_dark" />
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
             <android.support.v4.view.ViewPager
                 android:id="@+id/grouponViewPager"
                 android:layout_width="match_parent"
-                android:layout_height="480dp">
-            </android.support.v4.view.ViewPager>
-            <me.relex.circleindicator.CircleIndicator
-                android:id="@+id/groupon_circle_indicator"
-                android:layout_width="match_parent"
-                android:layout_height="44dp"
-                app:ci_drawable="@drawable/circle_indicator_selected"
-                app:ci_drawable_unselected="@drawable/circle_indicator_unselected"
-                android:layout_alignBottom="@+id/grouponViewPager"
-                android:layout_marginBottom="40dp">
-            </me.relex.circleindicator.CircleIndicator>
-            <Button
-                android:layout_below="@id/groupon_circle_indicator"
-                android:background="@drawable/shape_button_view_all"
-                android:textSize="18sp"
-                android:textAllCaps="false"
-                android:gravity="center"
-                android:text="Смотреть все"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="450dp"/>
+
+            <!--<me.relex.circleindicator.CircleIndicator-->
+                <!--android:id="@id/groupon_circle_indicator"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="44dp"-->
+                <!--android:layout_marginBottom="40dp"-->
+                <!--android:layout_below="@id/grouponViewPager"-->
+                <!--app:ci_drawable="@drawable/circle_indicator_selected"-->
+                <!--app:ci_drawable_unselected="@drawable/circle_indicator_unselected" />-->
+
+
+
         </RelativeLayout>
-        <TextView
-            android:layout_marginTop="16dp"
-            android:padding="10dp"
-            android:gravity="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:text="ЛУЧШИЕ КОЛЛЕКЦИИ"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <android.support.v4.view.ViewPager
-                android:id="@+id/bestCollectionViewPager"
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="10dp"
+            android:text="Что нового?"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@id/group_purchases_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="16dp"
+            android:padding="15dp"
+            android:text="Смотреть все"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@android:color/holo_red_dark" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.CardView
+                android:id="@id/show_all_items_btn"
+                android:layout_width="wrap_content"
+                app:cardCornerRadius="8dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                app:cardElevation="3dp"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Все"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textSize="16sp" />
+
+
+                </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@id/show_popular_items_btn"
+                android:layout_width="wrap_content"
+                app:cardCornerRadius="8dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toEndOf="@id/show_all_items_btn"
+                android:layout_toRightOf="@id/show_all_items_btn"
+                app:cardElevation="3dp"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Популярные"
+                    android:textAllCaps="false"
+                    android:textSize="16sp" />
+
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@id/show_new_items_btn"
+                android:layout_width="wrap_content"
+                app:cardCornerRadius="8dp"
+                android:layout_marginBottom="5dp"
+
+                android:layout_marginLeft="10dp"
+                android:layout_toEndOf="@id/show_popular_items_btn"
+                android:layout_toRightOf="@id/show_popular_items_btn"
+                app:cardElevation="3dp"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Новинки"
+                    android:textAllCaps="false"
+                    android:textSize="16sp" />
+
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@id/show_blogs_cv"
+                android:layout_width="wrap_content"
+                app:cardCornerRadius="8dp"
+                android:layout_marginBottom="5dp"
+
+                android:layout_marginLeft="10dp"
+                android:layout_toEndOf="@id/show_new_items_btn"
+                android:layout_toRightOf="@id/show_new_items_btn"
+                app:cardElevation="3dp"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Блоги"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textSize="16sp" />
+
+
+            </android.support.v7.widget.CardView>
+
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="550dp">
+
+            <GridView
+                android:id="@id/whats_new_gv"
                 android:layout_width="match_parent"
-                android:layout_height="480dp">
-            </android.support.v4.view.ViewPager>
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="8dp"
+                android:adjustViewBounds="true"
+
+                android:columnWidth="0dp"
+                android:horizontalSpacing="3dp"
+                android:listSelector="@null"
+                android:numColumns="2"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="3dp" />
+
+
+            <me.relex.circleindicator.CircleIndicator
+                android:id="@id/whats_new_circle_indicator"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_alignBottom="@id/whats_new_gv"
+                android:layout_marginBottom="40dp"
+                app:ci_drawable="@drawable/circle_indicator_selected"
+                app:ci_drawable_unselected="@drawable/circle_indicator_unselected" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:padding="10dp"
+                android:text="Лучшие коллекции"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+
+            <TextView
+                android:id="@id/group_purchases_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:padding="15dp"
+                android:text="Смотреть все"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@android:color/holo_red_dark" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@id/best_collection_rv"
+
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
+
             <me.relex.circleindicator.CircleIndicator
                 android:id="@+id/best_collection_circle_indicator"
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
+                android:layout_alignBottom="@id/best_collection_rv"
+                android:layout_marginBottom="40dp"
                 app:ci_drawable="@drawable/circle_indicator_selected"
-                app:ci_drawable_unselected="@drawable/circle_indicator_unselected"
-                android:layout_alignBottom="@+id/bestCollectionViewPager"
-                android:layout_marginBottom="40dp">
-            </me.relex.circleindicator.CircleIndicator>
+                app:ci_drawable_unselected="@drawable/circle_indicator_unselected" />
 
-            <Button
-                android:layout_below="@id/best_collection_circle_indicator"
-                android:background="@drawable/shape_button_view_all"
-                android:textSize="18sp"
-                android:textAllCaps="false"
-                android:gravity="center"
-                android:text="Смотреть все"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
 
         </RelativeLayout>
+
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:padding="10dp"
-            android:gravity="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:text="МИРОВЫЕ МАГАЗИНЫ"
+            android:text="Мировые магазины"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+
+        <GridView
+            android:id="@id/brand_gv"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-
-            <GridView
-                android:id="@id/brand_gv"
-                android:layout_width="match_parent"
-                android:numColumns="3"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_height="360dp">
-            </GridView>
-
-
+            android:layout_height="355dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:numColumns="3" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -104,53 +310,51 @@
 
 
             <!--<android.support.v4.view.ViewPager-->
-                <!--android:id="@+id/brandViewPager"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="480dp">-->
+            <!--android:id="@+id/brandViewPager"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="480dp">-->
             <!--</android.support.v4.view.ViewPager>-->
             <!--<me.relex.circleindicator.CircleIndicator-->
-                <!--android:id="@+id/brand_circle_indicator"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="44dp"-->
-                <!--app:ci_drawable="@drawable/circle_indicator_selected"-->
-                <!--app:ci_drawable_unselected="@drawable/circle_indicator_unselected"-->
-                <!--android:layout_alignBottom="@+id/brandViewPager"-->
-                <!--android:layout_marginBottom="40dp">-->
+            <!--android:id="@+id/brand_circle_indicator"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="44dp"-->
+            <!--app:ci_drawable="@drawable/circle_indicator_selected"-->
+            <!--app:ci_drawable_unselected="@drawable/circle_indicator_unselected"-->
+            <!--android:layout_alignBottom="@+id/brandViewPager"-->
+            <!--android:layout_marginBottom="40dp">-->
             <!--</me.relex.circleindicator.CircleIndicator>-->
 
             <!--<Button-->
-                <!--android:layout_below="@id/brand_gv"-->
-                <!--android:background="@drawable/shape_button_view_all"-->
-                <!--android:textSize="18sp"-->
-                <!--android:textAllCaps="false"-->
-                <!--android:gravity="center"-->
-                <!--android:text="Смотреть все"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content" />-->
+            <!--android:layout_below="@id/brand_gv"-->
+            <!--android:background="@drawable/shape_button_view_all"-->
+            <!--android:textSize="18sp"-->
+            <!--android:textAllCaps="false"-->
+            <!--android:gravity="center"-->
+            <!--android:text="Смотреть все"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
 
         </RelativeLayout>
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:padding="10dp"
-            android:gravity="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:text="@string/online_store"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         <GridView
             android:id="@+id/grid_view_shop"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="80dp"
-            android:numColumns="3"
-            android:layout_height="wrap_content">
-        </GridView>
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:numColumns="3" />
 
 
     </LinearLayout>
-
-
 
 
 </ScrollView>

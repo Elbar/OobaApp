@@ -49,6 +49,7 @@ public class GrouponViewPagerAdapter extends PagerAdapter {
 
         ImageView imageView = (ImageView) itemView.findViewById(R.id.thumbnail);
         TextView tvTitle = (TextView) itemView.findViewById(R.id.title);
+        TextView tvDesc = (TextView) itemView.findViewById(R.id.desc);
         TextView tvPrice = (TextView) itemView.findViewById(R.id.price);
         TextView tvPriceTotal = (TextView) itemView.findViewById(R.id.price_total);
         //TextView tvDescription = itemView.findViewById(R.id.html);
@@ -59,6 +60,8 @@ public class GrouponViewPagerAdapter extends PagerAdapter {
         //Log.d("ooba2", "price "+groupon.getPrice());
         tvPriceTotal.setText(String.valueOf(groupon.getPriceTotal())+" сом");
         tvTitle.setText(groupon.getGoodsName());
+        tvDesc.setText("Здесь должно быть описание"+ groupon.getHtml());
+
         //tvDescription.setText(groupon.getHtml());
         Picasso.with(context).load(groupon.getPicUrl()).into(imageView, new Callback() {
             @Override
