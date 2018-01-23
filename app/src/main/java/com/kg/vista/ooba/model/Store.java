@@ -1,12 +1,10 @@
 package com.kg.vista.ooba.model;
 
-/**
- * Created by Begali on 9/2/2017.
- */
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Shop {
+public class Store {
 
     @SerializedName("name")
     @Expose

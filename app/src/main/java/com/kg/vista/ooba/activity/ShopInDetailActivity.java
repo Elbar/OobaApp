@@ -1,13 +1,12 @@
 package com.kg.vista.ooba.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.widget.Toast;
 
 import com.kg.vista.ooba.R;
 
-/**
- * Created by root on 1/23/18.
- */
 
 public class ShopInDetailActivity extends AbstractActivity {
 
@@ -16,5 +15,11 @@ public class ShopInDetailActivity extends AbstractActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop_in_detail);
+
+        Intent intent = getIntent();
+        String indexShop = intent.getStringExtra("index_shop");
+
+        Toast.makeText(this, indexShop, Toast.LENGTH_SHORT).show();
+
     }
 }

@@ -14,7 +14,6 @@ import android.widget.ProgressBar;
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.activity.ShopInDetailActivity;
 import com.kg.vista.ooba.model.Catalog;
-import com.kg.vista.ooba.model.Shop;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
@@ -82,6 +81,7 @@ public class CatalogGVAdapter extends BaseAdapter {
             public void onClick(View view) {
 
                 Intent intent = new Intent(mContext, ShopInDetailActivity.class);
+                intent.putExtra("index_shop", catalog.getIndexShop());
                 mContext.startActivity(intent);
 
             }

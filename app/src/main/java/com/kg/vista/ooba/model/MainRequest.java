@@ -11,7 +11,7 @@ public class MainRequest {
     private List<Brand> brand = null;
     @SerializedName("shop")
     @Expose
-    private List<Shop> shop = null;
+    private List<Store> store = null;
     @SerializedName("collection")
     @Expose
     private List<Collection> collection = null;
@@ -36,12 +36,12 @@ public class MainRequest {
         this.brand = brand;
     }
 
-    public List<Shop> getShop() {
-        return shop;
+    public List<Store> getStore() {
+        return store;
     }
 
-    public void setShop(List<Shop> shop) {
-        this.shop = shop;
+    public void setStore(List<Store> store) {
+        this.store = store;
     }
 
     public List<Collection> getCollection() {

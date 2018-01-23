@@ -32,7 +32,7 @@ import com.kg.vista.ooba.model.Brand;
 import com.kg.vista.ooba.model.Collection;
 import com.kg.vista.ooba.model.Groupon;
 import com.kg.vista.ooba.model.MainRequest;
-import com.kg.vista.ooba.model.Shop;
+import com.kg.vista.ooba.model.Store;
 import com.kg.vista.ooba.model.WhatsNew;
 
 import java.util.ArrayList;
@@ -63,7 +63,7 @@ public class MainActivity extends AbstractActivity
     private List<Groupon> grouponList;
     private List<Collection> collectionList;
     private List<Brand> brandList;
-    private List<Shop> shopList;
+    private List<Store> shopList;
 
     private CircleIndicator grouponCircleIndicator;
     private GrouponViewPagerAdapter grouponViewPagerAdapter;
@@ -375,7 +375,7 @@ public class MainActivity extends AbstractActivity
                 grouponList = response.body().getGroupon();
                 collectionList = response.body().getCollection();
                 brandList = response.body().getBrand();
-                shopList = response.body().getShop();
+                shopList = response.body().getStore();
                 LinearLayoutManager bestCollectionLinearLayoutManager = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false);
 
                 int randomNumber = new Random().nextInt(grouponList.size()) + 1;

@@ -7,10 +7,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import com.kg.vista.ooba.R;
-import com.kg.vista.ooba.model.Shop;
+import com.kg.vista.ooba.model.Store;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
@@ -18,11 +17,11 @@ import java.util.List;
 
 public class ShopAdapter extends BaseAdapter {
 
-    private final List<Shop> shops;
+    private final List<Store> shops;
     Context context;
     Context mContext;
 
-    public ShopAdapter(Context context, List<Shop> shops) {
+    public ShopAdapter(Context context, List<Store> shops) {
         this.mContext = context;
         this.shops = shops;
     }
@@ -50,7 +49,7 @@ public class ShopAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
 
-        final Shop shop = shops.get(position);
+        final Store shop = shops.get(position);
 
         if (convertView == null) {
             final LayoutInflater layoutInflater = LayoutInflater.from(mContext);
