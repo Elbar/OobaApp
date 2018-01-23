@@ -106,6 +106,7 @@ public class MainActivity extends AbstractActivity
         ButterKnife.bind(this);
 
 
+        getWhatsAllItems();
         mShowAllItemsCV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -466,22 +467,22 @@ public class MainActivity extends AbstractActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.menu_basket) {
             // if user logged in start ShopActivity otherwise start LoginActivity
-            Intent intent;
-            String USER_ID = usrData.getUserData(this);
-            if (Integer.parseInt(USER_ID) > 0) {
-                //start activity shop
-                Log.d("my_id", "id = "+USER_ID);
-                intent = new Intent(this, ShopActivity.class);
-            } else {
-                //start activity login
-                intent = new Intent(this, LoginActivity.class);
-            }
-            startActivity(intent);
+//            Intent intent;
+//            String USER_ID = usrData.getUserData(this);
+//            if (Integer.parseInt(USER_ID) > 0) {
+//                //start activity shop
+//                Log.d("my_id", "id = "+USER_ID);
+//                intent = new Intent(this, ShopActivity.class);
+//            } else {
+//                //start activity login
+//                intent = new Intent(this, LoginActivity.class);
+//            }
+//            startActivity(intent);
         }
         else if (id == R.id.menu_notification){
             //start activity notifications
-            Intent intent = new Intent(this, NotificationActivity.class);
-            startActivity(intent);
+//            Intent intent = new Intent(this, NotificationActivity.class);
+//            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);

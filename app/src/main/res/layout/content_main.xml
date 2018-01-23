@@ -44,7 +44,8 @@
                 android:layout_marginTop="16dp"
                 android:padding="10dp"
                 android:text="Групповые покупки"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                android:textColor="@android:color/black"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@id/group_purchases_tv"
@@ -93,7 +94,8 @@
             android:layout_marginTop="16dp"
             android:padding="10dp"
             android:text="Что нового?"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textColor="@android:color/black"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
         <TextView
             android:id="@id/group_purchases_tv"
@@ -274,7 +276,8 @@
                 android:layout_marginTop="5dp"
                 android:padding="10dp"
                 android:text="Лучшие коллекции"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                android:textColor="@android:color/black"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
 
             <TextView
@@ -319,7 +322,8 @@
             android:layout_marginTop="16dp"
             android:padding="10dp"
             android:text="Мировые магазины"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textColor="@android:color/black"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
 
         <GridView
@@ -370,7 +374,8 @@
             android:layout_marginTop="16dp"
             android:padding="10dp"
             android:text="@string/online_store"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textColor="@android:color/black"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
         <GridView
             android:id="@+id/grid_view_shop"
