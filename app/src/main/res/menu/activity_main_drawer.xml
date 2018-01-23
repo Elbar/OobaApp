@@ -5,7 +5,7 @@
         <item
             android:id="@+id/nav_lenta"
             android:icon="@drawable/ic_home_white_24dp"
-            android:title="@string/lenta" />
+            android:title="@string/main" />
         <item
             android:id="@+id/nav_catalog"
             android:icon="@drawable/ic_menu_gallery"
