@@ -29,4 +29,10 @@
     <item name="content_frame" type="id" />
     <item name="activity_catalog" type="id" />
     <item name="catalog_cv" type="id" />
+    <item name="shop_country_tv" type="id" />
+    <item name="shop_main_category_tv" type="id" />
+    <item name="shop_country_text" type="id" />
+    <item name="shop_main_category_text" type="id" />
+    <item name="shop_about_us_text" type="id" />
+    <item name="shop_about_us_tv" type="id" />
 </resources>
