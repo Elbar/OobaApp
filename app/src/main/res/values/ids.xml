@@ -23,4 +23,7 @@
     <item name="show_popular_items_cv" type="id" />
     <item name="show_new_items_cv" type="id" />
     <item name="show_blogs_cv" type="id" />
+    <item name="search_item" type="id" />
+    <item name="product_color_image" type="id" />
+    <item name="product_color_progress_bar" type="id" />
 </resources>
