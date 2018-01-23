@@ -72,8 +72,12 @@
             android:name=".activity.GroupOnActivity"
             android:label="@string/title_activity_group_on"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".activity.CatalogActivity"
+            android:label="@string/catalog"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.GroupInfoActivity" />
-        <activity android:name=".activity.MessNotifActivity"></activity>
     </application>
 
 </manifest>

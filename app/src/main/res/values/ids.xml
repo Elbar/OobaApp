@@ -26,4 +26,6 @@
     <item name="search_item" type="id" />
     <item name="product_color_image" type="id" />
     <item name="product_color_progress_bar" type="id" />
+    <item name="content_frame" type="id" />
+    <item name="activity_catalog" type="id" />
 </resources>

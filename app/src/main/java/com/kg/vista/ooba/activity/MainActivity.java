@@ -5,6 +5,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -31,6 +34,7 @@ import com.kg.vista.ooba.adapter.GrouponViewPagerAdapter;
 import com.kg.vista.ooba.adapter.ShopAdapter;
 import com.kg.vista.ooba.adapter.WhatsNewGVAdapter;
 import com.kg.vista.ooba.api.RetrofitService;
+import com.kg.vista.ooba.fragment.CatalogFragment;
 import com.kg.vista.ooba.model.Brand;
 import com.kg.vista.ooba.model.Collection;
 import com.kg.vista.ooba.model.Groupon;
@@ -459,9 +463,7 @@ public class MainActivity extends AbstractActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
         UsersManagement usrData = new UsersManagement();
         //noinspection SimplifiableIfStatement
@@ -492,6 +494,12 @@ public class MainActivity extends AbstractActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+
+        Fragment fragment = null;
+        Class fragmentClass = null;
+
+
+
 //        int id = item.getItemId();
 
 //        if (id == R.id.nav_camera) {
@@ -511,6 +519,8 @@ public class MainActivity extends AbstractActivity
             case R.id.nav_lenta:
                 break;
             case R.id.nav_catalog:
+                fragmentClass = CatalogFragment.class;
+
                 break;
             case R.id.nav_discount:
                 break;
@@ -559,7 +569,16 @@ public class MainActivity extends AbstractActivity
                 loginPrefsEditor.commit();
                 finish();
                 break;
+
+
         }
+        try {
+            fragment = (Fragment) fragmentClass.newInstance();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
