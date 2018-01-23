@@ -82,6 +82,10 @@ public class CatalogGVAdapter extends BaseAdapter {
 
                 Intent intent = new Intent(mContext, ShopInDetailActivity.class);
                 intent.putExtra("index_shop", catalog.getIndexShop());
+                intent.putExtra("link_url", catalog.getLinkUrl());
+                intent.putExtra("desc", catalog.getDescription());
+                intent.putExtra("filter", catalog.getFilter());
+
                 mContext.startActivity(intent);
 
             }
