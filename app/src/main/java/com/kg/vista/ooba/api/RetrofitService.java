@@ -8,6 +8,7 @@ import java.util.List;
 import com.kg.vista.ooba.model.OtherProductsOfSeller;
 import com.kg.vista.ooba.model.Product;
 import com.kg.vista.ooba.model.ProductConfig;
+import com.kg.vista.ooba.model.Catalog;
 import com.kg.vista.ooba.model.WhatsNew;
 import com.kg.vista.ooba.model.body.LoginBody;
 import com.kg.vista.ooba.model.body.MFListBody;
@@ -135,4 +136,7 @@ public interface RetrofitService {
 
     @GET("api.ooba.kg/?url=mixed&filter=blogs&limit=6")
     Call<List<WhatsNew>> getBlogs();
+
+    @GET(BASE_URL + "?url=catalog")
+    Call<List<Catalog>> getCatalog();
 }

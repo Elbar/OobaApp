@@ -275,7 +275,7 @@ public class LoginActivity extends AbstractActivity implements LoaderCallbacks<C
         emailTextView.setError(null);
         passwordEditText.setError(null);
 
-        // Store values at the time of the login attempt.
+        // Catalog values at the time of the login attempt.
         String email = emailTextView.getText().toString();
         String password = passwordEditText.getText().toString();
 
