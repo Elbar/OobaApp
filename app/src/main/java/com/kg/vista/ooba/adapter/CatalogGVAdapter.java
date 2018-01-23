@@ -2,6 +2,8 @@ package com.kg.vista.ooba.adapter;
 
 
 import android.content.Context;
+import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.kg.vista.ooba.R;
+import com.kg.vista.ooba.activity.ShopInDetailActivity;
 import com.kg.vista.ooba.model.Catalog;
 import com.kg.vista.ooba.model.Shop;
 import com.squareup.picasso.Callback;
@@ -59,6 +62,7 @@ public class CatalogGVAdapter extends BaseAdapter {
         }
 
         ImageView imageView  = (ImageView) convertView.findViewById(R.id.shop_image);
+        CardView mCatalogCV = (CardView) convertView.findViewById(R.id.catalog_cv);
         final ProgressBar progressBar = (ProgressBar) convertView.findViewById(R.id.shopProgressBar);
 
         Picasso.with(context).load("http://ooba.kg/"+catalog.getLinkLogo()).into(imageView, new Callback() {
@@ -70,6 +74,16 @@ public class CatalogGVAdapter extends BaseAdapter {
             @Override
             public void onError() {
                 progressBar.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        mCatalogCV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(mContext, ShopInDetailActivity.class);
+                mContext.startActivity(intent);
+
             }
         });
 

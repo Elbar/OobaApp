@@ -28,4 +28,5 @@
     <item name="product_color_progress_bar" type="id" />
     <item name="content_frame" type="id" />
     <item name="activity_catalog" type="id" />
+    <item name="catalog_cv" type="id" />
 </resources>
