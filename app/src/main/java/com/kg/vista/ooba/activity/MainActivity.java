@@ -495,31 +495,14 @@ public class MainActivity extends AbstractActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
 
-        Fragment fragment = null;
-        Class fragmentClass = null;
 
-
-
-//        int id = item.getItemId();
-
-//        if (id == R.id.nav_camera) {
-//            // Handle the camera action
-//        } else if (id == R.id.nav_gallery) {
-//
-//        } else if (id == R.id.nav_slideshow) {
-//
-//        } else if (id == R.id.nav_manage) {
-//
-//        } else if (id == R.id.nav_share) {
-//
-//        } else if (id == R.id.nav_send) {
-//
-//        }
         switch(item.getItemId()){
             case R.id.nav_lenta:
                 break;
             case R.id.nav_catalog:
-                fragmentClass = CatalogFragment.class;
+
+                Intent intent = new Intent(MainActivity.this, CatalogActivity.class);
+                startActivity(intent);
 
                 break;
             case R.id.nav_discount:
@@ -572,13 +555,6 @@ public class MainActivity extends AbstractActivity
 
 
         }
-        try {
-            fragment = (Fragment) fragmentClass.newInstance();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
