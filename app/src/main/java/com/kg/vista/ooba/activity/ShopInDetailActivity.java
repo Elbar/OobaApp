@@ -10,7 +10,6 @@ import com.kg.vista.ooba.R;
 
 public class ShopInDetailActivity extends AbstractActivity {
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
