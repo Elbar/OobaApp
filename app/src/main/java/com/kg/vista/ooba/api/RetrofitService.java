@@ -1,5 +1,6 @@
 package com.kg.vista.ooba.api;
 
+import com.kg.vista.ooba.model.CatalogStore;
 import com.kg.vista.ooba.model.MainRequest;
 
 import java.util.List;
@@ -9,6 +10,7 @@ import com.kg.vista.ooba.model.OtherProductsOfSeller;
 import com.kg.vista.ooba.model.Product;
 import com.kg.vista.ooba.model.ProductConfig;
 import com.kg.vista.ooba.model.Catalog;
+import com.kg.vista.ooba.model.Shop;
 import com.kg.vista.ooba.model.WhatsNew;
 import com.kg.vista.ooba.model.body.LoginBody;
 import com.kg.vista.ooba.model.body.MFListBody;
@@ -35,10 +37,13 @@ import com.kg.vista.ooba.model.dto.UpdateAddressDTO;
 import com.kg.vista.ooba.model.dto.UpdateDataDTO;
 import com.kg.vista.ooba.model.dto.UpdateGoodDTO;
 import com.kg.vista.ooba.model.dto.UserListDTO;
+
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 import static com.kg.vista.ooba.api.conf.Config.BASE_URL;
@@ -113,7 +118,6 @@ public interface RetrofitService {
     @GET(BASE_URL)
     Call<NotificationListDTO> notification(@Query("url") String url, @Query("limit") String limit, @Query("user_id") String user_id);
 
-    //Api calls from Begali
     @GET(BASE_URL)
     Call<MainRequest> mainRequest();
 
@@ -125,18 +129,21 @@ public interface RetrofitService {
     @GET(BASE_URL)
     Call<OtherProductsOfSeller> getOtherProductsOfSeller(@Query("url") String sellerProductUrl);
 
-    @GET("api.ooba.kg/?url=mixed&filter=all&limit=6")
+    @GET(BASE_URL + "?url=mixed&filter=all&limit=6")
     Call<List<WhatsNew>> getWhatsAllItems();
 
-    @GET("api.ooba.kg/?url=mixed&filter=all&limit=6")
+    @GET(BASE_URL + "?url=mixed&filter=all&limit=6")
     Call<List<WhatsNew>> getWhatsPopularItems();
 
-    @GET("api.ooba.kg/?url=mixed&filter=all&limit=6")
+    @GET(BASE_URL + "?url=mixed&filter=all&limit=6")
     Call<List<WhatsNew>> getWhatsNewItems();
 
-    @GET("api.ooba.kg/?url=mixed&filter=blogs&limit=6")
+    @GET(BASE_URL+ "?url=mixed&filter=blogs&limit=6")
     Call<List<WhatsNew>> getBlogs();
 
     @GET(BASE_URL + "?url=catalog")
     Call<List<Catalog>> getCatalog();
+
+    @GET(BASE_URL + "?url=catalog/tmall")
+    Call<ResponseBody> getShopByIndex();
 }
