@@ -24,9 +24,6 @@ public class ShopInDetailActivity extends AbstractActivity {
     @BindView(R.id.shop_about_us_tv)
     TextView mShopAboutUsTV;
 
-
-
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
