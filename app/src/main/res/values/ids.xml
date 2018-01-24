@@ -39,4 +39,6 @@
     <item name="shop_banner_cv" type="id" />
     <item name="shop_country_link_tv" type="id" />
     <item name="show_more_info_tv" type="id" />
+    <item name="category_rv" type="id" />
+    <item name="category_name" type="id" />
 </resources>

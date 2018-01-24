@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
@@ -11,13 +13,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.kg.vista.ooba.R;
+import com.kg.vista.ooba.adapter.CategoryRVAdapter;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -41,6 +47,9 @@ public class ShopInDetailActivity extends AbstractActivity {
 
     @BindView(R.id.show_more_info_tv)
     TextView mShowMoreInfoTV;
+    @BindView(R.id.category_rv)
+    RecyclerView mCategoryRV;
+    CategoryRVAdapter categoryRVAdapter;
 
 
     @Override
@@ -56,6 +65,9 @@ public class ShopInDetailActivity extends AbstractActivity {
         String linkLogo = intent.getStringExtra("link_logo");
         final String desc = intent.getStringExtra("desc");
         String filter = intent.getStringExtra("filter");
+
+
+
 
         mShowMoreInfoTV.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,6 +99,7 @@ public class ShopInDetailActivity extends AbstractActivity {
 
 //        getShopByIndex(indexShop);
         getShopDetail(indexShop);
+        getCategories(indexShop);
 
     }
 
@@ -171,6 +184,63 @@ public class ShopInDetailActivity extends AbstractActivity {
             }
         });
     }
+
+    public void getCategories(final String indexShop) {
+
+
+        OkHttpClient client = new OkHttpClient();
+
+        final Request request = new Request.Builder()
+                .url("http://api.ooba.kg/?url=catalog/" + indexShop)
+                .get()
+                .build();
+        client.newCall(request).enqueue(new okhttp3.Callback() {
+            @Override
+            public void onFailure(okhttp3.Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(okhttp3.Call call, final okhttp3.Response response) throws IOException {
+                final String json = response.body().string();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        try {
+
+                            JSONObject menu = new JSONObject(json);
+                            JSONArray category = menu.getJSONArray("category");
+//                            Toast.makeText(ShopInDetailActivity.this, category.toString(), Toast.LENGTH_LONG).show();
+
+                            List<String> categories = new ArrayList<>();
+
+
+                            for (int i = 0; i < category.length(); i++) {
+                                JSONObject cat = category.getJSONObject(i);
+                                String catName = cat.getString("cat_name");
+                                categories.add(catName);
+
+                            }
+
+
+                            categoryRVAdapter = new CategoryRVAdapter(categories);
+
+                            mCategoryRV.setLayoutManager(new GridLayoutManager(ShopInDetailActivity.this, 2));
+
+                            mCategoryRV.setAdapter(categoryRVAdapter);
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                });
+            }
+        });
+    }
+
 
 
 }
