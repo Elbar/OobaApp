@@ -34,6 +34,8 @@
     <item name="shop_country_text" type="id" />
     <item name="shop_main_category_text" type="id" />
     <item name="shop_about_us_text" type="id" />
-    <item name="shop_about_us_tv" type="id" />
+    <item name="shop_about_us_wv" type="id" />
     <item name="shop_banner" type="id" />
+    <item name="shop_banner_cv" type="id" />
+    <item name="shop_country_link_tv" type="id" />
 </resources>

@@ -1,20 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_marginTop="56dp"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@id/shop_banner"
+    <android.support.v7.widget.CardView
+        android:id="@id/shop_banner_cv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="200dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@id/shop_banner"
+                android:layout_width="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
+
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+
+
+    </android.support.v7.widget.CardView>
 
 
     <TextView
         android:id="@id/shop_country_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Страна"/>
+        android:layout_below="@id/shop_banner_cv"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:text="Страна" />
+
+
+    <TextView
+        android:id="@id/shop_country_link_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/shop_banner_cv"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="16sp"
+        android:text="link" />
+
 
 
     <TextView
@@ -22,8 +61,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/shop_country_text"
-        android:text="Америка"/>
-
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Америка Static" />
 
 
     <TextView
@@ -31,13 +71,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/shop_country_tv"
-        android:text="Основная категория"/>
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:text="Основная категория" />
+
     <TextView
         android:id="@id/shop_main_category_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/shop_main_category_text"
-        android:text="Шоппинг-мол"/>
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Shopping mall" />
 
 
     <TextView
@@ -45,13 +92,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/shop_main_category_tv"
-        android:text="О нас"/>
-    <TextView
-        android:id="@id/shop_about_us_tv"
+        android:layout_marginLeft="20dp"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp"
+        android:text="О магазине" />
+
+    <WebView
+        android:id="@id/shop_about_us_wv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/shop_about_us_text"
-        android:text="Траляля"/>
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Траляля" />
 
 
 
@@ -59,3 +113,5 @@
 
 
 </RelativeLayout>
+
+    </ScrollView>

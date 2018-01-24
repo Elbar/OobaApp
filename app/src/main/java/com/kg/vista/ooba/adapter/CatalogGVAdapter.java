@@ -63,8 +63,9 @@ public class CatalogGVAdapter extends BaseAdapter {
         ImageView imageView  = (ImageView) convertView.findViewById(R.id.shop_image);
         CardView mCatalogCV = (CardView) convertView.findViewById(R.id.catalog_cv);
         final ProgressBar progressBar = (ProgressBar) convertView.findViewById(R.id.shopProgressBar);
+        final String linkLogo = "http://ooba.kg/"+ catalog.getLinkLogo();
 
-        Picasso.with(context).load("http://ooba.kg/"+catalog.getLinkLogo()).into(imageView, new Callback() {
+        Picasso.with(context).load(linkLogo).into(imageView, new Callback() {
             @Override
             public void onSuccess() {
                 progressBar.setVisibility(View.INVISIBLE);
@@ -83,6 +84,7 @@ public class CatalogGVAdapter extends BaseAdapter {
                 Intent intent = new Intent(mContext, ShopInDetailActivity.class);
                 intent.putExtra("index_shop", catalog.getIndexShop());
                 intent.putExtra("link_url", catalog.getLinkUrl());
+                intent.putExtra("link_logo", linkLogo);
                 intent.putExtra("desc", catalog.getDescription());
                 intent.putExtra("filter", catalog.getFilter());
 
