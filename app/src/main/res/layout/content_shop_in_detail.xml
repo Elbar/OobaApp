@@ -126,7 +126,7 @@
         android:layout_marginTop="10dp"
         android:text="" />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -140,11 +140,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scrollbars="vertical"
+            android:nestedScrollingEnabled="false"
             app:layoutManager="GridLayoutManager"
             app:spanCount="1"
             tools:listitem="@layout/layout_category" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
 

@@ -208,13 +208,11 @@ public class ShopInDetailActivity extends AbstractActivity {
                     public void run() {
 
                         try {
-
                             JSONObject menu = new JSONObject(json);
                             JSONArray category = menu.getJSONArray("category");
 //                            Toast.makeText(ShopInDetailActivity.this, category.toString(), Toast.LENGTH_LONG).show();
 
                             List<String> categories = new ArrayList<>();
-
 
                             for (int i = 0; i < category.length(); i++) {
                                 JSONObject cat = category.getJSONObject(i);
@@ -223,8 +221,7 @@ public class ShopInDetailActivity extends AbstractActivity {
 
                             }
 
-
-                            categoryRVAdapter = new CategoryRVAdapter(categories);
+                            categoryRVAdapter = new CategoryRVAdapter(ShopInDetailActivity.this, categories);
 
                             mCategoryRV.setLayoutManager(new GridLayoutManager(ShopInDetailActivity.this, 2));
 

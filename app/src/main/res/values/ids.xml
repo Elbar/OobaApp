@@ -41,4 +41,6 @@
     <item name="show_more_info_tv" type="id" />
     <item name="category_rv" type="id" />
     <item name="category_name" type="id" />
+    <item name="category_iv" type="id" />
+    <item name="category_cv" type="id" />
 </resources>
