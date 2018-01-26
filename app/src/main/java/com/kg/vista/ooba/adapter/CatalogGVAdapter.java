@@ -22,7 +22,6 @@ import java.util.List;
 public class CatalogGVAdapter extends BaseAdapter {
 
     private final List<Catalog> catalogs;
-    Context context;
     Context mContext;
 
     public CatalogGVAdapter(Context context, List<Catalog> catalogs) {
@@ -65,7 +64,7 @@ public class CatalogGVAdapter extends BaseAdapter {
         final ProgressBar progressBar = (ProgressBar) convertView.findViewById(R.id.shopProgressBar);
         final String linkLogo = "http://ooba.kg/"+ catalog.getLinkLogo();
 
-        Picasso.with(context).load(linkLogo).into(imageView, new Callback() {
+        Picasso.with(mContext).load(linkLogo).into(imageView, new Callback() {
             @Override
             public void onSuccess() {
                 progressBar.setVisibility(View.INVISIBLE);

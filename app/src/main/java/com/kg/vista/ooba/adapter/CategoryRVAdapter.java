@@ -20,10 +20,19 @@ import java.util.List;
 public class CategoryRVAdapter extends RecyclerView.Adapter<CategoryRVAdapter.MyViewHolder> {
 
     private List<String> categories;
+    private List<String> subCategories;
     public String TAG = "CategoryRVAdapter";
     Context context;
 
-    public CategoryRVAdapter( Context context, List<String> categories) {
+    public CategoryRVAdapter(Context context, List<String> categories, List<String> subCategories) {
+
+        this.categories = categories;
+        this.subCategories = subCategories;
+        this.context = context;
+    }
+
+    public CategoryRVAdapter(Context context, List<String> categories)  {
+
         this.categories = categories;
         this.context = context;
     }
@@ -41,6 +50,7 @@ public class CategoryRVAdapter extends RecyclerView.Adapter<CategoryRVAdapter.My
 
 
         String category = categories.get(position);
+//        final String subcategory = subCategories.get(position);
 
         holder.title.setText(category);
         Picasso.with(context).load(R.drawable.noimage).into(holder.mCategoryIV);
@@ -49,7 +59,7 @@ public class CategoryRVAdapter extends RecyclerView.Adapter<CategoryRVAdapter.My
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(context, "clicked", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context, subcategory, Toast.LENGTH_SHORT).show();
             }
         });
 

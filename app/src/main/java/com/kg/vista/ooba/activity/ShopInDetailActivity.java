@@ -100,6 +100,7 @@ public class ShopInDetailActivity extends AbstractActivity {
 //        getShopByIndex(indexShop);
         getShopDetail(indexShop);
         getCategories(indexShop);
+        getSubCategories(indexShop);
 
     }
 
@@ -210,23 +211,91 @@ public class ShopInDetailActivity extends AbstractActivity {
                         try {
                             JSONObject menu = new JSONObject(json);
                             JSONArray category = menu.getJSONArray("category");
+
 //                            Toast.makeText(ShopInDetailActivity.this, category.toString(), Toast.LENGTH_LONG).show();
 
                             List<String> categories = new ArrayList<>();
+                            List<String> subCategories = new ArrayList<>();
 
                             for (int i = 0; i < category.length(); i++) {
                                 JSONObject cat = category.getJSONObject(i);
                                 String catName = cat.getString("cat_name");
+
+//                                JSONArray child = cat.getJSONArray("child");
+//                                for (int j = 0; j < child.length(); j++) {
+//                                    JSONArray childJsonArray = child.getJSONArray(j);
+//                                    JSONObject contentJsonObject = childJsonArray.getJSONObject(j);
+//                                    String subCategoryName = contentJsonObject.getString("cat_name");
+//                                    Log.e("CHCH", subCategoryName);
+//                                    subCategories.add(subCategoryName);
+//
+//                                }
                                 categories.add(catName);
-
                             }
-
+//
                             categoryRVAdapter = new CategoryRVAdapter(ShopInDetailActivity.this, categories);
 
                             mCategoryRV.setLayoutManager(new GridLayoutManager(ShopInDetailActivity.this, 2));
 
                             mCategoryRV.setAdapter(categoryRVAdapter);
 
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                });
+            }
+        });
+    }
+    public void getSubCategories(final String indexShop) {
+
+
+        OkHttpClient client = new OkHttpClient();
+
+        final Request request = new Request.Builder()
+                .url("http://api.ooba.kg/?url=catalog/" + indexShop)
+                .get()
+                .build();
+        client.newCall(request).enqueue(new okhttp3.Callback() {
+            @Override
+            public void onFailure(okhttp3.Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(okhttp3.Call call, final okhttp3.Response response) throws IOException {
+                final String json = response.body().string();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        try {
+                            JSONObject menu = new JSONObject(json);
+                            JSONArray category = menu.getJSONArray("category");
+
+                            List<String> categories = new ArrayList<>();
+                            List<String> subCategories = new ArrayList<>();
+
+                            for (int i = 0; i < category.length(); i++) {
+                                JSONObject cat = category.getJSONObject(i);
+                                String catName = cat.getString("cat_name");
+
+                                JSONArray child = cat.getJSONArray("child");
+                                Log.e("DADF", child.toString());
+                                for (int j = 0; j < child.length(); j++) {
+                                    JSONArray childJsonArray = child.getJSONArray(j);
+                                    JSONObject contentJsonObject = childJsonArray.getJSONObject(j);
+                                    String subCategoryName = contentJsonObject.getString("cat_name");
+                                    Log.e("CHCH", subCategoryName);
+                                    subCategories.add(subCategoryName);
+
+                                }
+                                categories.add(catName);
+                            }
+//
+                            categoryRVAdapter = new CategoryRVAdapter(ShopInDetailActivity.this, categories, subCategories);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
