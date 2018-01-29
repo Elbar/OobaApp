@@ -1,8 +1,5 @@
 package com.kg.vista.ooba.model;
 
-/**
- * Created by Begali on 9/5/2017.
- */
 
 import java.util.List;
 import java.util.Map;

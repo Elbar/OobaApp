@@ -4,56 +4,49 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.activity.Product2Activity;
+import com.kg.vista.ooba.model.Product2;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class CategoryRVAdapter extends RecyclerView.Adapter<CategoryRVAdapter.MyViewHolder> {
 
-    private List<String> categories;
+public class ProductRVAdapter extends RecyclerView.Adapter<ProductRVAdapter.MyViewHolder> {
+
+    private List<Product2> products;
     private List<String> subCategories;
-    public String TAG = "CategoryRVAdapter";
+    public String TAG = "ProductRVAdapter";
     Context context;
 
-    public CategoryRVAdapter(Context context, List<String> categories, List<String> subCategories) {
+    public ProductRVAdapter(Context context, List<Product2> products) {
 
-        this.categories = categories;
-        this.subCategories = subCategories;
+        this.products = products;
         this.context = context;
     }
 
-    public CategoryRVAdapter(Context context, List<String> categories)  {
-
-        this.categories = categories;
-        this.context = context;
-    }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.layout_category, parent, false);
+                .inflate(R.layout.layout_product, parent, false);
 
         return new MyViewHolder(itemView);
+
     }
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
 
-
-        String category = categories.get(position);
 //        final String subcategory = subCategories.get(position);
 
-        holder.title.setText(category);
+//        holder.title.setText(category);
         Picasso.with(context).load(R.drawable.noimage).into(holder.mCategoryIV);
 
         holder.mCategoryCV.setOnClickListener(new View.OnClickListener() {
@@ -71,7 +64,7 @@ public class CategoryRVAdapter extends RecyclerView.Adapter<CategoryRVAdapter.My
 
     @Override
     public int getItemCount() {
-        return categories.size();
+        return products.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

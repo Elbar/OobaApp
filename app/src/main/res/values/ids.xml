@@ -43,4 +43,6 @@
     <item name="category_name" type="id" />
     <item name="category_iv" type="id" />
     <item name="category_cv" type="id" />
+    <item name="product_iv" type="id" />
+    <item name="product_rv" type="id" />
 </resources>
