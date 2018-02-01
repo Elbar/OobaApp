@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.kg.vista.ooba.R;
-import com.kg.vista.ooba.activity.ShopInDetailActivity;
+import com.kg.vista.ooba.ui.activity.ShopInDetailActivity;
 import com.kg.vista.ooba.model.Catalog;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;

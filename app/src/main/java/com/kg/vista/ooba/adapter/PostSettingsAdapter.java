@@ -15,8 +15,8 @@ import android.widget.Toast;
 import java.util.List;
 
 import com.kg.vista.ooba.R;
-import com.kg.vista.ooba.activity.App;
-import com.kg.vista.ooba.activity.PostSettingsActivity;
+import com.kg.vista.ooba.ui.activity.App;
+import com.kg.vista.ooba.ui.activity.PostSettingsActivity;
 import com.kg.vista.ooba.model.Item.AddressItem;
 import com.kg.vista.ooba.model.dto.DeleteAddressDTO;
 import com.kg.vista.ooba.model.dto.UpdateAddressDTO;

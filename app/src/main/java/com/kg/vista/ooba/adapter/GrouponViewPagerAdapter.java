@@ -12,7 +12,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.kg.vista.ooba.R;
-import com.kg.vista.ooba.activity.ProductActivity;
+import com.kg.vista.ooba.ui.activity.ProductActivity;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 

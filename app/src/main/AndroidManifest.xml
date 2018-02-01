@@ -9,7 +9,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".activity.App"
+        android:name=".ui.activity.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".ui.activity.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme">
             <intent-filter>
@@ -31,65 +31,65 @@
             <!--android:launchMode="singleTask"-->
             <!--android:theme="@style/AppTheme.NoActionBar" />-->
         <activity
-            android:name=".activity.ShopActivity"
+            android:name=".ui.activity.ShopActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.NotificationActivity" />
+        <activity android:name=".ui.activity.NotificationActivity" />
         <activity
-            android:name=".activity.LoginActivity"
+            android:name=".ui.activity.LoginActivity"
             android:label="@string/title_activity_login" />
         <activity
-            android:name=".activity.RegisterActivity"
+            android:name=".ui.activity.RegisterActivity"
             android:label="@string/title_activity_register" />
-        <activity android:name=".activity.WelcomeActivity" />
+        <activity android:name=".ui.activity.WelcomeActivity" />
         <activity
-            android:name=".activity.UserDetailsActivity"
+            android:name=".ui.activity.UserDetailsActivity"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".activity.SecurityActivity"
+            android:name=".ui.activity.SecurityActivity"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".activity.PostSettingsActivity" />
-        <activity android:name=".activity.DiscountActivity" />
-        <activity android:name=".activity.PaymentsActivity" />
-        <activity android:name=".activity.PaymentsStatusActivity" />
-        <activity android:name=".activity.BalanceActivity" />
-        <activity android:name=".activity.PartnerInfoActivity" />
+        <activity android:name=".ui.activity.PostSettingsActivity" />
+        <activity android:name=".ui.activity.DiscountActivity" />
+        <activity android:name=".ui.activity.PaymentsActivity" />
+        <activity android:name=".ui.activity.PaymentsStatusActivity" />
+        <activity android:name=".ui.activity.BalanceActivity" />
+        <activity android:name=".ui.activity.PartnerInfoActivity" />
         <activity
-            android:name=".activity.PartnerActivity"
+            android:name=".ui.activity.PartnerActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.MailForwardingActivity" />
-        <activity android:name=".activity.MailForwardingInfoActivity" />
+        <activity android:name=".ui.activity.MailForwardingActivity" />
+        <activity android:name=".ui.activity.MailForwardingInfoActivity" />
         <activity
-            android:name=".activity.ProductCartActivity"
+            android:name=".ui.activity.ProductCartActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.BasketOrderActivity"
+            android:name=".ui.activity.BasketOrderActivity"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".activity.GroupOnActivity"
+            android:name=".ui.activity.GroupOnActivity"
             android:label="@string/title_activity_group_on"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".activity.CatalogActivity"
+            android:name=".ui.activity.CatalogActivity"
             android:label="@string/catalog"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".activity.ShopInDetailActivity"
+            android:name=".ui.activity.ShopInDetailActivity"
             android:label="@string/catalog"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".activity.ProductActivity"
+            android:name=".ui.activity.ProductActivity"
             android:label="@string/catalog"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".activity.ProductDetailActivity"
+            android:name=".ui.activity.ProductDetailActivity"
             android:label="@string/catalog"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity android:name=".activity.GroupInfoActivity" />
+        <activity android:name=".ui.activity.GroupInfoActivity" />
     </application>
 
 </manifest>

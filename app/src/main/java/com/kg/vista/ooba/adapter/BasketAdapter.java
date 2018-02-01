@@ -17,9 +17,9 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.kg.vista.ooba.activity.App;
-import com.kg.vista.ooba.activity.ShopActivity;
-import com.kg.vista.ooba.activity.UsersManagement;
+import com.kg.vista.ooba.ui.activity.App;
+import com.kg.vista.ooba.ui.activity.ShopActivity;
+import com.kg.vista.ooba.ui.activity.UsersManagement;
 import com.kg.vista.ooba.model.Item.BasketItem;
 import com.kg.vista.ooba.model.dto.DeleteGoodDTO;
 import com.kg.vista.ooba.model.dto.UpdateGoodDTO;

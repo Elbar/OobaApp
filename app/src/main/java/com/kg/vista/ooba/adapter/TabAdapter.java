@@ -4,9 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.kg.vista.ooba.fragment.ProductInfoFragment;
-import com.kg.vista.ooba.fragment.ProductReviewsFragment;
-import com.kg.vista.ooba.fragment.ProductSellerFragment;
+import com.kg.vista.ooba.ui.fragment.ProductInfoFragment;
+import com.kg.vista.ooba.ui.fragment.ProductReviewsFragment;
+import com.kg.vista.ooba.ui.fragment.ProductSellerFragment;
 
 
 

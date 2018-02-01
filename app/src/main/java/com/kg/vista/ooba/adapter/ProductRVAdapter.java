@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.kg.vista.ooba.R;
-import com.kg.vista.ooba.activity.ProductDetailActivity;
+import com.kg.vista.ooba.ui.activity.ProductDetailActivity;
 import com.kg.vista.ooba.model.Product2;
 import com.squareup.picasso.Picasso;
 
