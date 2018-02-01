@@ -45,4 +45,7 @@
     <item name="category_cv" type="id" />
     <item name="product_iv" type="id" />
     <item name="product_rv" type="id" />
+    <item name="product_price_tv" type="id" />
+    <item name="product_name" type="id" />
+    <item name="product_cv" type="id" />
 </resources>

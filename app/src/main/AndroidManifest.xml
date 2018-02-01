@@ -88,11 +88,6 @@
             android:label="@string/catalog"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity
-            android:name=".activity.ProductInfoActivity"
-            android:label="@string/catalog"
-            android:theme="@style/AppTheme.NoActionBar" />
-
         <activity android:name=".activity.GroupInfoActivity" />
     </application>
 

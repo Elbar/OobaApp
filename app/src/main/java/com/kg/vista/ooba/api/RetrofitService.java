@@ -11,6 +11,7 @@ import com.kg.vista.ooba.model.Product;
 import com.kg.vista.ooba.model.Product2;
 import com.kg.vista.ooba.model.ProductConfig;
 import com.kg.vista.ooba.model.Catalog;
+import com.kg.vista.ooba.model.ProductList;
 import com.kg.vista.ooba.model.Shop;
 import com.kg.vista.ooba.model.WhatsNew;
 import com.kg.vista.ooba.model.body.LoginBody;
@@ -148,6 +149,6 @@ public interface RetrofitService {
     @GET(BASE_URL + "?url=catalog/tmall")
     Call<ResponseBody> getShopByIndex();
 
-    @GET(BASE_URL + "?url=catalog/tmall/2")
-    Call<Product2> getProductByIndex();
+    @GET(BASE_URL + "?url=catalog/tmall/28")
+    Call<ProductList> getProductByIndex();
 }
