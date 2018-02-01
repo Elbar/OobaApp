@@ -13,7 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kg.vista.ooba.R;
-import com.kg.vista.ooba.activity.Product2Activity;
+import com.kg.vista.ooba.activity.ProductActivity;
+import com.kg.vista.ooba.activity.ProductActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -61,7 +62,7 @@ public class CategoryRVAdapter extends RecyclerView.Adapter<CategoryRVAdapter.My
             public void onClick(View view) {
 
 //                Toast.makeText(context, subcategory, Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(context, Product2Activity.class);
+                Intent intent = new Intent(context, ProductActivity.class);
                 context.startActivity(intent);
 
             }

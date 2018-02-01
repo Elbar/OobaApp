@@ -17,7 +17,6 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import com.kg.vista.ooba.activity.ProductActivity;
 import com.kg.vista.ooba.model.Groupon;
 
 

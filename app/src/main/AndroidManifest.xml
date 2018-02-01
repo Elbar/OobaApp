@@ -52,10 +52,6 @@
         <activity android:name=".activity.PaymentsActivity" />
         <activity android:name=".activity.PaymentsStatusActivity" />
         <activity android:name=".activity.BalanceActivity" />
-        <activity
-            android:name=".activity.ProductActivity"
-            android:label=""
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.PartnerInfoActivity" />
         <activity
             android:name=".activity.PartnerActivity"
@@ -84,7 +80,12 @@
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".activity.Product2Activity"
+            android:name=".activity.ProductActivity"
+            android:label="@string/catalog"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".activity.ProductDetailActivity"
             android:label="@string/catalog"
             android:theme="@style/AppTheme.NoActionBar" />
 
