@@ -11,6 +11,7 @@ import com.kg.vista.ooba.model.Product;
 import com.kg.vista.ooba.model.Product2;
 import com.kg.vista.ooba.model.ProductConfig;
 import com.kg.vista.ooba.model.Catalog;
+import com.kg.vista.ooba.model.ProductDetail;
 import com.kg.vista.ooba.model.ProductList;
 import com.kg.vista.ooba.model.Shop;
 import com.kg.vista.ooba.model.WhatsNew;
@@ -151,4 +152,7 @@ public interface RetrofitService {
 
     @GET(BASE_URL + "?url=catalog/tmall/28")
     Call<ProductList> getProductByIndex();
+
+    @GET(BASE_URL + "?url=product/tmall/556485191900")
+    Call<ProductDetail> getDetailOfProduct();
 }
