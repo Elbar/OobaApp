@@ -1,8 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@id/product_detail_iv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/welcome1" />
+
+
+        <android.support.v7.widget.CardView
+            android:id="@id/about_product_cv"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/product_detail_iv"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="15dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="О товаре"
+                android:textAlignment="center" />
+
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@id/review_product_cv"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/product_detail_iv"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="15dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Отзывы"
+                android:textAlignment="center" />
+
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:id="@id/product_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/about_product_cv"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Платье в горошку"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@id/product_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_name_tv"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius felis ut ante commodo vestibulum."/>
+
+
+        <TextView
+            android:id="@id/vendor_code_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_desc_tv"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Артикул"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:id="@id/vendor_code_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@id/vendor_code_text"
+            android:layout_marginTop="10dp"
+            android:text="267136136"/>
+
+
+        <TextView
+            android:id="@id/product_color_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@id/vendor_code_tv"
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:text="Цвет"/>
+
+
+        <android.support.v7.widget.CardView
+            android:id="@id/product_color_cv"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_color_text"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="15dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Белый"
+                android:textAlignment="center" />
+
+        </android.support.v7.widget.CardView>
+
+
+        <TextView
+            android:id="@id/product_size_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@id/product_color_cv"
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:text="Размер"/>
+
+
+        <android.support.v7.widget.CardView
+            android:id="@id/product_size_cv"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_size_text"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="15dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="S/Small"
+                android:textAlignment="center" />
+
+        </android.support.v7.widget.CardView>
+
+
+        <TextView
+            android:id="@id/product_count_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@id/product_size_cv"
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:text="Количество"/>
 
 
 
 
-</RelativeLayout>
+
+
+    </RelativeLayout>
+
+</ScrollView>

@@ -48,4 +48,18 @@
     <item name="product_price_tv" type="id" />
     <item name="product_name" type="id" />
     <item name="product_cv" type="id" />
+    <item name="product_detail_iv" type="id" />
+    <item name="about_product_cv" type="id" />
+    <item name="review_product_cv" type="id" />
+    <item name="product_name_tv" type="id" />
+    <item name="product_desc_tv" type="id" />
+    <item name="vendor_code_text" type="id" />
+    <item name="vendor_code_tv" type="id" />
+    <item name="product_color_tv" type="id" />
+    <item name="product_color_text" type="id" />
+    <item name="product_color_cv" type="id" />
+    <item name="product_count_text" type="id" />
+    <item name="product_size_cv" type="id" />
+    <item name="product_size_text" type="id" />
+
 </resources>
