@@ -61,5 +61,9 @@
     <item name="product_count_text" type="id" />
     <item name="product_size_cv" type="id" />
     <item name="product_size_text" type="id" />
+    <item name="product_count_tv" type="id" />
+    <item name="ic_minus" type="id" />
+    <item name="ic_plus" type="id" />
+    <item name="add_to_cart_btn" type="id" />
 
 </resources>

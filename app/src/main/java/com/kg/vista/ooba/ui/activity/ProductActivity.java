@@ -76,6 +76,7 @@ public class ProductActivity extends AbstractActivity {
                         product2.setImages(product.get(i).getImages());
                         product2.setPrice(product.get(i).getPrice());
                         product2.setNickTitle(product.get(i).getNickTitle());
+                        product2.setUrlProduct(product.get(i).getUrlProduct());
                         productItem.add(product2);
 
                     }

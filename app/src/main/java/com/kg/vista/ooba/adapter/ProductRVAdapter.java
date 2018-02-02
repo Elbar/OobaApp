@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.ui.activity.ProductDetailActivity;
@@ -57,15 +58,23 @@ public class ProductRVAdapter extends RecyclerView.Adapter<ProductRVAdapter.View
         holder.mItem = mItems.get(position);
 
         Picasso.with(holder.mView.getContext()).load(holder.mItem.getImages()).resize(600,600).into(holder.mProductIV);
+        final String name = String.valueOf(holder.mItem.getNickTitle());
+        final String price = String.valueOf(holder.mItem.getPrice());
+        final String urlProduct = holder.mItem.getUrlProduct().substring(1);
 
-        holder.mProductName.setText(holder.mItem.getNickTitle());
-        String price = String.valueOf(holder.mItem.getPrice());
+        List<String> something = holder.mItem.getPics();
+
+        holder.mProductName.setText(name);
         holder.mProductPriceTV.setText(price + " сом ");
 
         holder.mProductCV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(holder.mView.getContext(), ProductDetailActivity.class);
+                intent.putExtra("product_price", price);
+                intent.putExtra("product_name", name);
+                intent.putExtra("product_url", urlProduct);
+
                 holder.mView.getContext().startActivity(intent);
 
             }

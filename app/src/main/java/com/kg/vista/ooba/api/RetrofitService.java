@@ -48,6 +48,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
+import retrofit2.http.QueryName;
 
 import static com.kg.vista.ooba.api.conf.Config.BASE_URL;
 
@@ -153,6 +154,6 @@ public interface RetrofitService {
     @GET(BASE_URL + "?url=catalog/tmall/28")
     Call<ProductList> getProductByIndex();
 
-    @GET(BASE_URL + "?url=product/tmall/556485191900")
-    Call<ProductDetail> getDetailOfProduct();
+    @GET(BASE_URL)
+    Call<ProductDetail> getDetailOfProduct(@Query("url") String urlProduct);
 }

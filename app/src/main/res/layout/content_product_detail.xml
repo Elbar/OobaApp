@@ -75,7 +75,7 @@
             android:layout_below="@id/product_name_tv"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius felis ut ante commodo vestibulum."/>
+            android:text=" " />
 
 
         <TextView
@@ -94,22 +94,22 @@
             android:id="@id/vendor_code_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
             android:layout_below="@id/vendor_code_text"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:text="267136136"/>
+            android:text="" />
 
 
         <TextView
             android:id="@id/product_color_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
             android:layout_below="@id/vendor_code_tv"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
+            android:text="Цвет"
             android:textColor="@android:color/black"
-            android:textSize="16sp"
-            android:text="Цвет"/>
+            android:textSize="16sp" />
 
 
         <android.support.v7.widget.CardView
@@ -136,12 +136,12 @@
             android:id="@id/product_size_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
             android:layout_below="@id/product_color_cv"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
+            android:text="Размер"
             android:textColor="@android:color/black"
-            android:textSize="16sp"
-            android:text="Размер"/>
+            android:textSize="16sp" />
 
 
         <android.support.v7.widget.CardView
@@ -168,16 +168,71 @@
             android:id="@id/product_count_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
             android:layout_below="@id/product_size_cv"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
+            android:text="Количество"
             android:textColor="@android:color/black"
-            android:textSize="16sp"
-            android:text="Количество"/>
+            android:textSize="16sp" />
 
 
+        <ImageView
+            android:id="@id/ic_minus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_count_text"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ic_minus" />
+
+        <TextView
+            android:id="@id/product_count_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_count_text"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/ic_minus"
+            android:padding="2dp"
+            android:text="1"
+            android:textColor="@android:color/holo_red_dark" />
+
+        <ImageView
+            android:id="@id/ic_plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_count_text"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/product_count_tv"
+            android:background="@drawable/ic_plus" />
 
 
+        <TextView
+            android:id="@id/product_price_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/product_count_text"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:padding="2dp"
+            android:text="0 сом"
+            android:textColor="@android:color/holo_red_dark" />
+
+
+        <Button
+            android:id="@id/add_to_cart_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ic_minus"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:padding="10dp"
+            android:background="@drawable/button_stroke"
+            android:text="Добавить в корзину" />
 
 
     </RelativeLayout>
