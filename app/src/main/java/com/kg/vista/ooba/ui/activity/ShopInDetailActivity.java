@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.adapter.CategoryRVAdapter;
+import com.kg.vista.ooba.model.Category;
+import com.kg.vista.ooba.model.Child;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
@@ -67,8 +69,6 @@ public class ShopInDetailActivity extends AbstractActivity {
         String filter = intent.getStringExtra("filter");
 
 
-
-
         mShowMoreInfoTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -104,44 +104,7 @@ public class ShopInDetailActivity extends AbstractActivity {
 
     }
 
-
-//    private void getShopByIndex(String indexShop) {
-//
-//        Retrofit retrofit = new Retrofit.Builder()
-//                .baseUrl(BASE_URL)
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .build();
-//        final RetrofitService request = retrofit.create(RetrofitService.class);
-//
-//
-//        Call<ResponseBody> getShop = request.getShopByIndex();
-//
-//        getShop.enqueue(new Callback<ResponseBody>() {
-//            @Override
-//            public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
-//                try {
-//                    final String json = response.body().string();
-//                    Log.e("JSJS", json);
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//
-//
-//            }
-//
-//
-//            @Override
-//            public void onFailure(Call<ResponseBody> call, Throwable t) {
-//
-//            }
-//        });
-//
-//    }
-
-
     public void getShopDetail(final String indexShop) {
-
-
         OkHttpClient client = new OkHttpClient();
 
         final Request request = new Request.Builder()
@@ -166,14 +129,12 @@ public class ShopInDetailActivity extends AbstractActivity {
                             JSONObject menu = new JSONObject(json);
                             JSONObject shop = menu.getJSONObject("shop");
                             Log.e("JSJ", shop.toString());
-                            String  country = shop.getString("country");
+                            String country = shop.getString("country");
                             String shortDesc = shop.getString("short_desc");
                             mShopCountryTV.setText(country);
                             mShopAboutUsWV.getSettings().setDefaultTextEncodingName("utf-8");
                             mShopAboutUsWV.setBackgroundColor(Color.TRANSPARENT);
                             mShopAboutUsWV.loadData(shortDesc, "text/html; charset=utf-8", "utf-8");
-
-
 
 
                         } catch (JSONException e) {
@@ -212,27 +173,19 @@ public class ShopInDetailActivity extends AbstractActivity {
                             JSONObject menu = new JSONObject(json);
                             JSONArray category = menu.getJSONArray("category");
 
-//                            Toast.makeText(ShopInDetailActivity.this, category.toString(), Toast.LENGTH_LONG).show();
-
-                            List<String> categories = new ArrayList<>();
-                            List<String> subCategories = new ArrayList<>();
+                            List<Category> categories = new ArrayList<>();
 
                             for (int i = 0; i < category.length(); i++) {
                                 JSONObject cat = category.getJSONObject(i);
-                                String catName = cat.getString("cat_name");
+                                Category category1 = new Category();
+                                category1.setCatId(cat.getString("cat_id"));
+                                category1.setCatName(cat.getString("cat_name"));
 
-//                                JSONArray child = cat.getJSONArray("child");
-//                                for (int j = 0; j < child.length(); j++) {
-//                                    JSONArray childJsonArray = child.getJSONArray(j);
-//                                    JSONObject contentJsonObject = childJsonArray.getJSONObject(j);
-//                                    String subCategoryName = contentJsonObject.getString("cat_name");
-//                                    Log.e("CHCH", subCategoryName);
-//                                    subCategories.add(subCategoryName);
-//
-//                                }
-                                categories.add(catName);
+
+                                categories.add(category1);
+
                             }
-//
+
                             categoryRVAdapter = new CategoryRVAdapter(ShopInDetailActivity.this, categories);
 
                             mCategoryRV.setLayoutManager(new GridLayoutManager(ShopInDetailActivity.this, 2));
@@ -249,6 +202,7 @@ public class ShopInDetailActivity extends AbstractActivity {
             }
         });
     }
+
     public void getSubCategories(final String indexShop) {
 
 
@@ -275,8 +229,7 @@ public class ShopInDetailActivity extends AbstractActivity {
                             JSONObject menu = new JSONObject(json);
                             JSONArray category = menu.getJSONArray("category");
 
-                            List<String> categories = new ArrayList<>();
-                            List<String> subCategories = new ArrayList<>();
+                            List<Category> categories = new ArrayList<>();
 
                             for (int i = 0; i < category.length(); i++) {
                                 JSONObject cat = category.getJSONObject(i);
@@ -287,15 +240,17 @@ public class ShopInDetailActivity extends AbstractActivity {
                                 for (int j = 0; j < child.length(); j++) {
                                     JSONArray childJsonArray = child.getJSONArray(j);
                                     JSONObject contentJsonObject = childJsonArray.getJSONObject(j);
-                                    String subCategoryName = contentJsonObject.getString("cat_name");
-                                    Log.e("CHCH", subCategoryName);
-                                    subCategories.add(subCategoryName);
+                                    Category category1 = new Category();
+                                    category1.setCatName(contentJsonObject.getString("cat_name"));
+                                    category1.setCatName(contentJsonObject.getString("cat_id"));
+
+                                    categories.add(category1);
+
 
                                 }
-                                categories.add(catName);
                             }
 //
-                            categoryRVAdapter = new CategoryRVAdapter(ShopInDetailActivity.this, categories, subCategories);
+                            categoryRVAdapter = new CategoryRVAdapter(ShopInDetailActivity.this, categories);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -306,7 +261,6 @@ public class ShopInDetailActivity extends AbstractActivity {
             }
         });
     }
-
 
 
 }

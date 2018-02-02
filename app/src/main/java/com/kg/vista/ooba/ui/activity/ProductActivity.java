@@ -1,9 +1,11 @@
 package com.kg.vista.ooba.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.adapter.ProductRVAdapter;
@@ -37,6 +39,10 @@ public class ProductActivity extends AbstractActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product);
         ButterKnife.bind(this);
+        Intent intent = getIntent();
+        String catID = intent.getStringExtra("cat_id");
+        Toast.makeText(this, catID, Toast.LENGTH_SHORT).show();
+
 
 
 

@@ -9,8 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.kg.vista.ooba.R;
+import com.kg.vista.ooba.model.Category;
 import com.kg.vista.ooba.ui.activity.ProductActivity;
 import com.squareup.picasso.Picasso;
 
@@ -18,19 +20,12 @@ import java.util.List;
 
 public class CategoryRVAdapter extends RecyclerView.Adapter<CategoryRVAdapter.MyViewHolder> {
 
-    private List<String> categories;
-    private List<String> subCategories;
+    private List<Category> categories;
     public String TAG = "CategoryRVAdapter";
     Context context;
 
-    public CategoryRVAdapter(Context context, List<String> categories, List<String> subCategories) {
 
-        this.categories = categories;
-        this.subCategories = subCategories;
-        this.context = context;
-    }
-
-    public CategoryRVAdapter(Context context, List<String> categories)  {
+    public CategoryRVAdapter(Context context, List<Category> categories)  {
 
         this.categories = categories;
         this.context = context;
@@ -48,20 +43,20 @@ public class CategoryRVAdapter extends RecyclerView.Adapter<CategoryRVAdapter.My
     public void onBindViewHolder(final MyViewHolder holder, int position) {
 
 
-        String category = categories.get(position);
-//        final String subcategory = subCategories.get(position);
+        Category category = categories.get(position);
+        final String catID = category.getCatId();
 
-        holder.title.setText(category);
+
+        holder.title.setText(category.getCatName());
         Picasso.with(context).load(R.drawable.noimage).into(holder.mCategoryIV);
 
         holder.mCategoryCV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-//                Toast.makeText(context, subcategory, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context, ProductActivity.class);
+                intent.putExtra("cat_id", catID);
                 context.startActivity(intent);
-
             }
         });
 
@@ -76,9 +71,9 @@ public class CategoryRVAdapter extends RecyclerView.Adapter<CategoryRVAdapter.My
         public TextView title;
         ImageView mCategoryIV;
         CardView mCategoryCV;
-        String mItem;
 
-        public MyViewHolder(View view) {
+        MyViewHolder(View view) {
+
             super(view);
             title = (TextView) view.findViewById(R.id.category_name);
             mCategoryIV = (ImageView) view.findViewById(R.id.category_iv);
