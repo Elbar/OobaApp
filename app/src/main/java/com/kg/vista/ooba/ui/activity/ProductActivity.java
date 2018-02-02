@@ -43,9 +43,6 @@ public class ProductActivity extends AbstractActivity {
         String catID = intent.getStringExtra("cat_id");
         Toast.makeText(this, catID, Toast.LENGTH_SHORT).show();
 
-
-
-
         mAdapter = new ProductRVAdapter();
         mAdapter.setHasStableIds(true);
 //        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
@@ -78,7 +75,6 @@ public class ProductActivity extends AbstractActivity {
                     for (int i = 0; i < product.size(); i++) {
                         Log.e(TAG, product.get(i).getImages());
                         Product2 product2 = new Product2();
-
                         product2.setImages(product.get(i).getImages());
                         product2.setPrice(product.get(i).getPrice());
                         product2.setNickTitle(product.get(i).getNickTitle());

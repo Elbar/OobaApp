@@ -2,6 +2,7 @@ package com.kg.vista.ooba.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
@@ -11,15 +12,16 @@ import android.widget.Toast;
 
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.api.RetrofitService;
-import com.kg.vista.ooba.model.Product2;
 import com.kg.vista.ooba.model.ProductDetail;
-import com.kg.vista.ooba.model.ProductList;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -42,7 +44,6 @@ public class ProductDetailActivity extends AbstractActivity {
     TextView mVendorCodeTV;
 
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +55,7 @@ public class ProductDetailActivity extends AbstractActivity {
         Toast.makeText(this, urlProduct, Toast.LENGTH_SHORT).show();
 
         getDetailOfProduct(urlProduct);
+        getProductProperties();
 
         mAddToCartBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +88,7 @@ public class ProductDetailActivity extends AbstractActivity {
 
                     mProductDescTV.setText(detail);
                     mVendorCodeTV.setText(goodID);
-                    mProductPriceTV.setText(price+ " сом");
+                    mProductPriceTV.setText(price + " сом");
 
                     List<ProductDetail> productItem = new ArrayList<>();
 
@@ -111,5 +113,37 @@ public class ProductDetailActivity extends AbstractActivity {
         });
 
     }
+
+
+    public void getProductProperties() {
+
+
+        OkHttpClient client = new OkHttpClient();
+
+        final Request request = new Request.Builder()
+                .url("http://api.ooba.kg/?url=product/config/538151332510")
+                .get()
+                .build();
+        client.newCall(request).enqueue(new okhttp3.Callback() {
+            @Override
+            public void onFailure(okhttp3.Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(@NonNull okhttp3.Call call, final okhttp3.Response response) throws IOException {
+                final String json = response.body().string();
+
+                try {
+                    Log.e(TAG, response.body().string());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+        });
+    }
+
 
 }

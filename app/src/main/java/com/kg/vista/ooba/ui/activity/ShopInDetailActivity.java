@@ -180,8 +180,6 @@ public class ShopInDetailActivity extends AbstractActivity {
                                 Category category1 = new Category();
                                 category1.setCatId(cat.getString("cat_id"));
                                 category1.setCatName(cat.getString("cat_name"));
-
-
                                 categories.add(category1);
 
                             }

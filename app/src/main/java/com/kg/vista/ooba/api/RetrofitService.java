@@ -156,4 +156,7 @@ public interface RetrofitService {
 
     @GET(BASE_URL)
     Call<ProductDetail> getDetailOfProduct(@Query("url") String urlProduct);
+
+
+
 }
