@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.activity.MainActivity">
+
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/search_edit_frame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/search_edit_frame"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
@@ -26,31 +26,34 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"
-                    android:background="@drawable/logo"/>
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/logo" />
 
             </RelativeLayout>
-
 
 
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
 
+    <FrameLayout
+        android:id="@+id/flContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
-        <include layout="@layout/content_main" />
 
-
+    <include layout="@layout/content_main" />
 
 
     <android.support.design.widget.BottomNavigationView
         android:id="@id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         app:itemBackground="@color/colorBottomNavigation"
         app:itemIconTint="@android:color/black"
-        android:layout_alignParentBottom="true"
-        app:menu="@menu/bottom_navigation"/>
+        app:menu="@menu/bottom_navigation" />
 
 </RelativeLayout>
