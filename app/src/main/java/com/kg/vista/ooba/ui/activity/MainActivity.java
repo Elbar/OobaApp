@@ -494,11 +494,14 @@ public class MainActivity extends AbstractActivity
                 break;
             case R.id.nav_catalog:
 
-                Intent intent = new Intent(MainActivity.this, CatalogActivity.class);
-                startActivity(intent);
+                Intent catalogIntent = new Intent(MainActivity.this, CatalogActivity.class);
+                startActivity(catalogIntent);
 
                 break;
             case R.id.nav_discount:
+
+                Intent grouponIntent = new Intent(MainActivity.this, DiscountActivity.class);
+                startActivity(grouponIntent);
                 break;
             case R.id.nav_collections:
                 break;
@@ -519,7 +522,7 @@ public class MainActivity extends AbstractActivity
                 startActivity(partner);
                 break;
             case R.id.nav_my_group_shopings:
-                Intent groupOn = new Intent(MainActivity.this, GroupOnActivity.class);
+                Intent groupOn = new Intent(MainActivity.this, DiscountActivity.class);
                 startActivity(groupOn);
                 break;
             case R.id.nav_my_collections:

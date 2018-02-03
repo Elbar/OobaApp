@@ -65,5 +65,6 @@
     <item name="ic_minus" type="id" />
     <item name="ic_plus" type="id" />
     <item name="add_to_cart_btn" type="id" />
+    <item name="discount_rv" type="id" />
 
 </resources>

@@ -48,7 +48,6 @@
             android:name=".ui.activity.SecurityActivity"
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".ui.activity.PostSettingsActivity" />
-        <activity android:name=".ui.activity.DiscountActivity" />
         <activity android:name=".ui.activity.PaymentsActivity" />
         <activity android:name=".ui.activity.PaymentsStatusActivity" />
         <activity android:name=".ui.activity.BalanceActivity" />
@@ -64,10 +63,6 @@
         <activity
             android:name=".ui.activity.BasketOrderActivity"
             android:windowSoftInputMode="adjustPan" />
-        <activity
-            android:name=".ui.activity.GroupOnActivity"
-            android:label="@string/title_activity_group_on"
-            android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
             android:name=".ui.activity.CatalogActivity"
@@ -86,6 +81,12 @@
 
         <activity
             android:name=".ui.activity.ProductDetailActivity"
+            android:label="@string/catalog"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+
+        <activity
+            android:name=".ui.activity.DiscountActivity"
             android:label="@string/catalog"
             android:theme="@style/AppTheme.NoActionBar" />
 
