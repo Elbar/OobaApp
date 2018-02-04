@@ -33,7 +33,6 @@ public class CatalogFragment extends Fragment {
     @BindView(R.id.grid_view_shop)
     GridView mGridViewShop;
 
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -42,8 +41,6 @@ public class CatalogFragment extends Fragment {
         ButterKnife.bind(this, view);
 
         getShops();
-
-
         return view;
     }
 

@@ -14,6 +14,7 @@ import android.view.View;
 
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.ui.fragment.CatalogFragment;
+import com.kg.vista.ooba.ui.fragment.DiscountFragment;
 import com.kg.vista.ooba.ui.fragment.HomeFragment;
 
 import butterknife.ButterKnife;
@@ -36,7 +37,6 @@ public class Main2Activity extends AbstractActivity
 
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -45,7 +45,7 @@ public class Main2Activity extends AbstractActivity
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        navigationView.setCheckedItem(0);
+
         final LinearLayoutManager whatsNewLinearLayoutManager = new LinearLayoutManager(Main2Activity.this, LinearLayoutManager.VERTICAL, false);
 
 
@@ -108,7 +108,6 @@ public class Main2Activity extends AbstractActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
 
         int id = item.getItemId();
 
@@ -129,8 +128,14 @@ public class Main2Activity extends AbstractActivity
                         .commit();
                 break;
 
-//                Intent catalogIntent = new Intent(MainActivity.this, CatalogActivity.class);
-//                startActivity(catalogIntent);
+            case R.id.nav_discount:
+
+                DiscountFragment discountFragment = new DiscountFragment();
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.content_frame, discountFragment)
+                        .addToBackStack(null)
+                        .commit();
+
             case R.id.nav_collections:
                 break;
 
