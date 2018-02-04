@@ -1,15 +1,18 @@
 package com.kg.vista.ooba.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.model.Store;
+import com.kg.vista.ooba.ui.activity.ShopInDetailActivity;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
@@ -50,6 +53,9 @@ public class ShopAdapter extends BaseAdapter {
 
 
         final Store shop = shops.get(position);
+        String shopName = shop.getName();
+
+
 
         if (convertView == null) {
             final LayoutInflater layoutInflater = LayoutInflater.from(mContext);
@@ -68,6 +74,17 @@ public class ShopAdapter extends BaseAdapter {
             @Override
             public void onError() {
                 progressBar.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(mContext, ShopInDetailActivity.class);
+                intent.putExtra("index_shop", shop.getName());
+                mContext.startActivity(intent);
+
             }
         });
 

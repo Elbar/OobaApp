@@ -444,7 +444,7 @@ public class MainActivity extends AbstractActivity
     private void setItemVisibility(boolean visible, int visibility)
     {
         Menu nav_Menu = navigationView.getMenu();
-        nav_Menu.findItem(R.id.sub_item).setVisible(visible);
+//        nav_Menu.findItem(R.id.sub_item).setVisible(visible);
 
         View header = navigationView.getHeaderView(0);
         header.setVisibility(visibility);

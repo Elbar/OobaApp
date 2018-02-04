@@ -24,50 +24,50 @@
             android:title="@string/mpublic" />
     </group>
 
-    <item android:title=""
-        android:id="@+id/sub_item">
-        <menu>
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/my_orders" />
-            <item
-                android:id="@+id/nav_payments"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/my_payments"/>
-            <item
-                android:id="@+id/nav_mail_forwarding"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/mail_forwarding"/>
-            <item
-                android:id="@+id/nav_partner_program"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/partnerProgram"/>
-            <item
-                android:id="@+id/nav_my_group_shopings"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Мои групповые покупки"/>
-            <item
-                android:id="@+id/nav_my_collections"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Мои коллекции"/>
-            <item
-                android:id="@+id/nav_user_details"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/user_details"/>
-            <item
-                android:id="@+id/nav_security"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/security"/>
-            <item
-                android:id="@+id/nav_mail_settings"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/user_settings"/>
-            <item
-                android:id="@+id/nav_logout"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/exit"/>
-        </menu>
-    </item>
+    <!--<item android:title=""-->
+        <!--android:id="@+id/sub_item">-->
+        <!--<menu>-->
+            <!--<item-->
+                <!--android:id="@+id/nav_send"-->
+                <!--android:icon="@drawable/ic_menu_send"-->
+                <!--android:title="@string/my_orders" />-->
+            <!--<item-->
+                <!--android:id="@+id/nav_payments"-->
+                <!--android:icon="@drawable/ic_menu_send"-->
+                <!--android:title="@string/my_payments"/>-->
+            <!--<item-->
+                <!--android:id="@+id/nav_mail_forwarding"-->
+                <!--android:icon="@drawable/ic_menu_send"-->
+                <!--android:title="@string/mail_forwarding"/>-->
+            <!--<item-->
+                <!--android:id="@+id/nav_partner_program"-->
+                <!--android:icon="@drawable/ic_menu_send"-->
+                <!--android:title="@string/partnerProgram"/>-->
+            <!--<item-->
+                <!--android:id="@+id/nav_my_group_shopings"-->
+                <!--android:icon="@drawable/ic_menu_send"-->
+                <!--android:title="Мои групповые покупки"/>-->
+            <!--<item-->
+                <!--android:id="@+id/nav_my_collections"-->
+                <!--android:icon="@drawable/ic_menu_send"-->
+                <!--android:title="Мои коллекции"/>-->
+            <!--<item-->
+                <!--android:id="@+id/nav_user_details"-->
+                <!--android:icon="@drawable/ic_menu_send"-->
+                <!--android:title="@string/user_details"/>-->
+            <!--<item-->
+                <!--android:id="@+id/nav_security"-->
+                <!--android:icon="@drawable/ic_menu_send"-->
+                <!--android:title="@string/security"/>-->
+            <!--<item-->
+                <!--android:id="@+id/nav_mail_settings"-->
+                <!--android:icon="@drawable/ic_menu_send"-->
+                <!--android:title="@string/user_settings"/>-->
+            <!--<item-->
+                <!--android:id="@+id/nav_logout"-->
+                <!--android:icon="@drawable/ic_menu_send"-->
+                <!--android:title="@string/exit"/>-->
+        <!--</menu>-->
+    <!--</item>-->
 
 </menu>

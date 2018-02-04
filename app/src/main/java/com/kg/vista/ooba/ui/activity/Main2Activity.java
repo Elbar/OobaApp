@@ -14,8 +14,10 @@ import android.view.View;
 
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.ui.fragment.CatalogFragment;
+import com.kg.vista.ooba.ui.fragment.CollectionFragment;
 import com.kg.vista.ooba.ui.fragment.DiscountFragment;
 import com.kg.vista.ooba.ui.fragment.HomeFragment;
+import com.kg.vista.ooba.ui.fragment.PublicFragment;
 
 import butterknife.ButterKnife;
 
@@ -64,7 +66,7 @@ public class Main2Activity extends AbstractActivity
     private void setItemVisibility(boolean visible, int visibility)
     {
         Menu nav_Menu = navigationView.getMenu();
-        nav_Menu.findItem(R.id.sub_item).setVisible(visible);
+//        nav_Menu.findItem(R.id.sub_item).setVisible(visible);
 
         View header = navigationView.getHeaderView(0);
         header.setVisibility(visibility);
@@ -128,16 +130,33 @@ public class Main2Activity extends AbstractActivity
                         .commit();
                 break;
 
-            case R.id.nav_discount:
 
+            case R.id.nav_discount:
                 DiscountFragment discountFragment = new DiscountFragment();
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.content_frame, discountFragment)
                         .addToBackStack(null)
                         .commit();
+                break;
 
             case R.id.nav_collections:
+
+                CollectionFragment collectionFragment = new CollectionFragment();
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.content_frame, collectionFragment)
+                        .addToBackStack(null)
+                        .commit();
                 break;
+
+            case R.id.nav_public:
+
+                PublicFragment publicFragment = new PublicFragment();
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.content_frame, publicFragment)
+                        .addToBackStack(null)
+                        .commit();
+                break;
+
 
         }
 

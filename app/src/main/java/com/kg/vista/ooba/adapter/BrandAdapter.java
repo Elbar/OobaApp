@@ -1,15 +1,18 @@
 package com.kg.vista.ooba.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.model.Brand;
+import com.kg.vista.ooba.ui.activity.ShopInDetailActivity;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
@@ -50,6 +53,8 @@ public class BrandAdapter extends BaseAdapter {
 
 
             final Brand brand = brands.get(position);
+
+        Toast.makeText(mContext, brand.getBrandName(), Toast.LENGTH_SHORT).show();
 
 
             if (convertView == null) {

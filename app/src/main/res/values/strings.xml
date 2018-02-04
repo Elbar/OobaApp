@@ -7,18 +7,10 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="lenta">Лента</string>
     <string name="catalog">Каталог</string>
     <string name="discounts">Акции</string>
     <string name="collections">Коллекции</string>
     <string name="mpublic">Паблик</string>
-    <string name="my_orders">Мои заказы</string>
-    <string name="my_payments">Мои платежи</string>
-    <string name="mail_forwarding">Mail Forwarding</string>
-    <string name="user_details">Личные данные</string>
-    <string name="security">Безопасность</string>
-    <string name="user_settings">Почтовые настройки</string>
-    <string name="exit">Выход</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
@@ -46,7 +38,6 @@
     <string name="privacy">Безопасность</string>
     <string name="mailForwarding">Mail forwarding</string>
     <string name="partnerProgram">Партнерская программа</string>
-    <string name="groupPurchases">Групповые покупки</string>
     <string name="signIn">Логин</string>
     <string name="basketItem">Корзина</string>
     <string name="balance">Личный баланс</string>
@@ -116,7 +107,6 @@
     <string name="bonus">Бонус</string>
     <string name="promoCode">Промо</string>
     <string name="statusText">Статус</string>
-    <string name="title_activity_group_on">GroupOnActivity</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
