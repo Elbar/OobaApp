@@ -55,8 +55,6 @@ public class ShopAdapter extends BaseAdapter {
         final Store shop = shops.get(position);
         String shopName = shop.getName();
 
-
-
         if (convertView == null) {
             final LayoutInflater layoutInflater = LayoutInflater.from(mContext);
             convertView = layoutInflater.inflate(R.layout.shop_item, null);
