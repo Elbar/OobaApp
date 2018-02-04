@@ -177,7 +177,7 @@
 
 
         <ImageView
-            android:id="@id/ic_minus"
+            android:id="@id/ic_minus_iv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/product_count_text"
@@ -192,13 +192,13 @@
             android:layout_below="@id/product_count_text"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:layout_toRightOf="@id/ic_minus"
+            android:layout_toRightOf="@id/ic_minus_iv"
             android:padding="2dp"
             android:text="1"
             android:textColor="@android:color/holo_red_dark" />
 
         <ImageView
-            android:id="@id/ic_plus"
+            android:id="@id/ic_plus_iv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/product_count_text"
@@ -226,7 +226,7 @@
             android:id="@id/add_to_cart_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/ic_minus"
+            android:layout_below="@id/ic_minus_iv"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"

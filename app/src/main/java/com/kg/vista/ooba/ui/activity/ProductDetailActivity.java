@@ -2,11 +2,10 @@ package com.kg.vista.ooba.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,14 +13,11 @@ import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.api.RetrofitService;
 import com.kg.vista.ooba.model.ProductDetail;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -43,6 +39,14 @@ public class ProductDetailActivity extends AbstractActivity {
     @BindView(R.id.vendor_code_tv)
     TextView mVendorCodeTV;
 
+    @BindView(R.id.product_count_tv)
+    TextView mProductCountTV;
+
+    @BindView(R.id.ic_minus_iv)
+    ImageView mIcMinusIV;
+    @BindView(R.id.ic_plus_iv)
+    ImageView mIcPlusIV;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -55,12 +59,33 @@ public class ProductDetailActivity extends AbstractActivity {
         Toast.makeText(this, urlProduct, Toast.LENGTH_SHORT).show();
 
         getDetailOfProduct(urlProduct);
-        getProductProperties();
 
         mAddToCartBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Toast.makeText(ProductDetailActivity.this, "Clicked", Toast.LENGTH_SHORT).show();
+
+
+            }
+        });
+        mIcMinusIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int count = Integer.parseInt(mProductCountTV.getText().toString());
+                String countStr = String.valueOf(count - 1);
+                mProductCountTV.setText(countStr);
+
+            }
+        });
+
+        mIcPlusIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int count = Integer.parseInt(mProductCountTV.getText().toString());
+                String countStr = String.valueOf(count + 1);
+                mProductCountTV.setText(countStr);
+
             }
         });
     }
@@ -112,37 +137,6 @@ public class ProductDetailActivity extends AbstractActivity {
             }
         });
 
-    }
-
-
-    public void getProductProperties() {
-
-
-        OkHttpClient client = new OkHttpClient();
-
-        final Request request = new Request.Builder()
-                .url("http://api.ooba.kg/?url=product/config/538151332510")
-                .get()
-                .build();
-        client.newCall(request).enqueue(new okhttp3.Callback() {
-            @Override
-            public void onFailure(okhttp3.Call call, IOException e) {
-
-            }
-
-            @Override
-            public void onResponse(@NonNull okhttp3.Call call, final okhttp3.Response response) throws IOException {
-                final String json = response.body().string();
-
-                try {
-                    Log.e(TAG, response.body().string());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-
-            }
-        });
     }
 
 
