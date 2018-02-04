@@ -45,6 +45,7 @@ public class Main2Activity extends AbstractActivity
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(0);
         final LinearLayoutManager whatsNewLinearLayoutManager = new LinearLayoutManager(Main2Activity.this, LinearLayoutManager.VERTICAL, false);
 
 

@@ -38,14 +38,13 @@ public class ProductDetailActivity extends AbstractActivity {
     TextView mProductDescTV;
     @BindView(R.id.vendor_code_tv)
     TextView mVendorCodeTV;
-
     @BindView(R.id.product_count_tv)
     TextView mProductCountTV;
-
     @BindView(R.id.ic_minus_iv)
     ImageView mIcMinusIV;
     @BindView(R.id.ic_plus_iv)
     ImageView mIcPlusIV;
+
 
 
     @Override
