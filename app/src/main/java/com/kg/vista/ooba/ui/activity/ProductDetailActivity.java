@@ -36,6 +36,8 @@ public class ProductDetailActivity extends AbstractActivity {
     TextView mProductPriceTV;
     @BindView(R.id.product_desc_tv)
     TextView mProductDescTV;
+    @BindView(R.id.product_name_tv)
+    TextView mProductNameTV;
     @BindView(R.id.vendor_code_tv)
     TextView mVendorCodeTV;
     @BindView(R.id.product_count_tv)
@@ -44,7 +46,7 @@ public class ProductDetailActivity extends AbstractActivity {
     ImageView mIcMinusIV;
     @BindView(R.id.ic_plus_iv)
     ImageView mIcPlusIV;
-
+    String productName;
 
 
     @Override
@@ -55,17 +57,15 @@ public class ProductDetailActivity extends AbstractActivity {
 
         Intent intent = getIntent();
         String urlProduct = intent.getStringExtra("product_url");
-        Toast.makeText(this, urlProduct, Toast.LENGTH_SHORT).show();
+//        productName = intent.getStringExtra("product_name");
+//        String productPrice = intent.getStringExtra("product_price");
 
         getDetailOfProduct(urlProduct);
-
         mAddToCartBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Toast.makeText(ProductDetailActivity.this, "Clicked", Toast.LENGTH_SHORT).show();
-
-
             }
         });
         mIcMinusIV.setOnClickListener(new View.OnClickListener() {
@@ -74,7 +74,6 @@ public class ProductDetailActivity extends AbstractActivity {
                 int count = Integer.parseInt(mProductCountTV.getText().toString());
                 String countStr = String.valueOf(count - 1);
                 mProductCountTV.setText(countStr);
-
             }
         });
 
@@ -104,25 +103,20 @@ public class ProductDetailActivity extends AbstractActivity {
             @Override
             public void onResponse(Call<ProductDetail> call, Response<ProductDetail> response) {
                 try {
+
                     ProductDetail product = response.body();
                     String detail = product.getDetailUrlTitle();
                     String goodID = product.getGoodsId();
                     String price = String.valueOf(product.getPrice());
-
-
                     mProductDescTV.setText(detail);
                     mVendorCodeTV.setText(goodID);
                     mProductPriceTV.setText(price + " сом");
+//                    mProductNameTV.setText(productName);
+//
+
 
                     List<ProductDetail> productItem = new ArrayList<>();
 
-//                    for (int i = 0; i < product.size(); i++) {
-//                        Product2 product2 = new Product2();
-//
-//
-//                    }
-
-//                    mAdapter.setItems(productItem);
 
                 } catch (Exception e) {
                     e.printStackTrace();

@@ -65,7 +65,6 @@ public class DiscountActivity extends AbstractActivity {
             public void onResponse(Call<ProductList> call, Response<ProductList> response) {
                 try {
                     List<Product2> product = response.body().getProduct();
-
                     List<Product2> productItem = new ArrayList<>();
 
                     for (int i = 0; i < product.size(); i++) {

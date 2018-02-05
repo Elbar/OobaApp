@@ -41,7 +41,6 @@ public class ProductActivity extends AbstractActivity {
         ButterKnife.bind(this);
         Intent intent = getIntent();
         String catID = intent.getStringExtra("cat_id");
-        Toast.makeText(this, catID, Toast.LENGTH_SHORT).show();
 
         mAdapter = new ProductRVAdapter();
         mAdapter.setHasStableIds(true);
@@ -50,9 +49,9 @@ public class ProductActivity extends AbstractActivity {
         mProductRV.setAdapter(mAdapter);
         getProducts();
 
-
-
     }
+
+
 
     private void getProducts() {
 
@@ -73,14 +72,12 @@ public class ProductActivity extends AbstractActivity {
                     List<Product2> productItem = new ArrayList<>();
 
                     for (int i = 0; i < product.size(); i++) {
-                        Log.e(TAG, product.get(i).getImages());
                         Product2 product2 = new Product2();
                         product2.setImages(product.get(i).getImages());
                         product2.setPrice(product.get(i).getPrice());
                         product2.setNickTitle(product.get(i).getNickTitle());
                         product2.setUrlProduct(product.get(i).getUrlProduct());
                         productItem.add(product2);
-
                     }
 
                     mAdapter.setItems(productItem);

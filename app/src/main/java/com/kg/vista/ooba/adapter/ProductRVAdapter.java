@@ -57,15 +57,14 @@ public class ProductRVAdapter extends RecyclerView.Adapter<ProductRVAdapter.View
 
         holder.mItem = mItems.get(position);
 
-        Picasso.with(holder.mView.getContext()).load(holder.mItem.getImages()).resize(600,600).into(holder.mProductIV);
         final String name = String.valueOf(holder.mItem.getNickTitle());
         final String price = String.valueOf(holder.mItem.getPrice());
         final String urlProduct = holder.mItem.getUrlProduct().substring(1);
-
-        List<String> something = holder.mItem.getPics();
-
+        String imgUrl = holder.mItem.getImages();
         holder.mProductName.setText(name);
         holder.mProductPriceTV.setText(price + " сом ");
+
+        Picasso.with(holder.mView.getContext()).load(imgUrl).resize(600,600).into(holder.mProductIV);
 
         holder.mProductCV.setOnClickListener(new View.OnClickListener() {
             @Override

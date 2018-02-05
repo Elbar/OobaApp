@@ -298,9 +298,10 @@
 
             <android.support.v7.widget.RecyclerView
                 android:id="@id/best_collection_rv"
-
                 android:layout_width="match_parent"
-                android:layout_height="300dp" />
+                android:layout_height="wrap_content" />
+
+
 
             <me.relex.circleindicator.CircleIndicator
                 android:id="@+id/best_collection_circle_indicator"
