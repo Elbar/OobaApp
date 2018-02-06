@@ -21,6 +21,10 @@ public class PaymentsItem {
         this.amount = amount;
     }
 
+    public static PaymentsItem of(PaymentsItemDTO item) {
+        return new PaymentsItem(item.getDate(), item.getPurpose(), item.getInvoiceNumber(), item.getOrderNumber(), item.getAmount());
+    }
+
     public String getDate() {
         return date;
     }
@@ -39,9 +43,5 @@ public class PaymentsItem {
 
     public int getAmount() {
         return amount;
-    }
-
-    public static PaymentsItem of(PaymentsItemDTO item) {
-        return new PaymentsItem(item.getDate(), item.getPurpose(), item.getInvoiceNumber(), item.getOrderNumber(), item.getAmount());
     }
 }

@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.model.Category;
@@ -20,12 +19,12 @@ import java.util.List;
 
 public class CategoryRVAdapter extends RecyclerView.Adapter<CategoryRVAdapter.MyViewHolder> {
 
-    private List<Category> categories;
     public String TAG = "CategoryRVAdapter";
     Context context;
+    private List<Category> categories;
 
 
-    public CategoryRVAdapter(Context context, List<Category> categories)  {
+    public CategoryRVAdapter(Context context, List<Category> categories) {
 
         this.categories = categories;
         this.context = context;

@@ -63,14 +63,15 @@ public class Main2Activity extends AbstractActivity
             super.onBackPressed();
         }
     }
-    private void setItemVisibility(boolean visible, int visibility)
-    {
+
+    private void setItemVisibility(boolean visible, int visibility) {
         Menu nav_Menu = navigationView.getMenu();
 //        nav_Menu.findItem(R.id.sub_item).setVisible(visible);
 
         View header = navigationView.getHeaderView(0);
         header.setVisibility(visibility);
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -97,8 +98,7 @@ public class Main2Activity extends AbstractActivity
 //                intent = new Intent(this, LoginActivity.class);
 //            }
 //            startActivity(intent);
-        }
-        else if (id == R.id.menu_notification){
+        } else if (id == R.id.menu_notification) {
             //start activity notifications
 //            Intent intent = new Intent(this, NotificationActivity.class);
 //            startActivity(intent);
@@ -113,7 +113,7 @@ public class Main2Activity extends AbstractActivity
 
         int id = item.getItemId();
 
-        switch(id){
+        switch (id) {
             case R.id.nav_lenta:
                 HomeFragment homeFragment = new HomeFragment();
                 getSupportFragmentManager().beginTransaction()

@@ -8,11 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.kg.vista.ooba.R;
-import com.kg.vista.ooba.ui.activity.ProductDetailActivity;
 import com.kg.vista.ooba.model.Product2;
+import com.kg.vista.ooba.ui.activity.ProductDetailActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -64,7 +63,7 @@ public class ProductRVAdapter extends RecyclerView.Adapter<ProductRVAdapter.View
         holder.mProductName.setText(name);
         holder.mProductPriceTV.setText(price + " сом ");
 
-        Picasso.with(holder.mView.getContext()).load(imgUrl).resize(600,600).into(holder.mProductIV);
+        Picasso.with(holder.mView.getContext()).load(imgUrl).resize(600, 600).into(holder.mProductIV);
 
         holder.mProductCV.setOnClickListener(new View.OnClickListener() {
             @Override

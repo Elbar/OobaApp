@@ -37,7 +37,7 @@ public class CatalogFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.catalog_fragment,container,false);
+        View view = inflater.inflate(R.layout.catalog_fragment, container, false);
         ButterKnife.bind(this, view);
 
         getShops();

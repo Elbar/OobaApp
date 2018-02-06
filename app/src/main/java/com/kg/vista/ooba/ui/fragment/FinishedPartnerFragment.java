@@ -1,8 +1,8 @@
 package com.kg.vista.ooba.ui.fragment;
 
 import android.content.Intent;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,17 +11,17 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.kg.vista.ooba.R;
-import com.kg.vista.ooba.ui.activity.App;
-import com.kg.vista.ooba.ui.activity.PartnerInfoActivity;
-import com.kg.vista.ooba.ui.activity.UsersManagement;
 import com.kg.vista.ooba.adapter.PartnerAdapter;
 import com.kg.vista.ooba.model.Item.PartnerItem;
 import com.kg.vista.ooba.model.dto.PartnerItemDTO;
 import com.kg.vista.ooba.model.dto.PartnerListDTO;
+import com.kg.vista.ooba.ui.activity.App;
+import com.kg.vista.ooba.ui.activity.UsersManagement;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -62,19 +62,7 @@ public class FinishedPartnerFragment extends Fragment {
                 double bonusAmount = partnerItems.get(i).getBonusAmount();
                 String promoCode = partnerItems.get(i).getPromoCode();
 
-                Intent intent = new Intent(view.getContext(), PartnerInfoActivity.class);
 
-                intent.putExtra("clientId", clientId);
-                intent.putExtra("seller", seller);
-                intent.putExtra("statusText", statusText);
-                intent.putExtra("picUrl", picUrl);
-                intent.putExtra("quantity", quantity);
-                intent.putExtra("goodPrice", goodsPrice);
-                intent.putExtra("amount", amount);
-                intent.putExtra("bonusAmount", bonusAmount);
-                intent.putExtra("promoCode", promoCode);
-
-                startActivity(intent);
             }
         });
 

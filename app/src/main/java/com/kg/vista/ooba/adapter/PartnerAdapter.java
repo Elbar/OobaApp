@@ -9,12 +9,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.kg.vista.ooba.R;
+import com.kg.vista.ooba.model.Item.PartnerItem;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-
-import com.kg.vista.ooba.model.Item.PartnerItem;
-
 
 
 public class PartnerAdapter extends BaseAdapter {

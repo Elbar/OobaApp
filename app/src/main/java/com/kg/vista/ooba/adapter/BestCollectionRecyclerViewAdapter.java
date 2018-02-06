@@ -19,10 +19,11 @@ import java.util.List;
 
 public class BestCollectionRecyclerViewAdapter extends RecyclerView.Adapter<BestCollectionRecyclerViewAdapter.MyViewHolder> {
 
-    private List<Collection> collections;
     public String TAG = "BestCollectionTag";
     Context context;
-    public BestCollectionRecyclerViewAdapter( List<Collection> collections) {
+    private List<Collection> collections;
+
+    public BestCollectionRecyclerViewAdapter(List<Collection> collections) {
         this.collections = collections;
     }
 
@@ -42,7 +43,7 @@ public class BestCollectionRecyclerViewAdapter extends RecyclerView.Adapter<Best
         holder.info.setText(collection.getInfo());
 
 //
-        Picasso.with(context).load("http://ooba.kg/"+collection.getPicUrl()).into(holder.imageView, new Callback() {
+        Picasso.with(context).load("http://ooba.kg/" + collection.getPicUrl()).into(holder.imageView, new Callback() {
             @Override
             public void onSuccess() {
                 holder.progressBar.setVisibility(View.INVISIBLE);
@@ -61,15 +62,15 @@ public class BestCollectionRecyclerViewAdapter extends RecyclerView.Adapter<Best
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView title,info;
-        ProgressBar progressBar;
+        public TextView title, info;
         public ImageView imageView;
+        ProgressBar progressBar;
 
         public MyViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.best_collections_title);
             info = (TextView) view.findViewById(R.id.best_collection_info);
-             progressBar = (ProgressBar) view.findViewById(R.id.bestCollectionProgressBar);
+            progressBar = (ProgressBar) view.findViewById(R.id.bestCollectionProgressBar);
             imageView = (ImageView) view.findViewById(R.id.best_collections_image);
 
         }

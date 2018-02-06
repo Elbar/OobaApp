@@ -12,7 +12,9 @@ public class UserListDTO {
     @Expose
     private UserItemDTO user;
 
-    public UserItemDTO getUser(){return user;}
+    public UserItemDTO getUser() {
+        return user;
+    }
 
     public void setUser(UserItemDTO user) {
         this.user = user;

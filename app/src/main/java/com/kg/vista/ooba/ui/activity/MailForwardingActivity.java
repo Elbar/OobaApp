@@ -11,9 +11,6 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.adapter.MailForwardingAdapter;
 import com.kg.vista.ooba.model.Item.MailForwardingItem;
@@ -21,6 +18,10 @@ import com.kg.vista.ooba.model.body.MFBody;
 import com.kg.vista.ooba.model.body.MFListBody;
 import com.kg.vista.ooba.model.dto.MFListDTO;
 import com.kg.vista.ooba.util.StaticGridView;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -99,7 +100,7 @@ public class MailForwardingActivity extends AbstractActivity {
                     mailForwardings.add(new MailForwardingItem(trackNumber, text));
                     grvMailForwarding.setAdapter(mailForwardingAdapter);
                     //tracks.setMf(new MFBody(trackNumber,text));
-                    tracks.addMFBody(new MFBody(trackNumber,text));
+                    tracks.addMFBody(new MFBody(trackNumber, text));
                     trNum.setText("");
                 } else
                     Toast.makeText(getApplicationContext(), "Заполните трек номер", Toast.LENGTH_LONG).show();

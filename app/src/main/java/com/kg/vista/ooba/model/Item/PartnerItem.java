@@ -40,6 +40,13 @@ public class PartnerItem {
         this.url = url;
     }
 
+    public static PartnerItem of(PartnerItemDTO item) {
+        return new PartnerItem(item.getGoodsId(), item.getClientId(), item.getSeller(), item.getStatus(),
+                item.getStatusText(), item.getPicUrl(), item.getQuantity(), item.getGoodsPrice(),
+                item.getBonusPrice(), item.getAmount(), item.getBonusAmount(), item.getPromoCode(),
+                item.getUrl());
+    }
+
     public String getGoodsId() {
         return goodsId;
     }
@@ -90,12 +97,5 @@ public class PartnerItem {
 
     public String getUrl() {
         return url;
-    }
-
-    public static PartnerItem of(PartnerItemDTO item) {
-        return new PartnerItem(item.getGoodsId(), item.getClientId(), item.getSeller(), item.getStatus(),
-                item.getStatusText(), item.getPicUrl(), item.getQuantity(), item.getGoodsPrice(),
-                item.getBonusPrice(), item.getAmount(), item.getBonusAmount(), item.getPromoCode(),
-                item.getUrl());
     }
 }

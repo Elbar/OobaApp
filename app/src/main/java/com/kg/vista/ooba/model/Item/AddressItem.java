@@ -19,6 +19,10 @@ public class AddressItem {
         this.address_id = address_id;
     }
 
+    public static AddressItem of(AddressDTO item) {
+        return new AddressItem(item.getConsignee(), item.getAddress(), item.getTel(), item.getAddress_id());
+    }
+
     public String getName() {
         return name;
     }
@@ -33,9 +37,5 @@ public class AddressItem {
 
     public String getAddress_id() {
         return address_id;
-    }
-
-    public static AddressItem of(AddressDTO item) {
-        return new AddressItem(item.getConsignee(), item.getAddress(), item.getTel(), item.getAddress_id());
     }
 }

@@ -1,7 +1,6 @@
 package com.kg.vista.ooba.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +11,6 @@ import android.widget.Toast;
 
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.model.Brand;
-import com.kg.vista.ooba.ui.activity.ShopInDetailActivity;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
@@ -52,19 +50,19 @@ public class BrandAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
 
-            final Brand brand = brands.get(position);
+        final Brand brand = brands.get(position);
 
         Toast.makeText(mContext, brand.getBrandName(), Toast.LENGTH_SHORT).show();
 
 
-            if (convertView == null) {
-                final LayoutInflater layoutInflater = LayoutInflater.from(mContext);
-                convertView = layoutInflater.inflate(R.layout.brand_item, null);
-            }
+        if (convertView == null) {
+            final LayoutInflater layoutInflater = LayoutInflater.from(mContext);
+            convertView = layoutInflater.inflate(R.layout.brand_item, null);
+        }
 
-            ImageView imageView = (ImageView) convertView.findViewById(R.id.brand_image);
-            final ProgressBar progressBar = (ProgressBar) convertView.findViewById(R.id.brandProgressBar);
-        Picasso.with(mContext).load("http://ooba.kg/data/brandlogo/"+brand.getBrandLogo()).into(imageView, new Callback() {
+        ImageView imageView = (ImageView) convertView.findViewById(R.id.brand_image);
+        final ProgressBar progressBar = (ProgressBar) convertView.findViewById(R.id.brandProgressBar);
+        Picasso.with(mContext).load("http://ooba.kg/data/brandlogo/" + brand.getBrandLogo()).into(imageView, new Callback() {
             @Override
             public void onSuccess() {
                 progressBar.setVisibility(View.INVISIBLE);

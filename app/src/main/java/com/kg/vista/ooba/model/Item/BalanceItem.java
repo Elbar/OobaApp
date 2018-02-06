@@ -17,6 +17,10 @@ public class BalanceItem {
         this.amount = amount;
     }
 
+    public static BalanceItem of(BalanceDTO item) {
+        return new BalanceItem(item.getDate(), item.getPurpose(), item.getAmount());
+    }
+
     public String getDate() {
         return date;
     }
@@ -27,9 +31,5 @@ public class BalanceItem {
 
     public String getAmount() {
         return amount;
-    }
-
-    public static BalanceItem of(BalanceDTO item) {
-        return new BalanceItem(item.getDate(), item.getPurpose(), item.getAmount());
     }
 }

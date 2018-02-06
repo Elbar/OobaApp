@@ -11,7 +11,7 @@ import android.widget.ProgressBar;
 import com.kg.vista.ooba.R;
 
 
-public class ProductColorRecyclerViewAdapter extends RecyclerView.Adapter<ProductColorRecyclerViewAdapter.MyViewHolder>{
+public class ProductColorRecyclerViewAdapter extends RecyclerView.Adapter<ProductColorRecyclerViewAdapter.MyViewHolder> {
 
     private LayoutInflater inflater;
     private Context context;
@@ -44,7 +44,7 @@ public class ProductColorRecyclerViewAdapter extends RecyclerView.Adapter<Produc
         public MyViewHolder(View itemView) {
             super(itemView);
 
-            imageView  = (ImageView) itemView.findViewById(R.id.product_color_image);
+            imageView = (ImageView) itemView.findViewById(R.id.product_color_image);
             progressBar = (ProgressBar) itemView.findViewById(R.id.product_color_progress_bar);
             itemView.setOnClickListener(this);
         }

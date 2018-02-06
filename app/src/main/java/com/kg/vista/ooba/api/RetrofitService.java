@@ -1,19 +1,12 @@
 package com.kg.vista.ooba.api;
 
-import com.kg.vista.ooba.model.CatalogStore;
+import com.kg.vista.ooba.model.Catalog;
 import com.kg.vista.ooba.model.MainRequest;
-
-import java.util.List;
-
-
 import com.kg.vista.ooba.model.OtherProductsOfSeller;
 import com.kg.vista.ooba.model.Product;
-import com.kg.vista.ooba.model.Product2;
 import com.kg.vista.ooba.model.ProductConfig;
-import com.kg.vista.ooba.model.Catalog;
 import com.kg.vista.ooba.model.ProductDetail;
 import com.kg.vista.ooba.model.ProductList;
-import com.kg.vista.ooba.model.Shop;
 import com.kg.vista.ooba.model.WhatsNew;
 import com.kg.vista.ooba.model.body.LoginBody;
 import com.kg.vista.ooba.model.body.MFListBody;
@@ -41,17 +34,16 @@ import com.kg.vista.ooba.model.dto.UpdateDataDTO;
 import com.kg.vista.ooba.model.dto.UpdateGoodDTO;
 import com.kg.vista.ooba.model.dto.UserListDTO;
 
+import java.util.List;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
-import retrofit2.http.QueryName;
 
 import static com.kg.vista.ooba.api.conf.Config.BASE_URL;
-
 
 
 public interface RetrofitService {
@@ -130,6 +122,7 @@ public interface RetrofitService {
 
     @GET(BASE_URL)
     Call<ProductConfig> getProductConfig(@Query("url") String mPath);
+
     @GET(BASE_URL)
     Call<OtherProductsOfSeller> getOtherProductsOfSeller(@Query("url") String sellerProductUrl);
 
@@ -142,7 +135,7 @@ public interface RetrofitService {
     @GET(BASE_URL + "?url=mixed&filter=all&limit=6")
     Call<List<WhatsNew>> getWhatsNewItems();
 
-    @GET(BASE_URL+ "?url=mixed&filter=blogs&limit=6")
+    @GET(BASE_URL + "?url=mixed&filter=blogs&limit=6")
     Call<List<WhatsNew>> getBlogs();
 
     @GET(BASE_URL + "?url=catalog")
@@ -156,7 +149,6 @@ public interface RetrofitService {
 
     @GET(BASE_URL)
     Call<ProductDetail> getDetailOfProduct(@Query("url") String urlProduct);
-
 
 
 }

@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 
-public class MFListBody implements Serializable{
+public class MFListBody implements Serializable {
     private String userId;
     private List<MFBody> mf = null;
     private String addressId;
@@ -18,11 +18,13 @@ public class MFListBody implements Serializable{
         this.userId = userId;
     }
 
+    public List<MFBody> getMf() {
+        return mf;
+    }
+
     public void setMf(List<MFBody> mf) {
         this.mf = mf;
     }
-
-    public List<MFBody> getMf() { return mf; }
 
     public String getAddressId() {
         return addressId;
@@ -40,7 +42,7 @@ public class MFListBody implements Serializable{
         this.shippingId = shippingId;
     }
 
-    public void addMFBody(MFBody mfBody){
+    public void addMFBody(MFBody mfBody) {
         this.mf.add(mfBody);
     }
 }

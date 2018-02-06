@@ -29,7 +29,6 @@ import static com.kg.vista.ooba.api.conf.Config.BASE_URL;
 
 public class ProductDetailActivity extends AbstractActivity {
 
-    private String TAG = "ProductDetailActivity";
     @BindView(R.id.add_to_cart_btn)
     Button mAddToCartBtn;
     @BindView(R.id.product_price_tv)
@@ -47,7 +46,7 @@ public class ProductDetailActivity extends AbstractActivity {
     @BindView(R.id.ic_plus_iv)
     ImageView mIcPlusIV;
     String productName;
-
+    private String TAG = "ProductDetailActivity";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

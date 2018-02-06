@@ -7,14 +7,13 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.model.Item.NotificationItem;
 
+import java.util.ArrayList;
 
 
-public class NotificationAdapter extends BaseAdapter{
+public class NotificationAdapter extends BaseAdapter {
     Context contxt;
     LayoutInflater lInflater;
     ArrayList<NotificationItem> notificationItem;

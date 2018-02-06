@@ -16,18 +16,17 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 
-
 public class ProductImageViewPagerAdapter extends PagerAdapter {
 
     Context context;
     List<String> imageList;
     LayoutInflater inflater;
 
-    public ProductImageViewPagerAdapter(Context context, List<String> imageList){
+    public ProductImageViewPagerAdapter(Context context, List<String> imageList) {
         this.context = context;
         this.imageList = imageList;
         inflater = LayoutInflater.from(context);
-        Log.d("product_image", "images length "+getCount());
+        Log.d("product_image", "images length " + getCount());
     }
 
     @Override
@@ -64,6 +63,7 @@ public class ProductImageViewPagerAdapter extends PagerAdapter {
     public boolean isViewFromObject(View view, Object object) {
         return view == object;
     }
+
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         //if error cast container to view pager

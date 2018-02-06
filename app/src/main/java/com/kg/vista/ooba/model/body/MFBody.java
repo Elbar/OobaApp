@@ -1,8 +1,7 @@
 package com.kg.vista.ooba.model.body;
 
 
-
-public class MFBody{
+public class MFBody {
 
     private String trackNumber;
     private String type;

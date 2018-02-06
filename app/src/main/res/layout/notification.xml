@@ -9,7 +9,7 @@
         android:id="@+id/notifIcon"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/notif"/>
+        android:src="@drawable/notif" />
 
     <TextView
         android:id="@+id/notifDate"

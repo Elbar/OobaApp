@@ -7,10 +7,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.model.Item.BalanceItem;
+
+import java.util.ArrayList;
 
 /**
  * Created by aizhan on 9/4/17.

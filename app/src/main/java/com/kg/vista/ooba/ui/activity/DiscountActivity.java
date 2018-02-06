@@ -1,11 +1,9 @@
 package com.kg.vista.ooba.ui.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.adapter.ProductRVAdapter;
@@ -27,11 +25,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import static com.kg.vista.ooba.api.conf.Config.BASE_URL;
 
 public class DiscountActivity extends AbstractActivity {
-    private String TAG = "ProductActivity";
     ProductRVAdapter mAdapter;
     @BindView(R.id.product_rv)
     RecyclerView mProductRV;
-
+    private String TAG = "ProductActivity";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,7 +42,6 @@ public class DiscountActivity extends AbstractActivity {
 
         mProductRV.setAdapter(mAdapter);
         getProducts();
-
 
 
     }

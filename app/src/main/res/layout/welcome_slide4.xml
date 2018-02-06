@@ -12,9 +12,9 @@
         android:orientation="vertical">
 
         <ImageView
-            android:background="@color/colorWelcomeImage"
             android:layout_width="@dimen/img_width_height"
             android:layout_height="@dimen/img_width_height"
+            android:background="@color/colorWelcomeImage"
             android:src="@drawable/ic_travel" />
 
         <TextView

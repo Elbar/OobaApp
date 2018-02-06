@@ -9,13 +9,13 @@ import com.kg.vista.ooba.ui.fragment.ProductReviewsFragment;
 import com.kg.vista.ooba.ui.fragment.ProductSellerFragment;
 
 
-
 public class TabAdapter extends FragmentStatePagerAdapter {
 
     private int numberOfTabs;
     private ProductInfoFragment productInfoFragment;
     private ProductReviewsFragment productReviewsFragment;
     private ProductSellerFragment productSellerFragment;
+
     public TabAdapter(FragmentManager fm, int numberOfTabs) {
         super(fm);
         this.numberOfTabs = numberOfTabs;

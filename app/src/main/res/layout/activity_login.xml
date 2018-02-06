@@ -1,5 +1,4 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -42,7 +41,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_email"
                     android:inputType="textEmailAddress"
-                    android:maxLines="1"/>
+                    android:maxLines="1" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -62,42 +61,46 @@
                     android:maxLines="1" />
 
             </android.support.design.widget.TextInputLayout>
+
             <CheckBox
                 android:id="@+id/rememberMeCheckBox"
-                android:textColor="@color/colorAccent"
-                android:padding="10dp"
-                android:textSize="16sp"
-                android:text="@string/rememberMe"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/rememberMe"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp" />
+
             <Button
-                android:background="@drawable/rounded_corner_solid"
                 android:id="@+id/email_sign_in_button"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_corner_solid"
                 android:text="@string/login"
                 android:textStyle="bold" />
+
             <Button
-                android:background="@drawable/rounded_corner_line"
                 android:id="@+id/email_register_button"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_corner_line"
                 android:text="@string/haveLogin"
                 android:textStyle="bold" />
+
             <TextView
-                android:clickable="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:textColor="@color/colorAccent"
+                android:clickable="true"
                 android:gravity="end"
                 android:padding="10dp"
-                android:textSize="16sp"
                 android:text="@string/forgotPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp" />
 
         </LinearLayout>
     </ScrollView>

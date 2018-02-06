@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.activity.MainActivity">
+
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/search_edit_frame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/search_edit_frame"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
@@ -17,10 +17,10 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay">
-        </android.support.v7.widget.Toolbar>
+            app:popupTheme="@style/AppTheme.PopupOverlay"></android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
+
     <include
         layout="@layout/content_shop"
         android:layout_width="match_parent"
@@ -45,17 +45,17 @@
     </RelativeLayout>
 
     <ListView
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="5dp"
         android:id="@+id/lvBasket"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/lin"
         android:layout_below="@+id/RLSpinner"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="10dp"
+        android:descendantFocusability="beforeDescendants"
         android:divider="@null"
         android:dividerHeight="7dp"
-        android:drawSelectorOnTop="false"
-        android:descendantFocusability="beforeDescendants"/>
+        android:drawSelectorOnTop="false" />
 
     <RelativeLayout
         android:id="@+id/lin"

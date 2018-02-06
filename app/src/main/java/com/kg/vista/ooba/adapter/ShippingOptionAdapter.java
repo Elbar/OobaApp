@@ -7,24 +7,23 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.RadioButton;
 
-import java.util.ArrayList;
-
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.model.Item.ShippingItem;
 
+import java.util.ArrayList;
 
 
-public class ShippingOptionAdapter extends BaseAdapter{
+public class ShippingOptionAdapter extends BaseAdapter {
 
+    int selectedPosition = 0;
     private Context contxt;
     private LayoutInflater lInflater;
     private ArrayList<ShippingItem> shippingItem;
-    int selectedPosition = 0;
     private RadioButton checkedRadioBtn;
 
     public ShippingOptionAdapter(Context context, ArrayList<ShippingItem> shippingItem) {
         contxt = context;
-        this.shippingItem=shippingItem;
+        this.shippingItem = shippingItem;
         lInflater = (LayoutInflater) LayoutInflater.from(context);
     }
 
@@ -53,22 +52,24 @@ public class ShippingOptionAdapter extends BaseAdapter{
         ShippingItem s = getShippingOption(position);
 
         checkedRadioBtn = (RadioButton) view.findViewById(R.id.shippingBtn);
-        checkedRadioBtn.setText(s.getShippingName()+" \n"+s.getShippingDesc());
+        checkedRadioBtn.setText(s.getShippingName() + " \n" + s.getShippingDesc());
         checkedRadioBtn.setChecked(position == selectedPosition);
         checkedRadioBtn.setTag(position);
         checkedRadioBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectedPosition = (Integer)view.getTag();
+                selectedPosition = (Integer) view.getTag();
                 notifyDataSetChanged();
             }
         });
 
         return view;
     }
+
     public int getPosition() {
         return selectedPosition;
     }
+
     ShippingItem getShippingOption(int position) {
         return ((ShippingItem) getItem(position));
     }

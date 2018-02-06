@@ -36,7 +36,7 @@ public class MFListDTO {
     }
 
     public void setAddressDTO(List<AddressDTO> addressDTO) {
-        this.addressDTO=addressDTO;
+        this.addressDTO = addressDTO;
     }
 
     public List<ShippingDTO> getShippingDTO() {
@@ -44,7 +44,7 @@ public class MFListDTO {
     }
 
     public void setShippingDTO(List<ShippingDTO> shippingDTO) {
-        this.shippingDTO=shippingDTO;
+        this.shippingDTO = shippingDTO;
     }
 
     public List<String> getGoodTypes() {

@@ -19,13 +19,13 @@ public class SplashScreen extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash);
 
-        Thread timerThread = new Thread(){
-            public void run(){
-                try{
+        Thread timerThread = new Thread() {
+            public void run() {
+                try {
                     sleep(500);
-                }catch(InterruptedException e){
+                } catch (InterruptedException e) {
                     e.printStackTrace();
-                }finally{
+                } finally {
                     //Intent intent = new Intent(SplashScreen.this, WelcomeActivity.class);
                     Intent intent;
                     String USER_ID = usrData.getUserData(SplashScreen.this);

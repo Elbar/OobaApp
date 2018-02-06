@@ -8,13 +8,13 @@ import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.model.Item.MailForwardingItem;
 
+import java.util.ArrayList;
 
-public class MailForwardingAdapter extends BaseAdapter{
+
+public class MailForwardingAdapter extends BaseAdapter {
 
     private Context contxt;
     private LayoutInflater lInflater;

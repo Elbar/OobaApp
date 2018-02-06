@@ -16,20 +16,20 @@ public class RegistrationDTO {
     @Expose
     private int password;
 
-    public void setLogin(int login) {
-        this.login = login;
-    }
-
-    public void setPassword(int password) {
-        this.password = password;
-    }
-
     public int getLogin() {
 
         return login;
     }
 
+    public void setLogin(int login) {
+        this.login = login;
+    }
+
     public int getPassword() {
         return password;
+    }
+
+    public void setPassword(int password) {
+        this.password = password;
     }
 }

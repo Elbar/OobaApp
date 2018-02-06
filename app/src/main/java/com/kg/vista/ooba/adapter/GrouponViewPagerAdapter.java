@@ -12,13 +12,12 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.kg.vista.ooba.R;
+import com.kg.vista.ooba.model.Groupon;
 import com.kg.vista.ooba.ui.activity.ProductActivity;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
-
-import com.kg.vista.ooba.model.Groupon;
 
 
 public class GrouponViewPagerAdapter extends PagerAdapter {
@@ -27,12 +26,13 @@ public class GrouponViewPagerAdapter extends PagerAdapter {
     List<Groupon> grouponList;
     LayoutInflater inflater;
 
-    public GrouponViewPagerAdapter(Context context, List<Groupon> grouponList){
+    public GrouponViewPagerAdapter(Context context, List<Groupon> grouponList) {
         this.context = context;
         this.grouponList = grouponList;
         inflater = LayoutInflater.from(context);
 
     }
+
     @Override
     public int getCount() {
         return grouponList.size();
@@ -56,11 +56,11 @@ public class GrouponViewPagerAdapter extends PagerAdapter {
         final ProgressBar progressBar = (ProgressBar) itemView.findViewById(R.id.grouponProgressBar);
 
         final Groupon groupon = grouponList.get(position);
-        tvPrice.setText(groupon.getPrice()+" сом");
+        tvPrice.setText(groupon.getPrice() + " сом");
         //Log.d("ooba2", "price "+groupon.getPrice());
-        tvPriceTotal.setText(String.valueOf(groupon.getPriceTotal())+" сом");
+        tvPriceTotal.setText(String.valueOf(groupon.getPriceTotal()) + " сом");
         tvTitle.setText(groupon.getGoodsName());
-        tvDesc.setText("Здесь должно быть описание"+ groupon.getHtml());
+        tvDesc.setText("Здесь должно быть описание" + groupon.getHtml());
 
         //tvDescription.setText(groupon.getHtml());
         Picasso.with(context).load(groupon.getPicUrl()).into(imageView, new Callback() {
@@ -84,7 +84,7 @@ public class GrouponViewPagerAdapter extends PagerAdapter {
                 productIntent.putExtra("goods_id", groupon.getGoodsId());
                 productIntent.putExtra("goods_pic_url", groupon.getPicUrl());
                 productIntent.putExtra("goods_name", groupon.getGoodsName());
-                productIntent.putExtra("goods_price", groupon.getPrice()+" сом");
+                productIntent.putExtra("goods_price", groupon.getPrice() + " сом");
                 productIntent.putExtra("goods_quantity", String.valueOf(groupon.getCnt()));
                 context.startActivity(productIntent);
             }

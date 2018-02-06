@@ -1,157 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_marginTop="56dp"
-    android:layout_marginBottom="20dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v7.widget.CardView
-        android:id="@id/shop_banner_cv"
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="56dp"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:id="@id/shop_banner_cv"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@id/shop_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+
+                    android:layout_centerInParent="true" />
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+
+        <TextView
+            android:id="@id/shop_country_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/shop_banner_cv"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Страна"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:id="@id/shop_country_link_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/shop_banner_cv"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:text="link"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:id="@id/shop_country_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/shop_country_text"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="" />
+
+
+        <TextView
+            android:id="@id/shop_main_category_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/shop_country_tv"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Основная категория"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@id/shop_main_category_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/shop_main_category_text"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Shopping mall" />
+
+
+        <TextView
+            android:id="@id/shop_about_us_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/shop_main_category_tv"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="О магазине"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@id/show_more_info_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/shop_main_category_tv"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:padding="5dp"
+            android:text="Показать полностью"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="12sp" />
+
+        <WebView
+            android:id="@id/shop_about_us_wv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/shop_about_us_text"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="" />
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_below="@id/shop_about_us_wv"
+            android:layout_marginBottom="70dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <ImageView
-                android:id="@id/shop_banner"
+            <android.support.v7.widget.RecyclerView
+                android:id="@id/category_rv"
                 android:layout_width="match_parent"
-                android:layout_centerHorizontal="true"
-                android:layout_centerInParent="true"
+                android:layout_height="match_parent"
+                android:nestedScrollingEnabled="false"
+                android:scrollbars="vertical"
+                app:layoutManager="GridLayoutManager"
+                app:spanCount="1"
+                tools:listitem="@layout/layout_category" />
 
-                android:layout_height="wrap_content" />
         </RelativeLayout>
 
 
-
-    </android.support.v7.widget.CardView>
-
-
-    <TextView
-        android:id="@id/shop_country_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/shop_banner_cv"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:textColor="@android:color/black"
-        android:textSize="16sp"
-        android:text="Страна" />
-
-
-    <TextView
-        android:id="@id/shop_country_link_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/shop_banner_cv"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="16sp"
-        android:text="link" />
-
-
-
-    <TextView
-        android:id="@id/shop_country_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/shop_country_text"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:text="" />
-
-
-    <TextView
-        android:id="@id/shop_main_category_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/shop_country_tv"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:textColor="@android:color/black"
-        android:textSize="16sp"
-        android:text="Основная категория" />
-
-    <TextView
-        android:id="@id/shop_main_category_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/shop_main_category_text"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:text="Shopping mall" />
-
-
-    <TextView
-        android:id="@id/shop_about_us_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/shop_main_category_tv"
-        android:layout_marginLeft="20dp"
-        android:textColor="@android:color/black"
-        android:textSize="16sp"
-        android:layout_marginTop="20dp"
-        android:text="О магазине" />
-
-    <TextView
-        android:id="@id/show_more_info_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/shop_main_category_tv"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp"
-        android:padding="5dp"
-        android:text="Показать полностью"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="12sp" />
-
-    <WebView
-        android:id="@id/shop_about_us_wv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/shop_about_us_text"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:text="" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="70dp"
-        android:layout_below="@id/shop_about_us_wv"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@id/category_rv"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="vertical"
-            android:nestedScrollingEnabled="false"
-            app:layoutManager="GridLayoutManager"
-            app:spanCount="1"
-            tools:listitem="@layout/layout_category" />
-
     </RelativeLayout>
 
-
-
-
-
-
-</RelativeLayout>
-
-    </ScrollView>
+</ScrollView>

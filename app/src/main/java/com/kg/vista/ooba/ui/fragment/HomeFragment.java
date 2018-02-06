@@ -1,7 +1,6 @@
 package com.kg.vista.ooba.ui.fragment;
 
 
-
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -49,30 +48,10 @@ import static com.kg.vista.ooba.api.conf.Config.BASE_URL;
 
 public class HomeFragment extends Fragment {
 
-    private List<Groupon> grouponList;
-    private List<Collection> collectionList;
-    private List<Brand> brandList;
-    private List<Store> shopList;
-
-    private CircleIndicator grouponCircleIndicator;
-    private GrouponViewPagerAdapter grouponViewPagerAdapter;
-
-    private BestCollectionRecyclerViewAdapter bestCollectionRVAdapter;
-    private WhatsNewGVAdapter whatsNewRVAdapter;
-
-    private CircleIndicator bestCollectionCircleIndicator;
-    private BrandAdapter brandAdapter;
-    private GridView brandGridView;
-    private CircleIndicator brandCircleIndicator;
-    private ShopAdapter shopGridViewAdapter;
-    private GridView shopGridView;
-
     @BindView(R.id.best_collection_rv)
     RecyclerView mBestCollectionRV;
-
     @BindView(R.id.whats_new_gv)
     GridView mWhatsNewGV;
-
     @BindView(R.id.show_all_items_cv)
     CardView mShowAllItemsCV;
     @BindView(R.id.show_blogs_cv)
@@ -87,6 +66,20 @@ public class HomeFragment extends Fragment {
     GridView mBrandGV;
     @BindView(R.id.grid_view_shop)
     GridView mShopGV;
+    private List<Groupon> grouponList;
+    private List<Collection> collectionList;
+    private List<Brand> brandList;
+    private List<Store> shopList;
+    private CircleIndicator grouponCircleIndicator;
+    private GrouponViewPagerAdapter grouponViewPagerAdapter;
+    private BestCollectionRecyclerViewAdapter bestCollectionRVAdapter;
+    private WhatsNewGVAdapter whatsNewRVAdapter;
+    private CircleIndicator bestCollectionCircleIndicator;
+    private BrandAdapter brandAdapter;
+    private GridView brandGridView;
+    private CircleIndicator brandCircleIndicator;
+    private ShopAdapter shopGridViewAdapter;
+    private GridView shopGridView;
 
     @Nullable
     @Override

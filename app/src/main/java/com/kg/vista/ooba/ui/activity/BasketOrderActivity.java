@@ -1,15 +1,12 @@
 package com.kg.vista.ooba.ui.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.adapter.AddressOptionAdapter;
@@ -22,6 +19,10 @@ import com.kg.vista.ooba.model.dto.BasketListDTO;
 import com.kg.vista.ooba.model.dto.OrderGoodDTO;
 import com.kg.vista.ooba.model.dto.ShippingDTO;
 import com.kg.vista.ooba.util.Country;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -78,14 +79,14 @@ public class BasketOrderActivity extends AppCompatActivity {
         lvShippingRadio.setAdapter(shippingOptionAdapter);
     }
 
-    private void order(){
+    private void order() {
         url = "ordergood";
         shipping = shippingItem.get(shippingOptionAdapter.getPosition()).getShippingId();
         address = addressItem.get(addressOptionAdapter.getPosition()).getAddress_id();
         String comment = "abcd";
         List<String> goods_id = new ArrayList<>();
         goods_id = basketAdapter.getGoodsID();
-        App.api().orderGood(url, ID,address, shipping,goods_id, comment ).enqueue(new Callback<OrderGoodDTO>() {
+        App.api().orderGood(url, ID, address, shipping, goods_id, comment).enqueue(new Callback<OrderGoodDTO>() {
             @Override
             public void onResponse(Call<OrderGoodDTO> call, Response<OrderGoodDTO> response) {
                 Toast.makeText(getApplicationContext(), "Заказ успешно оформлен", Toast.LENGTH_LONG).show();
@@ -98,6 +99,7 @@ public class BasketOrderActivity extends AppCompatActivity {
             }
         });
     }
+
     private void show() {
         url = "cart";
         App.api().basket(url, geo, ID).enqueue(new Callback<BasketListDTO>() {

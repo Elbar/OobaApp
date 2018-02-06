@@ -29,6 +29,11 @@ public class GroupItem {
         this.status = status;
     }
 
+    public static GroupItem of(GroupOnDTO item) {
+        return new GroupItem(item.getProductId(), item.getImage(), item.getTitle(), item.getPrice(),
+                item.getQuantity(), item.getSubtotal(), item.getTrackId(), item.getStatus());
+    }
+
     public String getProductId() {
         return productId;
     }
@@ -59,10 +64,5 @@ public class GroupItem {
 
     public String getStatus() {
         return status;
-    }
-
-    public static GroupItem of(GroupOnDTO item) {
-        return new GroupItem(item.getProductId(),item.getImage(),item.getTitle(),item.getPrice(),
-                item.getQuantity(),item.getSubtotal(),item.getTrackId(),item.getStatus());
     }
 }

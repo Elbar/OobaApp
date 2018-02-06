@@ -6,19 +6,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.kg.vista.ooba.R;
-import com.kg.vista.ooba.model.Brand;
 import com.kg.vista.ooba.model.WhatsNew;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import retrofit2.Callback;
 
-
-public class WhatsNewGVAdapter extends BaseAdapter{
+public class WhatsNewGVAdapter extends BaseAdapter {
 
     private final List<WhatsNew> whatsNewList;
     Context mContext;
@@ -57,7 +53,7 @@ public class WhatsNewGVAdapter extends BaseAdapter{
         final ImageView brandLogoIV = (ImageView) convertView.findViewById(R.id.item_image);
 //        TextView mItemTitle = (TextView) convertView.findViewById(R.id.item_title);
 
-        Picasso.with(mContext).load(whatsNew.getFileUrl()).resize(400,400).into(brandLogoIV);
+        Picasso.with(mContext).load(whatsNew.getFileUrl()).resize(400, 400).into(brandLogoIV);
 
 //        mItemTitle.setText(whatsNew.getTitle());
 

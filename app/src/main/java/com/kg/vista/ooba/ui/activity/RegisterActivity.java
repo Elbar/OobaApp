@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.model.body.RegistrationBody;
 import com.kg.vista.ooba.model.dto.RegistrationDTO;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

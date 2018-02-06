@@ -12,21 +12,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kg.vista.ooba.R;
+import com.kg.vista.ooba.model.Item.BasketItem;
+import com.kg.vista.ooba.model.dto.DeleteGoodDTO;
+import com.kg.vista.ooba.model.dto.UpdateGoodDTO;
+import com.kg.vista.ooba.ui.activity.App;
+import com.kg.vista.ooba.ui.activity.ShopActivity;
+import com.kg.vista.ooba.ui.activity.UsersManagement;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.kg.vista.ooba.ui.activity.App;
-import com.kg.vista.ooba.ui.activity.ShopActivity;
-import com.kg.vista.ooba.ui.activity.UsersManagement;
-import com.kg.vista.ooba.model.Item.BasketItem;
-import com.kg.vista.ooba.model.dto.DeleteGoodDTO;
-import com.kg.vista.ooba.model.dto.UpdateGoodDTO;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
 
 
 public class BasketAdapter extends BaseAdapter {
@@ -103,7 +102,7 @@ public class BasketAdapter extends BaseAdapter {
         goodNum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectedPosition.add((Integer)view.getTag());
+                selectedPosition.add((Integer) view.getTag());
                 notifyDataSetChanged();
             }
         });
@@ -197,7 +196,7 @@ public class BasketAdapter extends BaseAdapter {
         return view;
     }
 
-    public List<String> getGoodsID(){
+    public List<String> getGoodsID() {
         return goodsID;
     }
 

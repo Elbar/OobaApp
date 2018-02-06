@@ -13,7 +13,11 @@ public class DeleteAddressDTO {
     @Expose
     private int sql;
 
-    public int getSql(){return sql;}
+    public int getSql() {
+        return sql;
+    }
 
-    public void setSql(int sql){this.sql=sql;}
+    public void setSql(int sql) {
+        this.sql = sql;
+    }
 }

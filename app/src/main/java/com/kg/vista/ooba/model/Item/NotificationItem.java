@@ -24,6 +24,11 @@ public class NotificationItem {
         this.status = status;
     }
 
+    public static NotificationItem of(NotificationItemDTO item) {
+        return new NotificationItem(item.getId(), item.getUserId(), item.getText(), item.getAddTime(),
+                item.getIsShow(), item.getStatus());
+    }
+
     public String getId() {
         return id;
     }
@@ -46,10 +51,5 @@ public class NotificationItem {
 
     public String getStatus() {
         return status;
-    }
-
-    public static NotificationItem of(NotificationItemDTO item) {
-        return new NotificationItem(item.getId(), item.getUserId(), item.getText(), item.getAddTime(),
-                item.getIsShow(), item.getStatus());
     }
 }

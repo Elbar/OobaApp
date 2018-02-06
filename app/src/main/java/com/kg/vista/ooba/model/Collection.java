@@ -1,7 +1,6 @@
 package com.kg.vista.ooba.model;
 
 
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

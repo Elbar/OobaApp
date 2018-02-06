@@ -2,10 +2,10 @@ package com.kg.vista.ooba.ui.activity;
 
 
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 import com.kg.vista.ooba.R;

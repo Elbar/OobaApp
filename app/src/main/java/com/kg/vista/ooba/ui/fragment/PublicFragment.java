@@ -19,7 +19,7 @@ public class PublicFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
 
-        View view = inflater.inflate(R.layout.public_fragment,container,false);
+        View view = inflater.inflate(R.layout.public_fragment, container, false);
         ButterKnife.bind(this, view);
 
         return view;

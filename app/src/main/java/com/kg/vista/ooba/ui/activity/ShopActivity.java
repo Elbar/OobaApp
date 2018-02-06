@@ -11,9 +11,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.adapter.BasketAdapter;
 import com.kg.vista.ooba.model.Item.BasketItem;
@@ -22,6 +19,10 @@ import com.kg.vista.ooba.model.dto.CartDTO;
 import com.kg.vista.ooba.model.dto.ClearBasketDTO;
 import com.kg.vista.ooba.model.dto.GoodItemDTO;
 import com.kg.vista.ooba.util.Country;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -92,7 +93,7 @@ public class ShopActivity extends AbstractActivity {
         clearImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(enabledChina)
+                if (enabledChina)
                     clearData(Country.CHINA.getCode());
                 else
                     clearData(Country.USA.getCode());
@@ -103,7 +104,7 @@ public class ShopActivity extends AbstractActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ShopActivity.this, BasketOrderActivity.class);
-                if(enabledChina)
+                if (enabledChina)
                     intent.putExtra("geo", Country.CHINA.getCode());
                 else
                     intent.putExtra("geo", Country.USA.getCode());
@@ -117,24 +118,24 @@ public class ShopActivity extends AbstractActivity {
         lvBasket.setAdapter(basketAdapter);
     }
 
-    public String geo(){
-        if(enabledChina)
+    public String geo() {
+        if (enabledChina)
             return Country.CHINA.getCode();
         else
             return Country.USA.getCode();
     }
-    void clearData(String geo){
+
+    void clearData(String geo) {
         url = "clearcart";
-        App.api().clearBasket(url, ID,geo).enqueue(new Callback<ClearBasketDTO>() {
+        App.api().clearBasket(url, ID, geo).enqueue(new Callback<ClearBasketDTO>() {
             @Override
             public void onResponse(Call<ClearBasketDTO> call, Response<ClearBasketDTO> response) {
                 basketAdapter.notifyDataSetChanged();
                 int success = response.body().getSuccess();
-                if (success==1) {
+                if (success == 1) {
                     basketItems.clear();
                     basketAdapter.notifyDataSetChanged();
-                }
-                else
+                } else
                     Toast.makeText(getApplicationContext(), "Произошла ошибка", Toast.LENGTH_LONG).show();
             }
 
@@ -145,6 +146,7 @@ public class ShopActivity extends AbstractActivity {
             }
         });
     }
+
     public void data(String geo) {
         url = "cart";
         App.api().basket(url, geo, ID).enqueue(new Callback<BasketListDTO>() {

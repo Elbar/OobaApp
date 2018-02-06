@@ -7,7 +7,8 @@ public class UsersManagement {
 
     private static String PREF_NAME = "prefs";
 
-    public UsersManagement(){ }
+    public UsersManagement() {
+    }
 
     private static SharedPreferences getPrefs(Context context) {
         return context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);

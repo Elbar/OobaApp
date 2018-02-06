@@ -26,10 +26,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<activity-->
-            <!--android:name=".activities.MainActivity"-->
-            <!--android:launchMode="singleTask"-->
-            <!--android:theme="@style/AppTheme.NoActionBar" />-->
+
         <activity
             android:name=".ui.activity.ShopActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -41,17 +38,6 @@
             android:name=".ui.activity.RegisterActivity"
             android:label="@string/title_activity_register" />
         <activity android:name=".ui.activity.WelcomeActivity" />
-        <activity
-            android:name=".ui.activity.UserDetailsActivity"
-            android:windowSoftInputMode="stateHidden" />
-        <activity
-            android:name=".ui.activity.SecurityActivity"
-            android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".ui.activity.PostSettingsActivity" />
-        <activity android:name=".ui.activity.PaymentsActivity" />
-        <activity android:name=".ui.activity.PaymentsStatusActivity" />
-        <activity android:name=".ui.activity.BalanceActivity" />
-        <activity android:name=".ui.activity.PartnerInfoActivity" />
         <activity
             android:name=".ui.activity.PartnerActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -76,18 +62,19 @@
 
         <activity
             android:name=".ui.activity.ProductActivity"
-            android:label="@string/catalog"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
             android:name=".ui.activity.ProductDetailActivity"
-            android:label="@string/catalog"
             android:theme="@style/AppTheme.NoActionBar" />
 
 
         <activity
             android:name=".ui.activity.DiscountActivity"
-            android:label="@string/catalog"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".ui.activity.StoreDetailActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity android:name=".ui.activity.GroupInfoActivity" />

@@ -10,17 +10,17 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.kg.vista.ooba.R;
+import com.kg.vista.ooba.adapter.GroupOnAdapter;
+import com.kg.vista.ooba.model.Item.GroupItem;
+import com.kg.vista.ooba.model.dto.GroupOnDTO;
 import com.kg.vista.ooba.ui.activity.App;
 import com.kg.vista.ooba.ui.activity.GroupInfoActivity;
 import com.kg.vista.ooba.ui.activity.UsersManagement;
-import com.kg.vista.ooba.adapter.GroupOnAdapter;
-import com.kg.vista.ooba.model.Item.GroupItem;
 
-import com.kg.vista.ooba.model.dto.GroupOnDTO;
+import java.util.ArrayList;
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.model.Store;
@@ -60,10 +59,10 @@ public class ShopAdapter extends BaseAdapter {
             convertView = layoutInflater.inflate(R.layout.shop_item, null);
         }
 
-        ImageView imageView  = (ImageView) convertView.findViewById(R.id.shop_image);
+        ImageView imageView = (ImageView) convertView.findViewById(R.id.shop_image);
         final ProgressBar progressBar = (ProgressBar) convertView.findViewById(R.id.shopProgressBar);
 
-        Picasso.with(context).load("http://ooba.kg/"+shop.getLogo()).into(imageView, new Callback() {
+        Picasso.with(context).load("http://ooba.kg/" + shop.getLogo()).into(imageView, new Callback() {
             @Override
             public void onSuccess() {
                 progressBar.setVisibility(View.INVISIBLE);

@@ -7,9 +7,6 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.adapter.AddressOptionAdapter;
 import com.kg.vista.ooba.adapter.ShippingOptionAdapter;
@@ -21,6 +18,10 @@ import com.kg.vista.ooba.model.dto.AddressDTO;
 import com.kg.vista.ooba.model.dto.BasketListDTO;
 import com.kg.vista.ooba.model.dto.MFSaveDTO;
 import com.kg.vista.ooba.model.dto.ShippingDTO;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -43,7 +44,7 @@ public class MailForwardingInfoActivity extends AbstractActivity {
     private String addressID;
     private ListView lvAddressRadio;
     private ListView lvShippingRadio;
-    private String geo="";
+    private String geo = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +85,7 @@ public class MailForwardingInfoActivity extends AbstractActivity {
                 addressID = addressItem.get(addressOptionAdapter.getPosition()).getAddress_id();
                 body.setAddressId(shippingID);
                 body.setShippingId(addressID);
-                body.setMf((List<MFBody>)(getIntent().getSerializableExtra("tracks")));
+                body.setMf((List<MFBody>) (getIntent().getSerializableExtra("tracks")));
                 setData(body);
             }
         });

@@ -15,7 +15,6 @@ import android.widget.TextView;
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.adapter.CategoryRVAdapter;
 import com.kg.vista.ooba.model.Category;
-import com.kg.vista.ooba.model.Child;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 

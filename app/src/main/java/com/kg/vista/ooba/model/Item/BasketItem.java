@@ -31,6 +31,11 @@ public class BasketItem {
         this.comments = comments;
     }
 
+    public static BasketItem of(GoodItemDTO item) {
+        return new BasketItem(item.getTotal(), item.getGoodsId(), item.getRecId(), item.getPrice(),
+                item.getCount(), item.getAttr(), item.getPicUrl(), item.getSeller(), item.getComments());
+    }
+
     public double getTotal() {
         return total;
     }
@@ -67,10 +72,6 @@ public class BasketItem {
         return comments;
     }
 
-    public static BasketItem of(GoodItemDTO item) {
-        return new BasketItem(item.getTotal(), item.getGoodsId(), item.getRecId(), item.getPrice(),
-                item.getCount(), item.getAttr(), item.getPicUrl(), item.getSeller(), item.getComments());
-    }
     public int decrease(String count) {
         int a = Integer.parseInt(count);
         if (a == 1) {
@@ -87,11 +88,11 @@ public class BasketItem {
         return a;
     }
 
-    public double multiply(String count, String price){
-        double result=0;
+    public double multiply(String count, String price) {
+        double result = 0;
         int a = Integer.parseInt(count);
         double b = Double.parseDouble(price);
-        result = a*b;
+        result = a * b;
         return result;
     }
 }

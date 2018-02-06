@@ -18,6 +18,10 @@ public class ShippingItem {
         this.shippingDesc = shippingDesc;
     }
 
+    public static ShippingItem of(ShippingDTO item) {
+        return new ShippingItem(item.getShippingId(), item.getShippingName(), item.getShippingDesc());
+    }
+
     public String getShippingId() {
         return shippingId;
     }
@@ -28,9 +32,5 @@ public class ShippingItem {
 
     public String getShippingDesc() {
         return shippingDesc;
-    }
-
-    public static ShippingItem of(ShippingDTO item) {
-        return new ShippingItem(item.getShippingId(), item.getShippingName(), item.getShippingDesc());
     }
 }

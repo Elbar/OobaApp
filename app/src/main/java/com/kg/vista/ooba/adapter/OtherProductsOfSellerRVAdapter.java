@@ -9,13 +9,11 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.kg.vista.ooba.R;
+import com.kg.vista.ooba.model.Itemlist;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
-
-import com.kg.vista.ooba.model.Itemlist;
-
 
 
 public class OtherProductsOfSellerRVAdapter extends RecyclerView.Adapter<OtherProductsOfSellerRVAdapter.MyViewHolder> {
@@ -25,7 +23,7 @@ public class OtherProductsOfSellerRVAdapter extends RecyclerView.Adapter<OtherPr
     List<Itemlist> itemlistList;
     LayoutInflater inflater;
 
-    public OtherProductsOfSellerRVAdapter(Context context, List<Itemlist> itemlistList){
+    public OtherProductsOfSellerRVAdapter(Context context, List<Itemlist> itemlistList) {
         this.context = context;
         this.itemlistList = itemlistList;
         inflater = LayoutInflater.from(context);
@@ -70,7 +68,7 @@ public class OtherProductsOfSellerRVAdapter extends RecyclerView.Adapter<OtherPr
         public MyViewHolder(View itemView) {
             super(itemView);
 
-            imageView  = (ImageView) itemView.findViewById(R.id.item_image);
+            imageView = (ImageView) itemView.findViewById(R.id.item_image);
             progressBar = (ProgressBar) itemView.findViewById(R.id.otherItemProgressBar);
             itemView.setOnClickListener(this);
         }

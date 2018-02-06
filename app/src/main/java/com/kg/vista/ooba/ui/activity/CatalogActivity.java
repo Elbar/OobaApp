@@ -29,7 +29,6 @@ public class CatalogActivity extends AbstractActivity {
     GridView mGridViewShop;
 
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -12,7 +12,11 @@ public class UpdateAddressDTO {
     @Expose
     private int sql;
 
-    public int getSql(){return sql;}
+    public int getSql() {
+        return sql;
+    }
 
-    private void setSql(int sql){this.sql=sql;}
+    private void setSql(int sql) {
+        this.sql = sql;
+    }
 }

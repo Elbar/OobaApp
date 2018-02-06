@@ -17,7 +17,7 @@
             android:id="@+id/profileImage"
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:src="@drawable/none_photo"/>
+            android:src="@drawable/none_photo" />
 
         <TextView
             android:id="@+id/profileBalanceTxt"

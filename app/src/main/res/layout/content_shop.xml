@@ -1,33 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <LinearLayout
         android:id="@+id/toggleButton"
-        android:background="@drawable/rounded_corner_line"
-        android:layout_margin="20dp"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/rounded_corner_line"
+        android:orientation="horizontal">
+
         <Button
             android:id="@+id/btnChina"
-            android:background="@android:color/transparent"
-            android:textSize="18sp"
-            android:textAllCaps="false"
-            android:text="China"
-            android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="35dp" />
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:text="China"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
+
         <Button
             android:id="@+id/btnUsa"
-            android:background="@android:color/transparent"
-            android:textSize="18sp"
-            android:textAllCaps="false"
-            android:text="USA"
-            android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="35dp" />
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:text="USA"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
     </LinearLayout>
 
 </RelativeLayout>

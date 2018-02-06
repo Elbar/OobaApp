@@ -7,23 +7,23 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.RadioButton;
 
-import java.util.ArrayList;
-
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.model.Item.AddressItem;
 
+import java.util.ArrayList;
 
-public class AddressOptionAdapter extends BaseAdapter{
 
+public class AddressOptionAdapter extends BaseAdapter {
+
+    int selectedPosition = 0;
     private Context contxt;
     private LayoutInflater lInflater;
     private ArrayList<AddressItem> addressOptionItem;
     private RadioButton checkedRadioBtn;
-    int selectedPosition = 0;
 
     public AddressOptionAdapter(Context context, ArrayList<AddressItem> addressOptionItem) {
         contxt = context;
-        this.addressOptionItem=addressOptionItem;
+        this.addressOptionItem = addressOptionItem;
         lInflater = (LayoutInflater) LayoutInflater.from(context);
     }
 
@@ -51,14 +51,14 @@ public class AddressOptionAdapter extends BaseAdapter{
 
         AddressItem aoi = getAddressOption(position);
 
-        checkedRadioBtn =(RadioButton) view.findViewById(R.id.addressBtn);
-        checkedRadioBtn.setText(aoi.getName()+" \n"+aoi.getAddress()+" \n"+aoi.getPhone());
+        checkedRadioBtn = (RadioButton) view.findViewById(R.id.addressBtn);
+        checkedRadioBtn.setText(aoi.getName() + " \n" + aoi.getAddress() + " \n" + aoi.getPhone());
         checkedRadioBtn.setChecked(position == selectedPosition);
         checkedRadioBtn.setTag(position);
         checkedRadioBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectedPosition = (Integer)view.getTag();
+                selectedPosition = (Integer) view.getTag();
                 notifyDataSetChanged();
             }
         });
@@ -69,6 +69,7 @@ public class AddressOptionAdapter extends BaseAdapter{
     public int getPosition() {
         return selectedPosition;
     }
+
     AddressItem getAddressOption(int position) {
         return ((AddressItem) getItem(position));
     }

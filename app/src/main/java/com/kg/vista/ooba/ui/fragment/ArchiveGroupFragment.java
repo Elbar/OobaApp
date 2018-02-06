@@ -10,16 +10,16 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.kg.vista.ooba.R;
-import com.kg.vista.ooba.ui.activity.App;
-import com.kg.vista.ooba.ui.activity.GroupInfoActivity;
-import com.kg.vista.ooba.ui.activity.UsersManagement;
 import com.kg.vista.ooba.adapter.GroupOnAdapter;
 import com.kg.vista.ooba.model.Item.GroupItem;
 import com.kg.vista.ooba.model.dto.GroupOnDTO;
+import com.kg.vista.ooba.ui.activity.App;
+import com.kg.vista.ooba.ui.activity.GroupInfoActivity;
+import com.kg.vista.ooba.ui.activity.UsersManagement;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -27,7 +27,7 @@ import retrofit2.Response;
 
 public class ArchiveGroupFragment extends Fragment {
 
-    private ArrayList<GroupItem> groupItem= new ArrayList<>();
+    private ArrayList<GroupItem> groupItem = new ArrayList<>();
     private GroupOnAdapter groupAdapter;
 
     private ListView lvArchive;
@@ -42,7 +42,7 @@ public class ArchiveGroupFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_archive_group, container, false);
 
         url = "groupon/show";
-       // type = "processing";
+        // type = "processing";
 
         ID = UsersManagement.getUserData(getActivity());
 
@@ -79,11 +79,11 @@ public class ArchiveGroupFragment extends Fragment {
         App.api().showGroup(url, "8").enqueue(new Callback<List<GroupOnDTO>>() {
             @Override
             public void onResponse(Call<List<GroupOnDTO>> call, Response<List<GroupOnDTO>> response) {
-               groupAdapter.notifyDataSetChanged();
+                groupAdapter.notifyDataSetChanged();
                 List<GroupOnDTO> groupOnDTO = response.body();
                 for (int i = 0; i < groupOnDTO.size(); i++) {
                     GroupOnDTO item = groupOnDTO.get(i);
-                        groupItem.add(GroupItem.of(item));
+                    groupItem.add(GroupItem.of(item));
                 }
             }
 

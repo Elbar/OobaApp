@@ -7,13 +7,14 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.adapter.NotificationAdapter;
 import com.kg.vista.ooba.model.Item.NotificationItem;
 import com.kg.vista.ooba.model.dto.NotificationItemDTO;
 import com.kg.vista.ooba.model.dto.NotificationListDTO;
+
+import java.util.ArrayList;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -58,7 +59,7 @@ public class NotificationActivity extends AbstractActivity {
     private void show() {
         url = "notifications";
         limit = "all";
-        App.api().notification(url,limit, ID).enqueue(new Callback<NotificationListDTO>() {
+        App.api().notification(url, limit, ID).enqueue(new Callback<NotificationListDTO>() {
             @Override
             public void onResponse(Call<NotificationListDTO> call, Response<NotificationListDTO> response) {
                 notificationAdapter.notifyDataSetChanged();
@@ -68,9 +69,9 @@ public class NotificationActivity extends AbstractActivity {
                     return;
                 }
                 for (NotificationItemDTO item : notificationListDTO.getNotifications()) {
-                        notifications.add(NotificationItem.of(item));
+                    notifications.add(NotificationItem.of(item));
                     String status = item.getIsShow();
-                    if(status.equals("0"))
+                    if (status.equals("0"))
                         grvNotif.setBackgroundColor(getResources().getColor(R.color.white));
                 }
             }

@@ -1,7 +1,6 @@
 package com.kg.vista.ooba.ui.activity;
 
 
-
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -29,13 +28,13 @@ import com.kg.vista.ooba.adapter.GrouponViewPagerAdapter;
 import com.kg.vista.ooba.adapter.ShopAdapter;
 import com.kg.vista.ooba.adapter.WhatsNewGVAdapter;
 import com.kg.vista.ooba.api.RetrofitService;
-import com.kg.vista.ooba.ui.fragment.CatalogFragment;
 import com.kg.vista.ooba.model.Brand;
 import com.kg.vista.ooba.model.Collection;
 import com.kg.vista.ooba.model.Groupon;
 import com.kg.vista.ooba.model.MainRequest;
 import com.kg.vista.ooba.model.Store;
 import com.kg.vista.ooba.model.WhatsNew;
+import com.kg.vista.ooba.ui.fragment.CatalogFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,38 +54,10 @@ import static com.kg.vista.ooba.api.conf.Config.BASE_URL;
 public class MainActivity extends AbstractActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private NavigationView navigationView;
-
-    private SharedPreferences loginPreferences;
-    private SharedPreferences.Editor loginPrefsEditor;
-
-    private UsersManagement usrData;
-
-    private List<Groupon> grouponList;
-    private List<Collection> collectionList;
-    private List<Brand> brandList;
-    private List<Store> shopList;
-
-    private CircleIndicator grouponCircleIndicator;
-    private GrouponViewPagerAdapter grouponViewPagerAdapter;
-    private ViewPager grouponViewPager;
-
-    private BestCollectionRecyclerViewAdapter bestCollectionRVAdapter;
-    private WhatsNewGVAdapter whatsNewRVAdapter;
-
-    private CircleIndicator bestCollectionCircleIndicator;
-    private BrandAdapter brandAdapter;
-    private GridView brandGridView;
-    private CircleIndicator brandCircleIndicator;
-    private ShopAdapter shopGridViewAdapter;
-    private GridView shopGridView;
-
     @BindView(R.id.best_collection_rv)
     RecyclerView mBestCollectionRV;
-
     @BindView(R.id.whats_new_gv)
     GridView mWhatsNewGV;
-
     @BindView(R.id.show_all_items_cv)
     CardView mShowAllItemsCV;
     @BindView(R.id.show_blogs_cv)
@@ -95,8 +66,25 @@ public class MainActivity extends AbstractActivity
     CardView mShowPopularItemsCV;
     @BindView(R.id.show_new_items_cv)
     CardView mShowNewItemsCV;
-
-
+    private NavigationView navigationView;
+    private SharedPreferences loginPreferences;
+    private SharedPreferences.Editor loginPrefsEditor;
+    private UsersManagement usrData;
+    private List<Groupon> grouponList;
+    private List<Collection> collectionList;
+    private List<Brand> brandList;
+    private List<Store> shopList;
+    private CircleIndicator grouponCircleIndicator;
+    private GrouponViewPagerAdapter grouponViewPagerAdapter;
+    private ViewPager grouponViewPager;
+    private BestCollectionRecyclerViewAdapter bestCollectionRVAdapter;
+    private WhatsNewGVAdapter whatsNewRVAdapter;
+    private CircleIndicator bestCollectionCircleIndicator;
+    private BrandAdapter brandAdapter;
+    private GridView brandGridView;
+    private CircleIndicator brandCircleIndicator;
+    private ShopAdapter shopGridViewAdapter;
+    private GridView shopGridView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -166,7 +154,6 @@ public class MainActivity extends AbstractActivity
         brandGridView.setVerticalScrollBarEnabled(false);
 
 
-
         setUIFromAdapters();
 
     }
@@ -194,7 +181,7 @@ public class MainActivity extends AbstractActivity
                     for (int i = 0; i < whatsNews.size(); i++) {
                         WhatsNew whatsNew = new WhatsNew();
                         whatsNew.setTitle(whatsNews.get(i).getTitle());
-                        whatsNew.setFileUrl("http://ooba.kg/"+ whatsNews.get(i).getFileUrl());
+                        whatsNew.setFileUrl("http://ooba.kg/" + whatsNews.get(i).getFileUrl());
                         whatsNewItem.add(whatsNew);
 
                     }
@@ -217,6 +204,7 @@ public class MainActivity extends AbstractActivity
         });
 
     }
+
     private void getWhatsAllItems() {
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -239,7 +227,7 @@ public class MainActivity extends AbstractActivity
                     for (int i = 0; i < whatsNews.size(); i++) {
                         WhatsNew whatsNew = new WhatsNew();
                         whatsNew.setTitle(whatsNews.get(i).getTitle());
-                        whatsNew.setFileUrl("http://ooba.kg/"+ whatsNews.get(i).getFileUrl());
+                        whatsNew.setFileUrl("http://ooba.kg/" + whatsNews.get(i).getFileUrl());
                         whatsNewItem.add(whatsNew);
 
                     }
@@ -266,6 +254,7 @@ public class MainActivity extends AbstractActivity
         });
 
     }
+
     private void getWhatsPopularItems() {
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -288,7 +277,7 @@ public class MainActivity extends AbstractActivity
                     for (int i = 0; i < whatsNews.size(); i++) {
                         WhatsNew whatsNew = new WhatsNew();
                         whatsNew.setTitle(whatsNews.get(i).getTitle());
-                        whatsNew.setFileUrl("http://ooba.kg/"+ whatsNews.get(i).getFileUrl());
+                        whatsNew.setFileUrl("http://ooba.kg/" + whatsNews.get(i).getFileUrl());
                         whatsNewItem.add(whatsNew);
 
                     }
@@ -338,7 +327,7 @@ public class MainActivity extends AbstractActivity
                     for (int i = 0; i < whatsNews.size(); i++) {
                         WhatsNew whatsNew = new WhatsNew();
                         whatsNew.setTitle(whatsNews.get(i).getTitle());
-                        whatsNew.setFileUrl("http://ooba.kg/"+ whatsNews.get(i).getFileUrl());
+                        whatsNew.setFileUrl("http://ooba.kg/" + whatsNews.get(i).getFileUrl());
                         whatsNewItem.add(whatsNew);
 
                     }
@@ -367,11 +356,11 @@ public class MainActivity extends AbstractActivity
     }
 
 
-    private void setUIFromAdapters(){
+    private void setUIFromAdapters() {
         App.api().mainRequest().enqueue(new Callback<MainRequest>() {
             @Override
             public void onResponse(Call<MainRequest> call, Response<MainRequest> response) {
-                if (!response.isSuccessful()){
+                if (!response.isSuccessful()) {
                     return;
                 }
                 grouponList = response.body().getGroupon();
@@ -387,7 +376,7 @@ public class MainActivity extends AbstractActivity
 //                grouponCircleIndicator.setViewPager(grouponViewPager);
 
 
-                int randomNumber1 = new Random().nextInt(collectionList.size())+1;
+                int randomNumber1 = new Random().nextInt(collectionList.size()) + 1;
 
                 bestCollectionRVAdapter = new BestCollectionRecyclerViewAdapter(collectionList);
                 mBestCollectionRV.setLayoutManager(bestCollectionLinearLayoutManager);
@@ -397,7 +386,7 @@ public class MainActivity extends AbstractActivity
 //                bestCollectionViewPager.setCurrentItem(randomNumber1);
 //                bestCollectionCircleIndicator.setViewPager(bestCollectionViewPager);
 //
-                int randomNumber2 = new Random().nextInt(brandList.size())+1;
+                int randomNumber2 = new Random().nextInt(brandList.size()) + 1;
                 brandAdapter = new BrandAdapter(MainActivity.this, brandList);
                 brandGridView.setAdapter(brandAdapter);
 //                brandGridView.setCurrentItem(randomNumber2);
@@ -419,15 +408,15 @@ public class MainActivity extends AbstractActivity
             }
         });
     }
+
     protected void onResume() {
         super.onResume();
         usrData = new UsersManagement();
         String USER_ID = usrData.getUserData(this);
-        Log.d("user_id", "id "+USER_ID);
+        Log.d("user_id", "id " + USER_ID);
         if (Integer.parseInt(USER_ID) == 0) {
             setItemVisibility(false, View.INVISIBLE);
-        }
-        else {
+        } else {
             setItemVisibility(true, View.VISIBLE);
         }
     }
@@ -441,14 +430,15 @@ public class MainActivity extends AbstractActivity
             super.onBackPressed();
         }
     }
-    private void setItemVisibility(boolean visible, int visibility)
-    {
+
+    private void setItemVisibility(boolean visible, int visibility) {
         Menu nav_Menu = navigationView.getMenu();
 //        nav_Menu.findItem(R.id.sub_item).setVisible(visible);
 
         View header = navigationView.getHeaderView(0);
         header.setVisibility(visibility);
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -475,8 +465,7 @@ public class MainActivity extends AbstractActivity
 //                intent = new Intent(this, LoginActivity.class);
 //            }
 //            startActivity(intent);
-        }
-        else if (id == R.id.menu_notification){
+        } else if (id == R.id.menu_notification) {
             //start activity notifications
 //            Intent intent = new Intent(this, NotificationActivity.class);
 //            startActivity(intent);
@@ -492,7 +481,7 @@ public class MainActivity extends AbstractActivity
 
         int id = item.getItemId();
 
-        switch(id){
+        switch (id) {
             case R.id.nav_lenta:
                 break;
             case R.id.nav_catalog:

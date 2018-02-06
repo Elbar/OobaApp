@@ -10,11 +10,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.kg.vista.ooba.R;
+import com.kg.vista.ooba.model.Item.GroupItem;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-
-import com.kg.vista.ooba.model.Item.GroupItem;
 
 
 public class GroupOnAdapter extends BaseAdapter {

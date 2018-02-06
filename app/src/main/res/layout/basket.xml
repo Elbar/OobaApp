@@ -129,9 +129,9 @@
         android:id="@+id/basketTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/basketCount"
+        android:layout_marginTop="15dp"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -141,5 +141,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/basketTotal"
-        android:background="@drawable/border"/>
+        android:background="@drawable/border" />
 </RelativeLayout>

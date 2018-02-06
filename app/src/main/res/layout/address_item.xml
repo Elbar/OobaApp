@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/out_data"
         android:textColor="@android:color/black"
-        android:textSize="16sp"/>
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/out_contact"
@@ -56,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/out_phone"
         android:textColor="@android:color/black"
-        android:textSize="16sp"/>
+        android:textSize="16sp" />
 
     <ImageButton
         android:id="@+id/data_delete"
