@@ -77,5 +77,10 @@
     <item name="collection_good_desc_tv" type="id" />
     <item name="collection_iv" type="id" />
     <item name="divider" type="id" />
+    <item name="item_image" type="id" />
+    <item name="collection_good_count_tv" type="id" />
+    <item name="collection_good_feeds_tv" type="id" />
+    <item name="collection_good_points_tv" type="id" />
+    <item name="collection_good_views_tv" type="id" />
 
 </resources>

@@ -73,6 +73,11 @@ public class CollectionFragment extends Fragment {
                         CollectionGood collectionGood = new CollectionGood();
                         collectionGood.setTitle(collectionGoods.get(i).getTitle());
                         collectionGood.setInfo(collectionGoods.get(i).getInfo());
+                        collectionGood.setPoints(collectionGoods.get(i).getPoints());
+                        collectionGood.setFeeds(collectionGoods.get(i).getFeeds());
+                        collectionGood.setGoods(collectionGoods.get(i).getGoods());
+                        collectionGood.setViews(collectionGoods.get(i).getViews());
+
                         collectionGood.setPicUrl(collectionGoods.get(i).getPicUrl());
                         collectionItem.add(collectionGood);
 

@@ -40,7 +40,13 @@ public class CollectionRVAdapter extends RecyclerView.Adapter<CollectionRVAdapte
 
         CollectionGood collectionGood = collections.get(position);
         holder.mCollectionGoodNameTV.setText(collectionGood.getTitle());
-        holder.mCollectionInfo.setText(collectionGood.getInfo());
+        holder.mCollectionInfoTV.setText(collectionGood.getInfo());
+
+        holder.mCollectionPointsTV.setText(collectionGood.getPoints());
+        holder.mCollectionViewsTV.setText(collectionGood.getViews());
+        holder.mCollectionFeedsTV.setText(collectionGood.getFeeds());
+        holder.mCollectionGoodCountTV.setText(collectionGood.getGoods());
+
         Picasso.with(context).load("http://ooba.kg" + collectionGood.getPicUrl()).into(holder.mCollectionIV);
 
     }
@@ -54,8 +60,10 @@ public class CollectionRVAdapter extends RecyclerView.Adapter<CollectionRVAdapte
         TextView mCollectionGoodNameTV;
         ImageView mCollectionIV;
         TextView mCollectionFeedsTV;
-        TextView mCollectionInfo;
-        TextView mCollectionViews;
+        TextView mCollectionInfoTV;
+        TextView mCollectionViewsTV;
+        TextView mCollectionPointsTV;
+        TextView mCollectionGoodCountTV;
 
 
 
@@ -64,7 +72,12 @@ public class CollectionRVAdapter extends RecyclerView.Adapter<CollectionRVAdapte
             super(view);
             mCollectionGoodNameTV = (TextView) view.findViewById(R.id.collection_good_name_tv);
             mCollectionIV = (ImageView) view.findViewById(R.id.collection_iv);
-            mCollectionInfo = (TextView) view.findViewById(R.id.collection_good_desc_tv);
+            mCollectionInfoTV = (TextView) view.findViewById(R.id.collection_good_desc_tv);
+            mCollectionFeedsTV = (TextView) view.findViewById(R.id.collection_good_feeds_tv);
+            mCollectionViewsTV = (TextView) view.findViewById(R.id.collection_good_views_tv);
+            mCollectionPointsTV = (TextView) view.findViewById(R.id.collection_good_points_tv);
+            mCollectionGoodCountTV = (TextView) view.findViewById(R.id.collection_good_count_tv);
+
 
 
         }
