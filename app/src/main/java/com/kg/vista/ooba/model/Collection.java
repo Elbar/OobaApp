@@ -18,7 +18,7 @@ public class Collection {
     @SerializedName("id")
     @Expose
     private String id;
-    @SerializedName("title")
+    @SerializedName("discountGoodName")
     @Expose
     private String title;
     @SerializedName("info")

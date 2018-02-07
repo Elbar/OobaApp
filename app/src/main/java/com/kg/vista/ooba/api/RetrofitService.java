@@ -1,6 +1,7 @@
 package com.kg.vista.ooba.api;
 
 import com.kg.vista.ooba.model.Catalog;
+import com.kg.vista.ooba.model.Discount;
 import com.kg.vista.ooba.model.MainRequest;
 import com.kg.vista.ooba.model.OtherProductsOfSeller;
 import com.kg.vista.ooba.model.Product;
@@ -149,6 +150,10 @@ public interface RetrofitService {
 
     @GET(BASE_URL)
     Call<ProductDetail> getDetailOfProduct(@Query("url") String urlProduct);
+
+    @GET("http://api.ooba.kg/?url=groupon&limit=8&start=0")
+    Call<List<Discount>> getDiscountGoods();
+
 
 
 }

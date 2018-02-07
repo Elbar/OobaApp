@@ -66,5 +66,8 @@
     <item name="ic_plus_iv" type="id" />
     <item name="add_to_cart_btn" type="id" />
     <item name="discount_rv" type="id" />
+    <item name="discount_cv" type="id" />
+    <item name="discount_iv" type="id" />
+    <item name="discount_good_name" type="id" />
 
 </resources>

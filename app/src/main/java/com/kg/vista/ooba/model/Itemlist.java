@@ -18,7 +18,7 @@ public class Itemlist {
     @SerializedName("price")
     @Expose
     private Double price;
-    @SerializedName("title")
+    @SerializedName("discountGoodName")
     @Expose
     private String title;
 

@@ -8,7 +8,7 @@ public class WhatsNew {
     @SerializedName("id")
     @Expose
     private String id;
-    @SerializedName("title")
+    @SerializedName("discountGoodName")
     @Expose
     private String title;
     @SerializedName("description")

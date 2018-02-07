@@ -11,30 +11,29 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.kg.vista.ooba.R;
-import com.kg.vista.ooba.model.Category;
+import com.kg.vista.ooba.model.Discount;
 import com.kg.vista.ooba.ui.activity.ProductActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 
-public class DiscountAdapter extends RecyclerView.Adapter<DiscountAdapter.MyViewHolder> {
+public class DiscountRVAdapter extends RecyclerView.Adapter<DiscountRVAdapter.MyViewHolder> {
 
-    public String TAG = "CategoryRVAdapter";
     Context context;
-    private List<Category> categories;
+    private List<Discount> discounts;
 
+    public DiscountRVAdapter(Context context, List<Discount> discounts) {
 
-    public DiscountAdapter(Context context, List<Category> categories) {
-
-        this.categories = categories;
+        this.discounts = discounts;
         this.context = context;
     }
+
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.layout_category, parent, false);
+                .inflate(R.layout.layout_discount, parent, false);
 
         return new MyViewHolder(itemView);
     }
@@ -43,19 +42,16 @@ public class DiscountAdapter extends RecyclerView.Adapter<DiscountAdapter.MyView
     public void onBindViewHolder(final MyViewHolder holder, int position) {
 
 
-        Category category = categories.get(position);
-        final String catID = category.getCatId();
+        Discount discount = discounts.get(position);
+        holder.discountGoodName.setText(discount.getGoodsName());
+        Picasso.with(context).load(discount.getPicUrl()).into(holder.mDiscountIV);
 
-
-        holder.title.setText(category.getCatName());
-        Picasso.with(context).load(R.drawable.noimage).into(holder.mCategoryIV);
-
-        holder.mCategoryCV.setOnClickListener(new View.OnClickListener() {
+        holder.mDiscountCV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Intent intent = new Intent(context, ProductActivity.class);
-                intent.putExtra("cat_id", catID);
+                intent.putExtra("cat_id", "ds");
                 context.startActivity(intent);
             }
         });
@@ -64,20 +60,19 @@ public class DiscountAdapter extends RecyclerView.Adapter<DiscountAdapter.MyView
 
     @Override
     public int getItemCount() {
-        return categories.size();
+        return discounts.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView title;
-        ImageView mCategoryIV;
-        CardView mCategoryCV;
+     class MyViewHolder extends RecyclerView.ViewHolder {TextView discountGoodName;
+        ImageView mDiscountIV;
+        CardView mDiscountCV;
 
         MyViewHolder(View view) {
 
             super(view);
-            title = (TextView) view.findViewById(R.id.category_name);
-            mCategoryIV = (ImageView) view.findViewById(R.id.category_iv);
-            mCategoryCV = (CardView) view.findViewById(R.id.category_cv);
+            discountGoodName = (TextView) view.findViewById(R.id.discount_good_name);
+            mDiscountIV = (ImageView) view.findViewById(R.id.discount_iv);
+            mDiscountCV = (CardView) view.findViewById(R.id.discount_cv);
         }
     }
 }

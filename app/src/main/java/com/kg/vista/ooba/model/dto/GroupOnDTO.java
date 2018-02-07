@@ -14,7 +14,7 @@ public class GroupOnDTO {
     @SerializedName("image")
     @Expose
     private String image;
-    @SerializedName("title")
+    @SerializedName("discountGoodName")
     @Expose
     private String title;
     @SerializedName("price")
