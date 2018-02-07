@@ -18,18 +18,69 @@
 
             <ImageView
                 android:id="@id/discount_iv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_width="match_parent"
+                android:scaleType="fitXY"
+                android:layout_height="350dp">
+                </ImageView>
 
             <TextView
-                android:id="@id/discount_good_name"
+                android:id="@id/discount_percent_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="24%"
+                android:textColor="@android:color/white"
+                android:background="#ED1C24"
+                android:textStyle="bold"
+                android:layout_alignTop="@id/discount_iv"
+                android:layout_alignRight="@id/discount_iv" />
+            <TextView
+                android:id="@id/discount_good_name_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/discount_iv"
-                android:padding="10dp"
+                android:padding="8dp"
                 android:text="Center"
-                android:textAlignment="center"
+                android:gravity="left"
+                android:textColor="@android:color/black"
                 android:textSize="18sp" />
+
+            <TextView
+                android:id="@id/discount_good_desc_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/discount_good_name_tv"
+                android:gravity="left"
+                android:padding="8dp"
+                android:text="Описание товара" />
+
+
+            <TextView
+                android:id="@id/discount_price_total_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/discount_good_name_tv"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/crossed_text"
+                android:gravity="left"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="2157 сом"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@id/discount_price_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/discount_price_total_tv"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="1695 сом"
+                android:textColor="#ff0054"
+                android:textSize="20sp" />
+
 
 
         </RelativeLayout>

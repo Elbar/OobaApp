@@ -7,9 +7,6 @@
     android:background="#EEEEEE"
     tools:context=".ui.activity.MainActivity">
 
-
-
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -18,8 +15,8 @@
                 android:id="@id/discount_rv"
                 android:layout_width="wrap_content"
                 android:nestedScrollingEnabled="false"
+                android:layout_marginBottom="56dp"
                 android:layout_height="wrap_content" />
-
 
         </RelativeLayout>
 

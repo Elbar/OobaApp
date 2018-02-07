@@ -68,6 +68,10 @@
     <item name="discount_rv" type="id" />
     <item name="discount_cv" type="id" />
     <item name="discount_iv" type="id" />
-    <item name="discount_good_name" type="id" />
+    <item name="discount_good_name_tv" type="id" />
+    <item name="discount_good_desc_tv" type="id" />
+    <item name="discount_price_total_tv" type="id" />
+    <item name="discount_price_tv" type="id" />
+    <item name="discount_percent_tv" type="id" />
 
 </resources>

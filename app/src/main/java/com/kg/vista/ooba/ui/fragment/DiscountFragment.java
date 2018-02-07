@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kg.vista.ooba.R;
@@ -39,9 +40,6 @@ public class DiscountFragment extends Fragment {
     @BindView(R.id.discount_rv)
     RecyclerView mDiscountRV;
 
-    private DiscountRVAdapter mAdapter;
-
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -50,7 +48,6 @@ public class DiscountFragment extends Fragment {
         ButterKnife.bind(this, view);
 
         getDiscountGoods();
-
         return view;
     }
 
@@ -80,6 +77,8 @@ public class DiscountFragment extends Fragment {
                         Discount discount = new Discount();
                         discount.setGoodsName(discounts.get(i).getGoodsName());
                         discount.setPrice(discounts.get(i).getPrice());
+                        discount.setPercent(discounts.get(i).getPercent());
+                        discount.setHtml(discounts.get(i).getHtml());
                         discount.setPriceTotal(discounts.get(i).getPriceTotal());
                         discount.setCnt(discounts.get(i).getCnt());
                         discount.setPicUrl(discounts.get(i).getPicUrl());
