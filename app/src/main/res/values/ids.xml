@@ -82,5 +82,10 @@
     <item name="collection_good_feeds_tv" type="id" />
     <item name="collection_good_points_tv" type="id" />
     <item name="collection_good_views_tv" type="id" />
+    <item name="public_rv" type="id" />
+    <item name="public_good_title_tv" type="id" />
+    <item name="public_good_info_tv" type="id" />
+    <item name="public_iv" type="id" />
+    <item name="public_cv" type="id" />
 
 </resources>

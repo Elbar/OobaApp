@@ -9,6 +9,7 @@ import com.kg.vista.ooba.model.Product;
 import com.kg.vista.ooba.model.ProductConfig;
 import com.kg.vista.ooba.model.ProductDetail;
 import com.kg.vista.ooba.model.ProductList;
+import com.kg.vista.ooba.model.PublicGood;
 import com.kg.vista.ooba.model.WhatsNew;
 import com.kg.vista.ooba.model.body.LoginBody;
 import com.kg.vista.ooba.model.body.MFListBody;
@@ -157,6 +158,9 @@ public interface RetrofitService {
 
     @GET("http://api.ooba.kg/?url=collection&limit=6&start=0")
     Call<List<CollectionGood>> getCollectionGoods();
+
+    @GET("http://api.ooba.kg/?url=public&limit=8&start=0")
+    Call<List<PublicGood>> getPublicGoods();
 
 
 
