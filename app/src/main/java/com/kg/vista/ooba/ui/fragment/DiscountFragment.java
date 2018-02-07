@@ -5,23 +5,16 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.adapter.DiscountRVAdapter;
-import com.kg.vista.ooba.adapter.GrouponViewPagerAdapter;
-import com.kg.vista.ooba.adapter.ProductRVAdapter;
 import com.kg.vista.ooba.api.RetrofitService;
 import com.kg.vista.ooba.model.Discount;
-import com.kg.vista.ooba.model.Groupon;
 
 import java.util.ArrayList;
 import java.util.List;

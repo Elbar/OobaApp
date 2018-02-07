@@ -73,5 +73,6 @@
     <item name="discount_price_total_tv" type="id" />
     <item name="discount_price_tv" type="id" />
     <item name="discount_percent_tv" type="id" />
+    <item name="collection_rv" type="id" />
 
 </resources>
