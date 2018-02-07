@@ -17,32 +17,92 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@id/discount_iv"
+                android:id="@id/collection_iv"
                 android:layout_width="match_parent"
-                android:scaleType="fitXY"
-                android:layout_height="350dp">
-            </ImageView>
+                android:layout_height="350dp"
+                android:scaleType="fitXY"></ImageView>
 
             <TextView
-                android:id="@id/discount_good_name_tv"
+                android:id="@id/collection_good_name_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/discount_iv"
+                android:layout_below="@id/collection_iv"
+                android:gravity="left"
                 android:padding="8dp"
                 android:text="Center"
-                android:gravity="left"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
 
             <TextView
-                android:id="@id/discount_good_desc_tv"
+                android:id="@id/collection_good_desc_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/discount_good_name_tv"
+                android:layout_below="@id/collection_good_name_tv"
                 android:gravity="left"
                 android:padding="8dp"
+                android:paddingBottom="5dp"
+
                 android:text="Описание товара" />
+
+            <View
+                android:id="@id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/collection_good_desc_tv"
+
+
+                android:background="@color/background_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/divider"
+                android:layout_marginBottom="30dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:text="22"
+                    android:drawableStart="@drawable/ic_package_variant"
+                    android:drawableLeft="@drawable/ic_package_variant" />
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:drawableStart="@drawable/ic_package_variant"
+                    android:drawableLeft="@drawable/ic_package_variant"
+                    android:text="22" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:drawableStart="@drawable/ic_package_variant"
+                    android:drawableLeft="@drawable/ic_package_variant"
+                    android:text="22" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:drawableStart="@drawable/ic_package_variant"
+                    android:drawableLeft="@drawable/ic_package_variant"
+                    android:text="22" />
+
+
+            </LinearLayout>
 
 
         </RelativeLayout>

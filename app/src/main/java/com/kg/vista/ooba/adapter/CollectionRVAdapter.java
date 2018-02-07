@@ -7,10 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.kg.vista.ooba.R;
-import com.kg.vista.ooba.model.Collection;
 import com.kg.vista.ooba.model.CollectionGood;
 import com.squareup.picasso.Picasso;
 
@@ -41,8 +39,9 @@ public class CollectionRVAdapter extends RecyclerView.Adapter<CollectionRVAdapte
     public void onBindViewHolder(final MyViewHolder holder, int position) {
 
         CollectionGood collectionGood = collections.get(position);
-        holder.discountGoodName.setText(collectionGood.getTitle());
-        Picasso.with(context).load("http://ooba.kg" + collectionGood.getPicUrl()).into(holder.mDiscountIV);
+        holder.mCollectionGoodNameTV.setText(collectionGood.getTitle());
+        holder.mCollectionInfo.setText(collectionGood.getInfo());
+        Picasso.with(context).load("http://ooba.kg" + collectionGood.getPicUrl()).into(holder.mCollectionIV);
 
     }
 
@@ -52,15 +51,20 @@ public class CollectionRVAdapter extends RecyclerView.Adapter<CollectionRVAdapte
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView discountGoodName;
-        ImageView mDiscountIV;
+        TextView mCollectionGoodNameTV;
+        ImageView mCollectionIV;
+        TextView mCollectionFeedsTV;
+        TextView mCollectionInfo;
+        TextView mCollectionViews;
+
 
 
         MyViewHolder(View view) {
 
             super(view);
-            discountGoodName = (TextView) view.findViewById(R.id.discount_good_name_tv);
-            mDiscountIV = (ImageView) view.findViewById(R.id.discount_iv);
+            mCollectionGoodNameTV = (TextView) view.findViewById(R.id.collection_good_name_tv);
+            mCollectionIV = (ImageView) view.findViewById(R.id.collection_iv);
+            mCollectionInfo = (TextView) view.findViewById(R.id.collection_good_desc_tv);
 
 
         }

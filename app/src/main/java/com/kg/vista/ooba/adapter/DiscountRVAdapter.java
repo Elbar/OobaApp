@@ -78,7 +78,7 @@ public class DiscountRVAdapter extends RecyclerView.Adapter<DiscountRVAdapter.My
         MyViewHolder(View view) {
 
             super(view);
-            discountGoodName = (TextView) view.findViewById(R.id.discount_good_name_tv);
+            discountGoodName = (TextView) view.findViewById(R.id.collection_good_name_tv);
             mDiscountIV = (ImageView) view.findViewById(R.id.discount_iv);
             mDiscountCV = (CardView) view.findViewById(R.id.discount_cv);
             mDiscountPriceTV = (TextView) view.findViewById(R.id.discount_price_tv);
