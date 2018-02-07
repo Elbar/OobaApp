@@ -40,7 +40,6 @@ public class DiscountRVAdapter extends RecyclerView.Adapter<DiscountRVAdapter.My
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
 
-
         Discount discount = discounts.get(position);
         holder.discountGoodName.setText(discount.getGoodsName());
         holder.mDiscountPriceTV.setText(discount.getPrice() + " сом");

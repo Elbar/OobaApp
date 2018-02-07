@@ -16,7 +16,7 @@ public class OtherProductsOfSeller {
     private String totalItems;
     @SerializedName("itemlist")
     @Expose
-    private List<Itemlist> itemlist = null;
+    private List<ItemList> itemlist = null;
 
     public String getScore() {
         return score;
@@ -34,11 +34,11 @@ public class OtherProductsOfSeller {
         this.totalItems = totalItems;
     }
 
-    public List<Itemlist> getItemlist() {
+    public List<ItemList> getItemlist() {
         return itemlist;
     }
 
-    public void setItemlist(List<Itemlist> itemlist) {
+    public void setItemlist(List<ItemList> itemlist) {
         this.itemlist = itemlist;
     }
 
