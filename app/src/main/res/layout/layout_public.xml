@@ -44,9 +44,6 @@
                 android:maxLines="2"
                 android:text="Описание товара" />
 
-
-
-
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>
