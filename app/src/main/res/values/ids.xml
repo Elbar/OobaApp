@@ -87,5 +87,7 @@
     <item name="public_good_info_tv" type="id" />
     <item name="public_iv" type="id" />
     <item name="public_cv" type="id" />
+    <item name="public_good_agotime_tv" type="id" />
+    <item name="public_good_views_tv" type="id" />
 
 </resources>

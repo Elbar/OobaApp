@@ -43,6 +43,9 @@ public class PublicRVAdapter extends RecyclerView.Adapter<PublicRVAdapter.MyView
         holder.mPublicTitleTV.setText(publicGood.getTitle());
         holder.mPublicInfoTV.setText(publicGood.getDescription());
 
+        holder.mPublicGoodAgotimeTV.setText(publicGood.getAgotime());
+        holder.mPublicGoodViewsTV.setText(publicGood.getViews());
+
         Picasso.with(context).load("http://ooba.kg/" + publicGood.getFileUrl()).into(holder.mPublicIV);
 
         holder.mPublicCV.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +69,8 @@ public class PublicRVAdapter extends RecyclerView.Adapter<PublicRVAdapter.MyView
     class MyViewHolder extends RecyclerView.ViewHolder {
         TextView mPublicTitleTV;
         TextView mPublicInfoTV;
+        TextView mPublicGoodAgotimeTV;
+        TextView mPublicGoodViewsTV;
         ImageView mPublicIV;
         CardView mPublicCV;
 
@@ -75,6 +80,8 @@ public class PublicRVAdapter extends RecyclerView.Adapter<PublicRVAdapter.MyView
             super(view);
             mPublicTitleTV = (TextView) view.findViewById(R.id.public_good_title_tv);
             mPublicInfoTV = (TextView) view.findViewById(R.id.public_good_info_tv);
+            mPublicGoodViewsTV = (TextView) view.findViewById(R.id.public_good_views_tv);
+            mPublicGoodAgotimeTV = (TextView) view.findViewById(R.id.public_good_agotime_tv);
             mPublicIV = (ImageView) view.findViewById(R.id.public_iv);
             mPublicCV = (CardView) view.findViewById(R.id.public_cv);
 

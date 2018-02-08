@@ -44,6 +44,33 @@
                 android:maxLines="2"
                 android:text="Описание товара" />
 
+
+            <TextView
+                android:id="@id/public_good_agotime_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/public_good_info_tv"
+                android:gravity="left"
+                android:drawableLeft="@drawable/ic_clock"
+                android:padding="8dp"
+                android:drawablePadding="8dp"
+                android:maxLines="2"
+                android:text="7 дней назад" />
+
+            <TextView
+                android:id="@id/public_good_views_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/public_good_info_tv"
+                android:gravity="right"
+                android:layout_alignParentRight="true"
+                android:drawableRight="@drawable/ic_eye"
+                android:drawablePadding="8dp"
+                android:padding="8dp"
+                android:maxLines="2"
+                android:text="79" />
+
+
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>
