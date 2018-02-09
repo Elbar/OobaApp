@@ -45,7 +45,6 @@ public class PublicRVAdapter extends RecyclerView.Adapter<PublicRVAdapter.MyView
 
         holder.mPublicGoodAgotimeTV.setText(publicGood.getAgotime());
         holder.mPublicGoodViewsTV.setText(publicGood.getViews());
-
         Picasso.with(context).load("http://ooba.kg/" + publicGood.getFileUrl()).into(holder.mPublicIV);
 
         holder.mPublicCV.setOnClickListener(new View.OnClickListener() {

@@ -1,8 +1,10 @@
 package com.kg.vista.ooba.api;
 
 import com.kg.vista.ooba.model.Catalog;
+import com.kg.vista.ooba.model.Category;
 import com.kg.vista.ooba.model.CollectionGood;
 import com.kg.vista.ooba.model.Discount;
+import com.kg.vista.ooba.model.MainCategory;
 import com.kg.vista.ooba.model.MainRequest;
 import com.kg.vista.ooba.model.OtherProductsOfSeller;
 import com.kg.vista.ooba.model.Product;
@@ -41,6 +43,7 @@ import java.util.List;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
+import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
@@ -144,7 +147,7 @@ public interface RetrofitService {
     @GET(BASE_URL + "?url=catalog")
     Call<List<Catalog>> getCatalog();
 
-    @GET(BASE_URL + "?url=catalog/tmall")
+    @GET("http://api.ooba.kg/?url=catalog/tmall")
     Call<ResponseBody> getShopByIndex();
 
     @GET(BASE_URL + "?url=catalog/tmall/28")

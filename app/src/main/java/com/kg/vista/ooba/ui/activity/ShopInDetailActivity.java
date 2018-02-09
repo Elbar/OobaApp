@@ -3,6 +3,7 @@ package com.kg.vista.ooba.ui.activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,10 +12,15 @@ import android.view.View;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.adapter.CategoryRVAdapter;
+import com.kg.vista.ooba.api.RetrofitService;
 import com.kg.vista.ooba.model.Category;
+import com.kg.vista.ooba.model.Child;
+import com.kg.vista.ooba.model.MainCategory;
+import com.kg.vista.ooba.model.ProductDetail;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
@@ -24,12 +30,20 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
+import static com.kg.vista.ooba.api.conf.Config.BASE_URL;
 
 
 public class ShopInDetailActivity extends AbstractActivity {
@@ -99,7 +113,9 @@ public class ShopInDetailActivity extends AbstractActivity {
 //        getShopByIndex(indexShop);
         getShopDetail(indexShop);
         getCategories(indexShop);
-        getSubCategories(indexShop);
+
+        getTestCategories(indexShop);
+
 
     }
 
@@ -162,7 +178,7 @@ public class ShopInDetailActivity extends AbstractActivity {
             }
 
             @Override
-            public void onResponse(okhttp3.Call call, final okhttp3.Response response) throws IOException {
+            public void onResponse(final okhttp3.Call call, final okhttp3.Response response) throws IOException {
                 final String json = response.body().string();
                 runOnUiThread(new Runnable() {
                     @Override
@@ -173,12 +189,14 @@ public class ShopInDetailActivity extends AbstractActivity {
                             JSONArray category = menu.getJSONArray("category");
 
                             List<Category> categories = new ArrayList<>();
+                            List<Child> child = new ArrayList<>();
 
                             for (int i = 0; i < category.length(); i++) {
                                 JSONObject cat = category.getJSONObject(i);
                                 Category category1 = new Category();
                                 category1.setCatId(cat.getString("cat_id"));
                                 category1.setCatName(cat.getString("cat_name"));
+
                                 categories.add(category1);
 
                             }
@@ -199,6 +217,67 @@ public class ShopInDetailActivity extends AbstractActivity {
             }
         });
     }
+
+    private void getTestCategories(String indexShop) {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        final RetrofitService request = retrofit.create(RetrofitService.class);
+
+
+        Call<ResponseBody> getCatalog = request.getShopByIndex();
+
+        getCatalog.enqueue(new retrofit2.Callback<ResponseBody>() {
+            @Override
+            public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
+
+                try {
+                    final String json = response.body().string();
+
+                    JSONObject menu = new JSONObject(json);
+
+                    JSONArray category = menu.getJSONArray("category");
+                    List<Category> categories = new ArrayList<>();
+                    for (int i = 0; i < category.length(); i++) {
+
+                        String cat = category.getJSONObject(i).getString("child");
+                        String formattedString = cat
+                                    .replace("[", "")
+                                    .replace("]", "")
+                                    .trim();
+
+                        JSONObject jsonObject = new JSONObject(formattedString);
+
+
+
+                        for (int j = 0; j < jsonObject.length(); j++) {
+                            Log.e("LENGTT + CHILD", jsonObject.getString("cat_name"));
+
+
+                        }
+
+
+
+
+                    }
+
+                }catch(Exception e){
+                        e.printStackTrace();
+
+                    }
+                }
+
+                @Override
+                public void onFailure (Call < ResponseBody > call, Throwable t){
+
+                }
+            });
+
+
+        }
+
 
     public void getSubCategories(final String indexShop) {
 
@@ -258,6 +337,6 @@ public class ShopInDetailActivity extends AbstractActivity {
             }
         });
     }
-
-
 }
+
+
