@@ -19,9 +19,10 @@ public class Category {
     @SerializedName("is_show")
     @Expose
     private String isShow;
+
     @SerializedName("child")
     @Expose
-    private List<List<Child>> child = null;
+    private String child = null;
 
     public String getCatId() {
         return catId;
@@ -55,12 +56,11 @@ public class Category {
         this.isShow = isShow;
     }
 
-    public List<List<Child>> getChild() {
+    public String getChild() {
         return child;
     }
 
-    public void setChild(List<List<Child>> child) {
+    public void setChild(String child) {
         this.child = child;
     }
-
 }

@@ -12,15 +12,12 @@ import android.view.View;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.adapter.CategoryRVAdapter;
 import com.kg.vista.ooba.api.RetrofitService;
 import com.kg.vista.ooba.model.Category;
 import com.kg.vista.ooba.model.Child;
-import com.kg.vista.ooba.model.MainCategory;
-import com.kg.vista.ooba.model.ProductDetail;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
@@ -30,7 +27,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import butterknife.BindView;
@@ -114,7 +110,9 @@ public class ShopInDetailActivity extends AbstractActivity {
         getShopDetail(indexShop);
         getCategories(indexShop);
 
-        getTestCategories(indexShop);
+//        getTestCategories(indexShop);
+        getTestCategories2(indexShop);
+
 
 
     }
@@ -196,6 +194,7 @@ public class ShopInDetailActivity extends AbstractActivity {
                                 Category category1 = new Category();
                                 category1.setCatId(cat.getString("cat_id"));
                                 category1.setCatName(cat.getString("cat_name"));
+                                category1.setChild(cat.getString("child"));
 
                                 categories.add(category1);
 
@@ -244,39 +243,119 @@ public class ShopInDetailActivity extends AbstractActivity {
 
                         String cat = category.getJSONObject(i).getString("child");
                         String formattedString = cat
-                                    .replace("[", "")
-                                    .replace("]", "")
-                                    .trim();
+                                .replace("[", "")
+                                .replace("]", "")
+                                .trim();
 
                         JSONObject jsonObject = new JSONObject(formattedString);
+                        JSONArray jsArray = new JSONArray(jsonObject);
+
+
+//                        String catName = jsonObject.getString("cat_name");
 
 
 
-                        for (int j = 0; j < jsonObject.length(); j++) {
-                            Log.e("LENGTT + CHILD", jsonObject.getString("cat_name"));
+//                        for (int j = 0; j < jsonObject.length(); j++) {
+//
+//
+//                        }
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+            }
+        });
 
 
+    }
+
+    private void getTestCategories2(String indexShop) {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        final RetrofitService request = retrofit.create(RetrofitService.class);
+
+
+        Call<ResponseBody> getCatalog = request.getShopByIndex();
+
+        getCatalog.enqueue(new retrofit2.Callback<ResponseBody>() {
+            @Override
+            public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
+
+                try {
+                    final String json = response.body().string();
+
+                    JSONObject menu = new JSONObject(json);
+
+                    JSONArray category = menu.getJSONArray("category");
+                    for (int i = 0; i < category.length(); i++) {
+                        String cat = category.getJSONObject(i).getString("child");
+
+                        JSONArray jsonArray = new JSONArray(cat);
+                        for (int k = 0; k < jsonArray.length(); k++) {
+                            JSONArray js = jsonArray.getJSONArray(k);
+                            for (int j = 0; j < js.length(); j++) {
+                                JSONObject jsob = js.getJSONObject(j);
+                                String cat_name = jsob.getString("cat_name");
+                                Log.e("JSON", cat_name);
+                            }
                         }
+//                        JSONArray js = jsonArray.getJSONArray(i);
 
 
 
+//                        String formattedString = cat
+//                                .replace("[", "")
+//                                .replace("]", "")
+//                                .trim();
 
+//                        JSONObject jsonObject = new JSONObject(formattedString);
+//                        Log.e("SSAX", js.toString());
+
+//                        for (int j = 0; j < jsArray.length(); j++) {
+//
+//
+//                        }
+
+
+//                        String catName = jsonObject.getString("cat_name");
+
+
+
+//                        for (int j = 0; j < jsonObject.length(); j++) {
+//
+//
+//                        }
                     }
 
-                }catch(Exception e){
-                        e.printStackTrace();
-
-                    }
-                }
-
-                @Override
-                public void onFailure (Call < ResponseBody > call, Throwable t){
+                } catch (Exception e) {
+                    e.printStackTrace();
 
                 }
-            });
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+            }
+        });
 
 
-        }
+    }
+
+
+
+
+
 
 
     public void getSubCategories(final String indexShop) {
