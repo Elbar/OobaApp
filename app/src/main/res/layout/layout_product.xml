@@ -15,31 +15,48 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@id/product_iv"
+            <TextView
+                android:id="@id/nick_title_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="nicj"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:textSize="18sp"
                 android:scaleType="fitXY" />
 
             <TextView
-                android:id="@id/product_name"
-                android:layout_width="wrap_content"
+                android:id="@id/shop_name_tv"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/product_iv"
-                android:padding="10dp"
-                android:text="Center"
-                android:textAlignment="center"
-                android:textSize="18sp" />
+                android:layout_below="@id/nick_title_tv"
+                android:text="nicj"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:textSize="18sp"
+                android:scaleType="fitXY" />
+
+            <ImageView
+                android:id="@id/product_iv"
+                android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/shop_name_tv"
+
+                android:layout_height="350dp"
+                android:scaleType="fitXY" />
 
             <TextView
                 android:id="@id/product_price_tv"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_below="@id/product_iv"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:textSize="18sp"
                 android:text="dsd"
+                android:textAlignment="center"
                 android:textColor="@android:color/holo_red_dark"
                 android:textStyle="bold" />
 

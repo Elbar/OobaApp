@@ -38,6 +38,7 @@ public class CategoryRVAdapter extends RecyclerView.Adapter<CategoryRVAdapter.My
         this.categories = categories;
         this.context = context;
 
+
     }
 
     @Override
@@ -96,6 +97,7 @@ public class CategoryRVAdapter extends RecyclerView.Adapter<CategoryRVAdapter.My
 
                             Intent intent = new Intent(context, ProductActivity.class);
                             intent.putExtra("url", "catalog/tmall/2");
+
                             context.startActivity(intent);
                         }
                     });

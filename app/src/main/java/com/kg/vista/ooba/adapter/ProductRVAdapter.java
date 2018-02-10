@@ -49,12 +49,14 @@ public class ProductRVAdapter extends RecyclerView.Adapter<ProductRVAdapter.MyVi
         final String name = String.valueOf(product2.getNickTitle());
         final String price = String.valueOf(product2.getPrice());
         final String urlProduct = product2.getUrlProduct().substring(1);
+        String nickTitle = product2.getNickTitle();
 
         String imgUrl = product2.getImages();
-        holder.mProductName.setText(name);
         holder.mProductPriceTV.setText(price + " сом ");
+        holder.mNickTitleTV.setText(nickTitle);
+        holder.mShopNameTV.setText("d");
 
-        Picasso.with(holder.mView.getContext()).load(imgUrl).resize(600,400).into(holder.mProductIV);
+        Picasso.with(holder.mView.getContext()).load(imgUrl).into(holder.mProductIV);
     }
 
     @Override
@@ -65,8 +67,11 @@ public class ProductRVAdapter extends RecyclerView.Adapter<ProductRVAdapter.MyVi
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         final View mView;
-        @BindView(R.id.product_name)
-        TextView mProductName;
+
+        @BindView(R.id.nick_title_tv)
+        TextView mNickTitleTV;
+        @BindView(R.id.shop_name_tv)
+        TextView mShopNameTV;
 
         @BindView(R.id.product_iv)
         ImageView mProductIV;

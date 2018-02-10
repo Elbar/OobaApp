@@ -61,6 +61,7 @@ public class ShopInDetailActivity extends AbstractActivity {
     @BindView(R.id.category_rv)
     RecyclerView mCategoryRV;
     CategoryRVAdapter categoryRVAdapter;
+    String linkName;
 
 
     @Override
@@ -139,6 +140,7 @@ public class ShopInDetailActivity extends AbstractActivity {
                             Log.e("JSJ", shop.toString());
                             String country = shop.getString("country");
                             String shortDesc = shop.getString("short_desc");
+                            linkName = shop.getString("link_name");
                             mShopCountryTV.setText(country);
                             mShopAboutUsWV.getSettings().setDefaultTextEncodingName("utf-8");
                             mShopAboutUsWV.setBackgroundColor(Color.TRANSPARENT);

@@ -41,6 +41,7 @@ public class ProductActivity extends AbstractActivity {
         Intent intent = getIntent();
         String productUrl = intent.getStringExtra("url");
 
+
         getProducts(productUrl);
 
     }
