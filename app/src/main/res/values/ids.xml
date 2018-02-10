@@ -89,5 +89,8 @@
     <item name="public_cv" type="id" />
     <item name="public_good_agotime_tv" type="id" />
     <item name="public_good_views_tv" type="id" />
+    <item name="shop_short_desc" type="id" />
+    <item name="shop_link_name_tv" type="id" />
+    <item name="shop_filter_tv" type="id" />
 
 </resources>

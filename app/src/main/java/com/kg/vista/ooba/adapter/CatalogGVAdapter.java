@@ -3,13 +3,16 @@ package com.kg.vista.ooba.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.model.Catalog;
@@ -60,9 +63,21 @@ public class CatalogGVAdapter extends BaseAdapter {
         }
 
         ImageView imageView = (ImageView) convertView.findViewById(R.id.shop_image);
+        WebView mShopShortDescWV = (WebView) convertView.findViewById(R.id.shop_short_desc);
+        TextView mLinkNameTV = (TextView) convertView.findViewById(R.id.shop_link_name_tv);
+        TextView mShopFilterTV = (TextView) convertView.findViewById(R.id.shop_filter_tv);
         CardView mCatalogCV = (CardView) convertView.findViewById(R.id.catalog_cv);
         final ProgressBar progressBar = (ProgressBar) convertView.findViewById(R.id.shopProgressBar);
+
+        mShopShortDescWV.getSettings().setDefaultTextEncodingName("utf-8");
+        mShopShortDescWV.setBackgroundColor(Color.TRANSPARENT);
+        mShopShortDescWV.loadData(catalog.getShortDesc(), "text/html; charset=utf-8", "utf-8");
+        mLinkNameTV.setText(catalog.getLinkName());
+        mShopFilterTV.setText(catalog.getFilter());
+
+
         final String linkLogo = "http://ooba.kg/" + catalog.getLinkLogo();
+
 
         Picasso.with(mContext).load(linkLogo).into(imageView, new Callback() {
             @Override

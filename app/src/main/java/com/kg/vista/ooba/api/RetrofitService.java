@@ -150,8 +150,8 @@ public interface RetrofitService {
     @GET("http://api.ooba.kg/?url=catalog/tmall")
     Call<ResponseBody> getShopByIndex();
 
-    @GET(BASE_URL + "?url=catalog/tmall/28")
-    Call<ProductList> getProductByIndex();
+    @GET(BASE_URL)
+    Call<ProductList> getProductByIndex(@Query("url") String urlProduct);
 
     @GET(BASE_URL)
     Call<ProductDetail> getDetailOfProduct(@Query("url") String urlProduct);

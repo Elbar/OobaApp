@@ -64,6 +64,7 @@ public class CatalogActivity extends AbstractActivity {
                         catalog.setIndexShop(catalogs.get(i).getIndexShop());
                         catalog.setFilter(catalogs.get(i).getFilter());
                         catalog.setLinkUrl(catalogs.get(i).getLinkUrl());
+                        catalog.setShortDesc(catalogs.get(i).getShortDesc());
                         catalog.setDescription(catalogs.get(i).getDescription());
                         catalogItem.add(catalog);
 

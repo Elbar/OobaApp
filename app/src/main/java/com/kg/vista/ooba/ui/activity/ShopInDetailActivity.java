@@ -105,14 +105,9 @@ public class ShopInDetailActivity extends AbstractActivity {
 
         mShopCountryLinkTV.setText(linkUrl);
         mShopMainCategoryTV.setText(filter);
-
-//        getShopByIndex(indexShop);
         getShopDetail(indexShop);
         getCategories(indexShop);
-
-//        getTestCategories(indexShop);
         getTestCategories2(indexShop);
-
 
 
     }
@@ -217,64 +212,6 @@ public class ShopInDetailActivity extends AbstractActivity {
         });
     }
 
-    private void getTestCategories(String indexShop) {
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        final RetrofitService request = retrofit.create(RetrofitService.class);
-
-
-        Call<ResponseBody> getCatalog = request.getShopByIndex();
-
-        getCatalog.enqueue(new retrofit2.Callback<ResponseBody>() {
-            @Override
-            public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
-
-                try {
-                    final String json = response.body().string();
-
-                    JSONObject menu = new JSONObject(json);
-
-                    JSONArray category = menu.getJSONArray("category");
-                    List<Category> categories = new ArrayList<>();
-                    for (int i = 0; i < category.length(); i++) {
-
-                        String cat = category.getJSONObject(i).getString("child");
-                        String formattedString = cat
-                                .replace("[", "")
-                                .replace("]", "")
-                                .trim();
-
-                        JSONObject jsonObject = new JSONObject(formattedString);
-                        JSONArray jsArray = new JSONArray(jsonObject);
-
-
-//                        String catName = jsonObject.getString("cat_name");
-
-
-
-//                        for (int j = 0; j < jsonObject.length(); j++) {
-//
-//
-//                        }
-                    }
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-
-            }
-        });
-
-
-    }
 
     private void getTestCategories2(String indexShop) {
 
@@ -306,35 +243,9 @@ public class ShopInDetailActivity extends AbstractActivity {
                             for (int j = 0; j < js.length(); j++) {
                                 JSONObject jsob = js.getJSONObject(j);
                                 String cat_name = jsob.getString("cat_name");
-                                Log.e("JSON", cat_name);
                             }
                         }
-//                        JSONArray js = jsonArray.getJSONArray(i);
 
-
-
-//                        String formattedString = cat
-//                                .replace("[", "")
-//                                .replace("]", "")
-//                                .trim();
-
-//                        JSONObject jsonObject = new JSONObject(formattedString);
-//                        Log.e("SSAX", js.toString());
-
-//                        for (int j = 0; j < jsArray.length(); j++) {
-//
-//
-//                        }
-
-
-//                        String catName = jsonObject.getString("cat_name");
-
-
-
-//                        for (int j = 0; j < jsonObject.length(); j++) {
-//
-//
-//                        }
                     }
 
                 } catch (Exception e) {
@@ -353,69 +264,6 @@ public class ShopInDetailActivity extends AbstractActivity {
     }
 
 
-
-
-
-
-
-    public void getSubCategories(final String indexShop) {
-
-
-        OkHttpClient client = new OkHttpClient();
-
-        final Request request = new Request.Builder()
-                .url("http://api.ooba.kg/?url=catalog/" + indexShop)
-                .get()
-                .build();
-        client.newCall(request).enqueue(new okhttp3.Callback() {
-            @Override
-            public void onFailure(okhttp3.Call call, IOException e) {
-
-            }
-
-            @Override
-            public void onResponse(okhttp3.Call call, final okhttp3.Response response) throws IOException {
-                final String json = response.body().string();
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-
-                        try {
-                            JSONObject menu = new JSONObject(json);
-                            JSONArray category = menu.getJSONArray("category");
-
-                            List<Category> categories = new ArrayList<>();
-
-                            for (int i = 0; i < category.length(); i++) {
-                                JSONObject cat = category.getJSONObject(i);
-                                String catName = cat.getString("cat_name");
-
-                                JSONArray child = cat.getJSONArray("child");
-                                Log.e("DADF", child.toString());
-                                for (int j = 0; j < child.length(); j++) {
-                                    JSONArray childJsonArray = child.getJSONArray(j);
-                                    JSONObject contentJsonObject = childJsonArray.getJSONObject(j);
-                                    Category category1 = new Category();
-                                    category1.setCatName(contentJsonObject.getString("cat_name"));
-                                    category1.setCatName(contentJsonObject.getString("cat_id"));
-
-                                    categories.add(category1);
-
-
-                                }
-                            }
-//
-                            categoryRVAdapter = new CategoryRVAdapter(ShopInDetailActivity.this, categories);
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
-                    }
-                });
-            }
-        });
-    }
 }
 
 

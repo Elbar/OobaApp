@@ -11,10 +11,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.model.Category;
+import com.kg.vista.ooba.model.Child;
 import com.kg.vista.ooba.ui.activity.ProductActivity;
 import com.squareup.picasso.Picasso;
 
@@ -51,18 +53,11 @@ public class CategoryRVAdapter extends RecyclerView.Adapter<CategoryRVAdapter.My
 
 
         final Category category = categories.get(position);
-        final String catID = category.getCatId();
 
 
         holder.title.setText(category.getCatName());
         Picasso.with(context).load(R.drawable.noimage).into(holder.mCategoryIV);
-//
-//        holder.mCategoryCV.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
 
-//            }
-//        });
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,36 +66,40 @@ public class CategoryRVAdapter extends RecyclerView.Adapter<CategoryRVAdapter.My
                 try {
                     jsonArray = new JSONArray(cat);
                     ArrayList<String> subcategories = new ArrayList<String>();
-
+                    Child child = new Child();
                     for (int k = 0; k < jsonArray.length(); k++) {
                         JSONArray js = jsonArray.getJSONArray(k);
                         for (int j = 0; j < js.length(); j++) {
+
                             JSONObject jsob = js.getJSONObject(j);
                             String cat_name = jsob.getString("cat_name");
-                            String cat_id = jsob.getString("cat_id");
-                            Log.e("ITEMADAPTER", cat_name);
+                            String  url = jsob.getString("url");
+//                            child.setCatName(cat_name);
+//                            child.setUrl(url);
+
                             subcategories.add(cat_name);
+
 
                         }
                     }
+
 
                     CharSequence[] cs = subcategories.toArray(new CharSequence[subcategories.size()]);
 
                     AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(holder.itemView.getContext());
 
-//                    dialogBuilder.setTitle("Animals");
+                    dialogBuilder.setTitle("Подкатегории");
+
                     dialogBuilder.setItems(cs, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int item) {
 
 
                             Intent intent = new Intent(context, ProductActivity.class);
-                            intent.putExtra("cat_id", catID);
+                            intent.putExtra("url", "catalog/tmall/2");
                             context.startActivity(intent);
                         }
                     });
-                    //Create alert dialog object via builder
                     AlertDialog alertDialogObject = dialogBuilder.create();
-                    //Show the dialog
                     alertDialogObject.show();
 
 

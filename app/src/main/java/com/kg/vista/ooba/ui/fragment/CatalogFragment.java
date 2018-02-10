@@ -70,7 +70,9 @@ public class CatalogFragment extends Fragment {
                         catalog.setIndexShop(catalogs.get(i).getIndexShop());
                         catalog.setFilter(catalogs.get(i).getFilter());
                         catalog.setLinkUrl(catalogs.get(i).getLinkUrl());
+                        catalog.setLinkName(catalogs.get(i).getLinkName());
                         catalog.setDescription(catalogs.get(i).getDescription());
+                        catalog.setShortDesc(catalogs.get(i).getShortDesc());
                         catalogItem.add(catalog);
 
                     }

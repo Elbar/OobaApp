@@ -3,7 +3,9 @@ package com.kg.vista.ooba.ui.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import com.kg.vista.ooba.R;
 import com.kg.vista.ooba.adapter.ProductRVAdapter;
@@ -26,10 +28,10 @@ import static com.kg.vista.ooba.api.conf.Config.BASE_URL;
 
 
 public class ProductActivity extends AbstractActivity {
-    ProductRVAdapter mAdapter;
     @BindView(R.id.product_rv)
     RecyclerView mProductRV;
     private String TAG = "ProductActivity";
+    ProductRVAdapter mAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,19 +39,14 @@ public class ProductActivity extends AbstractActivity {
         setContentView(R.layout.activity_product);
         ButterKnife.bind(this);
         Intent intent = getIntent();
-        String catID = intent.getStringExtra("cat_id");
+        String productUrl = intent.getStringExtra("url");
 
-        mAdapter = new ProductRVAdapter();
-        mAdapter.setHasStableIds(true);
-//        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
-
-        mProductRV.setAdapter(mAdapter);
-        getProducts();
+        getProducts(productUrl);
 
     }
 
 
-    private void getProducts() {
+    private void getProducts(final String productUrl) {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
@@ -57,15 +54,15 @@ public class ProductActivity extends AbstractActivity {
                 .build();
         final RetrofitService request = retrofit.create(RetrofitService.class);
 
-        Call<ProductList> getExecutorProfile = request.getProductByIndex();
+        Call<ProductList> getExecutorProfile = request.getProductByIndex(productUrl);
 
         getExecutorProfile.enqueue(new Callback<ProductList>() {
             @Override
             public void onResponse(Call<ProductList> call, Response<ProductList> response) {
                 try {
                     List<Product2> product = response.body().getProduct();
-
                     List<Product2> productItem = new ArrayList<>();
+                    Log.e("size", String.valueOf(product.size()));
 
                     for (int i = 0; i < product.size(); i++) {
                         Product2 product2 = new Product2();
@@ -76,7 +73,11 @@ public class ProductActivity extends AbstractActivity {
                         productItem.add(product2);
                     }
 
-                    mAdapter.setItems(productItem);
+                    mAdapter = new ProductRVAdapter(ProductActivity.this, productItem);
+
+                    mProductRV.setLayoutManager(new GridLayoutManager(ProductActivity.this, 1));
+
+                    mProductRV.setAdapter(mAdapter);
 
                 } catch (Exception e) {
                     e.printStackTrace();
